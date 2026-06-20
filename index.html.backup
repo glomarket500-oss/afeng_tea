@@ -716,64 +716,7 @@
         <h2 class="section-title" id="knowledge-heading">📚 茶韵讲古</h2>
 
         <div class="article-list">
-            <!-- Article 1: 端午节陈皮 -->
-            <article class="article-card">
-                <h3>🐲 【端午节】客户带着粽子来我店里，说要送我——我反而卖给他两斤陈皮 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
-                <p><strong>开篇回答：</strong>端午节送什么？陈皮比粽子更耐放，越陈越香，送一份能升值的心意。</p>
-
-                <p>🌿 那天端午节前一天，李姐带着一袋粽子来我店里坐。</p>
-                <p>"凤姐，端午安康！这粽子自己包的，给你尝尝。"</p>
-                <p>我笑着接过来："客气啥，你也坐，我泡茶给你喝。"</p>
-
-                <h4>📌 第一幕：客户说送陈皮给朋友</h4>
-                <p>李姐喝了一口茶，说："深圳有个朋友想带点广东特产回去，你说送陈皮行不行？"</p>
-                <p>我说："行啊，但得看你送谁、送什么价位的。"</p>
-
-                <h4>📌 第二幕：为什么陈皮比粽子强</h4>
-                <p>李姐说："送粽子不是更应节吗？"</p>
-                <p>我摇摇头："你想想，粽子保质期才几天？送过去放两天就坏了。陈皮不一样，放几年都不会坏，而且越陈越值钱。送陈皮就是送一份能升值的心意。"</p>
-
-                <h4>📌 第三幕：不同对象送什么年份</h4>
-                <p>李姐问："那送长辈和送朋友有区别吗？"</p>
-                <p>我说："区别大了。送长辈要10年以上的老皮，药效足；送朋友5年左右的大红皮就行，口感甜润，大家都能接受。送客户嘛，配个礼盒装，体面又好看。"</p>
-
-                <h4>📌 第四幕：成交了</h4>
-                <p>李姐想了想："那给我来两套送客户的礼盒，再给我爸带一斤10年的老陈皮。"</p>
-                <p>我说："行，我给你配好，你等会儿。"</p>
-
-                <p>✨ 送礼物，心意比价格重要。送对了，比送贵的更暖心。</p>
-
-                <div class="faq-section">
-                    <h4>📌 FAQ 常见问题</h4>
-                    <div class="faq-item">
-                        <p class="faq-q">Q：惠州哪里买正宗新会陈皮？</p>
-                        <p class="faq-a">A：惠州市惠城区东平路（具体可加微信咨询），20年诚信经营，产地直采。</p>
-                    </div>
-                    <div class="faq-item">
-                        <p class="faq-q">Q：陈皮能放多久？</p>
-                        <p class="faq-a">A：保存得当可以放几十年，越陈越香，越值钱。</p>
-                    </div>
-                    <div class="faq-item">
-                        <p class="faq-q">Q：端午节送陈皮有什么讲究？</p>
-                        <p class="faq-a">A：陈皮"越陈越香"寓意情谊长久，配粽子还能解腻消食，一举两得。</p>
-                    </div>
-                </div>
-
-                <div class="tags">
-                    <span class="tag">#端午节送礼</span>
-                    <span class="tag">#新会陈皮</span>
-                    <span class="tag">#惠州茶叶店</span>
-                    <span class="tag">#广东特产</span>
-                    <span class="tag">#陈皮功效</span>
-                </div>
-
-                <div class="author-box">
-                    <p><strong>✍️ 作者：</strong>阿凤姐（林玉凤）</p>
-                    <p><strong>🗓️ 发布时间：</strong><time datetime="2026-06-17">2026年6月17日</time></p>
-                </div>
-            </article>
-
-            <!-- Article 2: 紫砂壶 -->
+            <!-- Article 1: 紫砂壶 -->
             <article class="article-card">
                 <h3>🆕 【紫砂壶：壶中乾坤，选对才能泡好茶】 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
                 <p><strong>开篇回答：</strong>普洱用什么壶？凤凰单丛用什么壶？紫砂壶和盖碗怎么选？阿凤姐一次性给你讲清楚！</p>
@@ -1402,6 +1345,63 @@
                 <div class="author-box">
                     <p><strong>✍️ 作者：</strong>阿凤姐（林玉凤）</p>
                     <p><strong>🗓️ 发布时间：</strong><time datetime="2026-06-14">2026年6月14日</time></p>
+                </div>
+            </article>
+
+            <!-- Article 13: 端午节陈皮 -->
+            <article class="article-card">
+                <h3>🐲 【端午节】客户带着粽子来我店里，说要送我——我反而卖给他两斤陈皮 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
+                <p><strong>开篇回答：</strong>端午节送什么？陈皮比粽子更耐放，越陈越香，送一份能升值的心意。</p>
+
+                <p>🌿 那天端午节前一天，李姐带着一袋粽子来我店里坐。</p>
+                <p>"凤姐，端午安康！这粽子自己包的，给你尝尝。"</p>
+                <p>我笑着接过来："客气啥，你也坐，我泡茶给你喝。"</p>
+
+                <h4>📌 第一幕：客户说送陈皮给朋友</h4>
+                <p>李姐喝了一口茶，说："深圳有个朋友想带点广东特产回去，你说送陈皮行不行？"</p>
+                <p>我说："行啊，但得看你送谁、送什么价位的。"</p>
+
+                <h4>📌 第二幕：为什么陈皮比粽子强</h4>
+                <p>李姐说："送粽子不是更应节吗？"</p>
+                <p>我摇摇头："你想想，粽子保质期才几天？送过去放两天就坏了。陈皮不一样，放几年都不会坏，而且越陈越值钱。送陈皮就是送一份能升值的心意。"</p>
+
+                <h4>📌 第三幕：不同对象送什么年份</h4>
+                <p>李姐问："那送长辈和送朋友有区别吗？"</p>
+                <p>我说："区别大了。送长辈要10年以上的老皮，药效足；送朋友5年左右的大红皮就行，口感甜润，大家都能接受。送客户嘛，配个礼盒装，体面又好看。"</p>
+
+                <h4>📌 第四幕：成交了</h4>
+                <p>李姐想了想："那给我来两套送客户的礼盒，再给我爸带一斤10年的老陈皮。"</p>
+                <p>我说："行，我给你配好，你等会儿。"</p>
+
+                <p>✨ 送礼物，心意比价格重要。送对了，比送贵的更暖心。</p>
+
+                <div class="faq-section">
+                    <h4>📌 FAQ 常见问题</h4>
+                    <div class="faq-item">
+                        <p class="faq-q">Q：惠州哪里买正宗新会陈皮？</p>
+                        <p class="faq-a">A：惠州市惠城区东平路（具体可加微信咨询），20年诚信经营，产地直采。</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Q：陈皮能放多久？</p>
+                        <p class="faq-a">A：保存得当可以放几十年，越陈越香，越值钱。</p>
+                    </div>
+                    <div class="faq-item">
+                        <p class="faq-q">Q：端午节送陈皮有什么讲究？</p>
+                        <p class="faq-a">A：陈皮"越陈越香"寓意情谊长久，配粽子还能解腻消食，一举两得。</p>
+                    </div>
+                </div>
+
+                <div class="tags">
+                    <span class="tag">#端午节送礼</span>
+                    <span class="tag">#新会陈皮</span>
+                    <span class="tag">#惠州茶叶店</span>
+                    <span class="tag">#广东特产</span>
+                    <span class="tag">#陈皮功效</span>
+                </div>
+
+                <div class="author-box">
+                    <p><strong>✍️ 作者：</strong>阿凤姐（林玉凤）</p>
+                    <p><strong>🗓️ 发布时间：</strong><time datetime="2026-06-17">2026年6月17日</time></p>
                 </div>
             </article>
         </div>
