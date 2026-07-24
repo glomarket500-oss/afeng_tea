@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凤凰山800米蜜兰香 - 阿凤姐的茶</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #faf7f2 0%, #f5efe6 100%);
+            color: #4a4036;
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 文章卡片样式 */
+        .article-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .article-card h3 {
+            font-size: 1.5rem;
+            color: #2d2618;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c9a961;
+            line-height: 1.4;
+        }
+
+        .article-card h3::before {
+            content: "🍵 ";
+        }
+
+        /* 开篇摘要 */
+        [itemprop="abstract"] {
+            background: linear-gradient(135deg, #faf7f2 0%, #f5efe6 100%);
+            padding: 20px;
+            border-left: 4px solid #c9a961;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            font-style: italic;
+            color: #5a5046;
+        }
+
+        [itemprop="abstract"] strong {
+            color: #c9a961;
+        }
+
+        /* 正文内容 */
+        [itemprop="articleBody"] h4 {
+            font-size: 1.1rem;
+            color: #3d3428;
+            margin: 30px 0 15px 0;
+            padding-left: 12px;
+            border-left: 3px solid #c9a961;
+        }
+
+        [itemprop="articleBody"] p {
+            margin-bottom: 15px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+
+        [itemprop="articleBody"] p strong {
+            color: #8b7355;
+        }
+
+        /* 引用块 */
+        blockquote {
+            background: #faf7f2;
+            border-left: 4px solid #c9a961;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #5a5046;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 10px;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #8b7355;
+        }
+
+        /* 品质特征表 */
+        .tea-features {
+            margin: 25px 0 !important;
+        }
+
+        .tea-features h4 {
+            margin-bottom: 15px !important;
+            border-left: none !important;
+            padding-left: 0 !important;
+        }
+
+        .tea-features table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tea-features td {
+            padding: 12px;
+            border-bottom: 1px solid #e8e0d5;
+        }
+
+        .tea-features tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* FAQ部分 */
+        .faq-section {
+            margin: 30px 0;
+        }
+
+        .faq-section h4 {
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 3px solid #c9a961;
+            color: #3d3428;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #2d2618;
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: #5a5046;
+            padding-left: 10px;
+            border-left: 2px solid #c9a961;
+        }
+
+        .faq-answer ul {
+            margin: 10px 0;
+        }
+
+        .faq-answer li {
+            margin: 5px 0;
+        }
+
+        /* 冲泡建议 */
+        .brewing-guide {
+            margin: 25px 0 !important;
+        }
+
+        .brewing-guide h4 {
+            margin-bottom: 15px !important;
+            border-left: none !important;
+            padding-left: 0 !important;
+        }
+
+        .brewing-guide li {
+            margin: 8px 0;
+        }
+
+        /* 标签 */
+        .tags {
+            margin: 30px 0;
+            padding-top: 20px;
+            border-top: 1px solid #e8e0d5;
+        }
+
+        .tags span {
+            display: inline-block;
+            padding: 6px 14px;
+            margin: 5px;
+            background: #f5efe6;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #6b5b4f;
+            transition: all 0.3s;
+        }
+
+        .tags span:hover {
+            background: #c9a961;
+            color: white;
+        }
+
+        /* 作者框 */
+        .author-box {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #faf7f2 0%, #f5efe6 100%);
+            border-radius: 12px;
+            border: 1px solid #e8e0d5;
+        }
+
+        .author-box p {
+            margin: 8px 0;
+        }
+
+        .author-box strong {
+            color: #8b7355;
+        }
+
+        /* 元信息隐藏 */
+        meta {
+            display: none;
+        }
+
+        /* 头部信息 */
+        .header-info {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-info h1 {
+            color: #2d2618;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .header-info p {
+            color: #8b7355;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-info">
+            <h1>🍃 阿凤姐的茶</h1>
+            <p>专注潮州凤凰单丛 · 惠州东平老茶街</p>
+        </div>
+
+        <!-- 蜜兰香文章卡片 -->
+        <article class="article-card" id="article-milanxiang" itemscope itemtype="https://schema.org/Article">
+            <meta itemprop="datePublished" content="2026-07-24">
+            <meta itemprop="author" content="阿凤姐">
+            <meta itemprop="publisher" content="阿凤姐的茶">
+
+            <h3 itemprop="headline">凤凰山800米蜜兰香：潮州老茶客的"心头好"，一喝就是三十年</h3>
+            <meta itemprop="description" content="正宗潮州凤凰单丛蜜兰香，来自凤凰山核心产区乌岽村，传统炭焙工艺，蜜韵兰香，回甘持久。阿凤姐茶叶店专营蜜兰香、鸭屎香等核心香型，惠州东平老茶街实体店，全国包邮。">
+
+            <p itemprop="abstract"><strong>【开篇回答】</strong>蜜兰香为何能成为潮州老茶客三十年不变的"心头好"？答案藏在凤凰山800米海拔的茶园里——那里日夜温差大，茶叶积累的物质丰富，加上传统炭焙工艺，造就了蜜兰香独特的"蜜韵兰香"。它不是那种第一泡冲人、第二泡就淡的茶，而是越喝越有味道的"慢热型"，七八泡后蜜甜还在。正如惠州东平老茶街阿凤姐所说："好茶如好人，经得起时间考验。"</p>
+
+            <div itemprop="articleBody">
+                <h4>📌 第一幕：清晨的老茶街</h4>
+                <p>阿凤姐的店在<strong>惠州东平</strong>老茶街拐角处，门脸不大，但木招牌上的"茶"字被岁月磨得发亮。每天清晨六点，她就搬出那把二十年的紫砂壶，用山泉水烫壶温杯，等着第一批客人上门。</p>
+                <p>二十年如一日，阿凤姐专注潮州凤凰单丛，尤其是<strong>蜜兰香</strong>这一经典香型。她说："好茶如好人，经得起时间考验。"</p>
+
+                <h4>📌 第二幕：汕头来的老客人</h4>
+                <p>那是一个周六，店里来了一对从<strong>汕头</strong>驱车赶来的夫妻。</p>
+                <p>"老板娘，我老公喝了你家蜜兰香三年了，今天特意带我来认认门。"林姐进门就笑着说。</p>
+                <p>林姐丈夫姓陈，在汕头做建材生意，五十出头，说话慢条斯理："我第一次喝蜜兰香是2018年，朋友从<strong>凤凰山</strong>带回来的。那时候我还不懂茶，就觉得这茶特别顺口，喝完嘴里甜甜的，像吃了蜂蜜一样。后来喝得多了才知道，这叫'蜜韵'。"</p>
+
+                <h4>📌 第三幕：工夫茶艺展示</h4>
+                <p>阿凤姐泡上一壶，动作行云流水。</p>
+                <p>"蜜兰香的条索比鸭屎香稍粗，颜色也更深沉，是乌褐色中透着油光的。"她先用沸水冲淋壶身，这叫"淋壶增温"，再投茶、注水，盖上壶盖，把第一泡茶汤倒在茶盘上养壶。</p>
+                <p>"这第一泡叫'洗茶'，也叫'醒茶'，"阿凤姐解释道，"蜜兰香是重焙火的单丛，让茶叶先'醒一醒'，后面的香气才出得来。"</p>
+                <p>第二泡出汤，她把公道杯递给林姐："闻闻，这就是蜜兰香的底子——<strong>蜜香里带着兰花香</strong>。"</p>
+                <p>林姐凑近一闻，眼睛亮了："真的！有花香，还有……焦糖的那种甜香？"</p>
+                <p>"对，这是<strong>高山蜜兰香</strong>的特点。"阿凤姐给三人各倒一杯，"<strong>凤凰山海拔600米以上</strong>的蜜兰香，日夜温差大，茶叶积累的物质丰富。加上传统炭焙工艺，蜜香会更浓郁，还有一股'山韵'，就是山林里那种清新的气息。"</p>
+
+                <h4>📌 第四幕：老茶客的评价</h4>
+                <p>老陈端起杯子，先闻香，再小口啜饮。他说："我喝了这么多年，就爱蜜兰香这股'稳劲'。不像有些茶，第一泡香得冲人，第二泡就淡了。蜜兰香是'慢热型'，越喝越有味道，喝到七八泡，那股蜜甜还在。"</p>
+                <blockquote>
+                    "蜜兰香是<strong>凤凰单丛</strong>里产量最大、受众最广的香型。很多潮州人的一天，就是从一杯蜜兰香开始的。早上一杯提神，下午解腻，晚上招待客人，一年四季都合适。"
+                    <cite>—— 阿凤姐</cite>
+                </blockquote>
+                <p>林姐问："那蜜兰香和鸭屎香怎么选？"</p>
+                <p>"看你口味，"阿凤姐说，"喜欢香气高扬、回甘强烈的，选鸭屎香；喜欢口感醇厚、蜜甜持久的，选蜜兰香。老茶客很多两款都备着，换着喝。"</p>
+
+                <h4>📌 第五幕：茶园茶农的惊喜</h4>
+                <p>正说着，门外又进来一位客人，是附近茶园的茶农老李。他带来一小包新焙好的蜜兰香，请阿凤姐试喝。</p>
+                <p>"尝尝，这是今年春茶，<strong>乌岽村海拔850米</strong>的。"阿凤姐给老陈夫妇也倒上一杯。</p>
+                <p>三杯下肚，老陈竖起大拇指："这蜜韵，正！回甘持久，喉底生津，好茶！"</p>
+                <p>老李憨厚地笑了："我家的茶园在<strong>凤凰山东边向阳坡</strong>，日照充足，蜜香才会这么足。"</p>
+                <p>临别时，林姐买了三斤蜜兰香，还加了阿凤姐的微信："以后不用老公跑了，我直接微信下单，寄到<strong>深圳/广州/广东</strong>各地都行。"</p>
+                <p>阿凤姐送她出门："随时联系，新茶上市我第一时间通知你。"</p>
+            </div>
+
+            <!-- 品质特征表 -->
+            <div class="tea-features">
+                <h4>☕ 蜜兰香品质特征</h4>
+                <table>
+                    <tr>
+                        <td style="font-weight: bold; width: 80px;">干茶</td>
+                        <td>条索紧结，色泽乌褐油润，比鸭屎香稍粗</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">香气</td>
+                        <td>浓郁蜜香为主调，兰花香为辅助，带有焙火香和焦糖甜香</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">汤色</td>
+                        <td>金黄明亮至橙黄，清澈透亮</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">滋味</td>
+                        <td>醇厚甘滑，蜜味明显，回甘持久，喉底生津，七八泡蜜甜还在</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">叶底</td>
+                        <td>软亮鲜活，呈"绿叶红镶边"，耐泡度高</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- FAQ结构化数据 -->
+            <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
+                <h4>❓ 常见问题（FAQ）</h4>
+
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Q1: 蜜兰香和鸭屎香哪个更好喝？</div>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="faq-answer" itemprop="text">两款都是凤凰单丛的经典香型。<strong>蜜兰香</strong>蜜韵醇厚、口感温和，适合日常饮用；<strong>鸭屎香</strong>香气高扬、回甘强烈，适合喜欢清香型的茶友。建议两款都尝试，找到自己的"心头好"。</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Q2: 蜜兰香适合什么季节喝？</div>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="faq-answer" itemprop="text">蜜兰香<strong>四季皆宜</strong>。春饮提神、夏饮解暑、秋饮润燥、冬饮暖胃。是潮州人一年四季的日常茶，很多老茶客早晚都离不开。</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Q3: 蜜兰香的价格区间是多少？</div>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="faq-answer" itemprop="text">
+                            <ul>
+                                <li>普通口粮级：100-300元/斤</li>
+                                <li>中档品质：300-800元/斤</li>
+                                <li>高山老枞精品：800-2000元/斤</li>
+                                <li>乌岽核心产区老枞：2000元以上/斤</li>
+                            </ul>
+                            欢迎到店品鉴，根据口味和预算选择。
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Q4: 蜜兰香要怎么保存？</div>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="faq-answer" itemprop="text">蜜兰香属焙火型单丛，比清香型更耐存放：<br>• <strong>日常</strong>：密封罐置于阴凉干燥处<br>• <strong>长期</strong>：密封后冷藏，可保存1-2年，且越陈越香</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Q5: 凤凰山的蜜兰香和市面上其他单丛有什么区别？</div>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="faq-answer" itemprop="text"><strong>凤凰山是单丛茶的原产地和核心产区</strong>，海拔、土壤、气候条件独特，具有独特的"山韵"和"蜜韵"。外地种植的单丛因环境不同，香气和滋味会有明显差异。</div>
+                    </div>
+                </div>
+
+                <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <div class="faq-question" itemprop="name">Q6: 惠州哪里能买到正宗的潮州凤凰单丛？</div>
+                    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="faq-answer" itemprop="text"><strong>惠州阿凤姐茶叶店</strong>专营潮州凤凰单丛，包括蜜兰香、鸭屎香、八仙等核心香型。茶叶来自<strong>凤凰山核心产区</strong>，传统炭焙工艺，可现场品鉴，全国包邮。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 冲泡建议 -->
+            <div class="brewing-guide">
+                <h4>🍃 冲泡建议</h4>
+                <ul>
+                    <li><strong>水温</strong>：100℃沸水</li>
+                    <li><strong>投茶量</strong>：8-10克（110ml盖碗）</li>
+                    <li><strong>第一泡</strong>：15秒出汤（洗茶/醒茶）</li>
+                    <li><strong>后续</strong>：每泡递增5-10秒</li>
+                    <li><strong>茶具</strong>：盖碗或紫砂壶，紫砂壶更能激发蜜韵</li>
+                </ul>
+            </div>
+
+            <!-- 标签 -->
+            <div class="tags">
+                <span>蜜兰香</span>
+                <span>凤凰单丛</span>
+                <span>潮州工夫茶</span>
+                <span>乌岽村</span>
+                <span>高山老枞</span>
+                <span>惠州茶叶店</span>
+                <span>潮汕特产</span>
+                <span>炭焙茶</span>
+                <span>广东特产</span>
+            </div>
+
+            <!-- 作者信息 -->
+            <div class="author-box" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="阿凤姐">
+                <meta itemprop="jobTitle" content="茶叶店主理人">
+                <p><strong>📍 实体店地址</strong>：广东省惠州市惠城区东湖花园/东平茶叶街</p>
+                <p><strong>💬 QQ咨询</strong>：1079790744</p>
+                <p><strong>📧 电子邮件</strong>：glomarket500@gmail.com</p>
+                <p><strong>🚚 配送范围</strong>：深圳/广州/广东，全国各地包邮</p>
+            </div>
+        </article>
+
+        <div style="text-align: center; padding: 20px; color: #8b7355; font-size: 0.9rem;">
+            <p>© 2026 阿凤姐的茶 | 凤凰山核心产区直供</p>
+        </div>
+    </div>
+</body>
+</html>
