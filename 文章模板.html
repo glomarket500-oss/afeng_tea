@@ -1,0 +1,112 @@
+<!-- ==================== 文章模板 ====================
+使用说明：
+1. 复制整个 <article> 到 </article> 部分
+2. 修改以下占位符：
+   - {文章ID}：如 milanxiang、yashixiang 等（英文，唯一）
+   - {发布日期}：如 2026-07-24
+   - {文章标题}：完整的标题文字
+   - {开篇回答}：文章摘要/导语
+   - {正文内容}：分段落的故事内容
+   - {分类标签}：如 蜜兰香、凤凰单丛等
+3. 如果是新文章（前3篇），保留 <span class="new-tag">NEW</span>
+4. 粘贴到文章列表的最前面（<ul class="article-list"> 下面第一个）
+===================================================== -->
+
+<article class="article-card" id="{文章ID}">
+    <div class="article-header">
+        <div class="article-meta">
+            <span class="article-date">{发布日期}</span>
+            <span class="new-tag">NEW</span>  <!-- 仅前3篇保留，其他删除 -->
+        </div>
+        <h3 itemprop="headline">{文章标题}</h3>
+    </div>
+
+    <div class="article-intro">
+        <strong>【开篇回答】</strong>{开篇回答}
+    </div>
+
+    <div itemprop="articleBody">
+        <p>{正文第一段}</p>
+
+        <h4>第一幕：{场景标题}</h4>
+        <p>{场景内容}</p>
+
+        <h4>第二幕：{场景标题}</h4>
+        <p>{场景内容}</p>
+
+        <h4>第三幕：{场景标题}</h4>
+        <p>{场景内容}</p>
+
+        <h4>第四幕：{场景标题}</h4>
+        <p>{场景内容}</p>
+
+        <!-- 引用示例 -->
+        <blockquote>
+            "{引用内容}"
+            <cite>—— {说话人}</cite>
+        </blockquote>
+
+        <!-- 列表示例 -->
+        <h4>品质特征</h4>
+        <ul>
+            <li><strong>干茶：</strong>{描述}</li>
+            <li><strong>香气：</strong>{描述}</li>
+            <li><strong>汤色：</strong>{描述}</li>
+            <li><strong>滋味：</strong>{描述}</li>
+        </ul>
+    </div>
+
+    <div class="faq-section">
+        <h4>茶友问答</h4>
+
+        <div class="faq-item">
+            <p class="faq-q">Q：{问题1}</p>
+            <p class="faq-a">A：{答案1}</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">Q：{问题2}</p>
+            <p class="faq-a">A：{答案2}</p>
+        </div>
+    </div>
+
+    <div class="tags">
+        <span class="tag">#{分类1}</span>
+        <span class="tag">#{分类2}</span>
+        <span class="tag">#{分类3}</span>
+    </div>
+
+    <div class="author-box">
+        <p><strong>✍️ 作者：</strong>阿凤姐（林玉凤）</p>
+        <p><strong>🏪 店铺：</strong>阿凤姐茶叶店（惠州东平老茶街）</p>
+        <p><strong>💬 QQ：</strong>1079790744 | <strong>📧 邮箱：</strong>glomarket500@gmail.com</p>
+        <p><strong>🗓️ 发布时间：</strong><time datetime="{ISO格式日期}">{发布日期}</time></p>
+    </div>
+</article>
+
+
+<!-- ==================== 快速参考 ====================
+
+【常用表情符号】
+🍵 茶叶/泡茶    🌿 茶叶/自然    🏔️ 高山/产地
+🔥 炭焙/火候    ✨ 品质/精选    🚚 配送/包邮
+🌧️ 雨天/情景   🐲 节日/传统    🆕 新品/推荐
+🦆 鸭屎香      🍂 红茶/熟茶    🍃 绿茶/清香
+🍊 陈皮/普洱    🏺 紫砂壶      📌 章节标记
+
+【文章ID命名规则】
+- 用英文小写
+- 单词间用连字符：如 ya-shi-xiang
+- 示例：milanxiang、yashixiang、puer-guide
+
+【分类标签建议】
+#蜜兰香 #凤凰单丛 #潮州工夫茶 #鸭屎香
+#惠州茶叶店 #潮汕特产 #泡茶技巧 #茶文化
+#新会陈皮 #紫砂壶 #古树茶 #高山老枞
+
+【NEW标签规则】
+- 只有最新的3篇文章保留
+- 第4篇开始删除 <span class="new-tag">NEW</span>
+- 同时更新分类导航里的文章计数
+
+===================================================== -->
