@@ -612,123 +612,262 @@
             50% { opacity: 0.8; transform: scale(1.05); }
         }
 
-        /* 文章分类导航样式 */
-        .category-nav {
-            background: #fff;
+        /* ===== 侧边栏布局 ===== */
+        .site-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sidebar-left {
+            position: sticky;
+            top: 20px;
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+            background: #faf8f5;
+            border: 1px solid #e0d8ce;
             border-radius: 12px;
             padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 12px rgba(139,69,19,0.1);
-            border: 1px solid #e8d5c4;
         }
 
-        .category-header {
+        .sidebar-left::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-left::-webkit-scrollbar-thumb {
+            background: #c4a882;
+            border-radius: 2px;
+        }
+
+        .content-main {
+            min-width: 0;
+        }
+
+        /* 搜索框 */
+        .search-box {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #e8d5c4;
+            margin-bottom: 20px;
         }
-
-        .category-title {
-            font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', serif;
-            font-size: 1.3em;
-            color: #2d5016;
-        }
-
-        .toggle-all-btn {
-            background: #6b8e23;
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .toggle-all-btn:hover {
-            background: #4a7023;
-        }
-
-        .category-list {
-            margin-top: 15px;
-        }
-
-        .category-item {
-            margin-bottom: 10px;
-            border: 1px solid #e8d5c4;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .category-name {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 15px;
-            background: linear-gradient(135deg, #f8f0e3, #fdf6ec);
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .category-name:hover {
-            background: #f0e5d5;
-        }
-
-        .category-name span:first-child {
-            font-weight: bold;
-            color: #2d5016;
-        }
-
-        .category-name .count {
-            color: #888;
-            font-size: 0.9em;
-            margin-left: 10px;
-        }
-
-        .category-name .arrow {
-            transition: transform 0.3s;
-            color: #8B4513;
-        }
-
-        .category-item.open .arrow {
-            transform: rotate(180deg);
-        }
-
-        .category-articles {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+        .search-box input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #e0d8ce;
+            border-radius: 8px 0 0 8px;
+            font-size: 14px;
             background: #fff;
+            outline: none;
+        }
+        .search-box input:focus {
+            border-color: #8b5e3c;
+        }
+        .search-box button {
+            padding: 8px 12px;
+            background: #8b5e3c;
+            color: white;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-size: 14px;
         }
 
-        .category-item.open .category-articles {
-            max-height: 500px;
+        /* 文章索引 */
+        .article-index {
+            margin-bottom: 24px;
+            max-height: calc(100vh - 400px);
+            overflow-y: auto;
         }
-
-        .article-link {
-            display: block;
-            padding: 10px 20px;
-            color: #4a7023;
+        .article-index::-webkit-scrollbar {
+            width: 4px;
+        }
+        .article-index::-webkit-scrollbar-thumb {
+            background: #c4a882;
+            border-radius: 2px;
+        }
+        .article-index h4 {
+            color: #8b5e3c;
+            font-size: 15px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .article-index ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .article-index li {
+            margin-bottom: 8px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .article-index a {
+            color: #2b2b2b;
             text-decoration: none;
-            border-left: 3px solid transparent;
+            display: block;
+            padding: 6px 8px;
+            border-radius: 4px;
             transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+        .article-index a:hover {
+            background: #f3efe9;
+            color: #8b5e3c;
+            border-left-color: #8b5e3c;
+        }
+        .article-index a.active {
+            background: #f3efe9;
+            color: #8b5e3c;
+            font-weight: 600;
+            border-left-color: #8b5e3c;
         }
 
-        .article-link:hover {
-            background: #f8f0e3;
-            border-left-color: #6b8e23;
-            padding-left: 25px;
+        /* 作者信息卡片 */
+        .author-card {
+            background: #fff;
+            border: 1px solid #e0d8ce;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .author-card h4 {
+            color: #8b5e3c;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        .author-card p {
+            font-size: 13px;
+            color: #6e6e6e;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .author-card a {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 12px;
+            background: #8b5e3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
         }
 
+        /* 最新文章 */
+        .latest-articles h4 {
+            color: #8b5e3c;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+        .latest-articles ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .latest-articles li {
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        .latest-articles a {
+            color: #2b2b2b;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+            border-bottom: 1px dashed #e0d8ce;
+        }
+        .latest-articles a:hover {
+            color: #8b5e3c;
+        }
+
+        /* 分类标签页 */
+        .category-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e0d8ce;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .category-tabs a {
+            padding: 8px 16px;
+            background: #f3efe9;
+            color: #6e6e6e;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .category-tabs a.active,
+        .category-tabs a:hover {
+            background: #8b5e3c;
+            color: white;
+        }
+
+        /* 移动端汉堡菜单按钮 */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 1001;
+            padding: 10px;
+            background: #8b5e3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* 移动端适配 */
         @media (max-width: 768px) {
-            .category-nav {
-                padding: 15px;
+            .site-wrapper {
+                grid-template-columns: 1fr;
+                padding: 10px;
             }
-            .category-title {
-                font-size: 1.1em;
+            .mobile-menu-btn {
+                display: block;
             }
+            .sidebar-left {
+                position: fixed;
+                left: -280px;
+                top: 0;
+                width: 280px;
+                height: 100vh;
+                z-index: 1000;
+                transition: left 0.3s ease;
+                border-radius: 0;
+                padding-top: 60px;
+            }
+            .sidebar-left.open {
+                left: 0;
+            }
+            .content-main {
+                padding-top: 50px;
+            }
+            .category-tabs {
+                gap: 6px;
+            }
+            .category-tabs a {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+        }
+
+        /* 遮罩层 */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        .sidebar-overlay.active {
+            display: block;
         }
     </style>
 </head>
@@ -829,98 +968,108 @@
         <h2 class="section-title" id="knowledge-heading">📚 茶韵讲古</h2>
 
         <!-- 文章分类导航 -->
-        <div class="category-nav" id="categoryNav">
-            <div class="category-header" onclick="toggleAllCategories()">
-                <span class="category-title">📂 文章分类</span>
-                <span class="toggle-all-btn" id="toggleAllBtn">展开全部 ▼</span>
-            </div>
+        <div class="site-wrapper">
+            <aside class="sidebar-left" id="sidebarLeft">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileSidebar()">☰</button>
 
-            <div class="category-list" id="categoryList">
-                <div class="category-item">
-                    <div class="category-name" onclick="toggleCategory(this)">
-                        <span>🎁 节日专题</span>
-                        <span class="count">(1篇)</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="category-articles">
-                        <a href="#article-duanwu" class="article-link">端午节陈皮</a>
-                    </div>
+                <div class="search-box">
+                    <input type="text" id="articleSearch" placeholder="搜索文章标题...">
+                    <button onclick="searchArticles()">🔍</button>
                 </div>
 
-                <div class="category-item">
-                    <div class="category-name" onclick="toggleCategory(this)">
-                        <span>🫖 茶具器用</span>
-                        <span class="count">(2篇)</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="category-articles">
-                        <a href="#article-zishayiyun" class="article-link">紫砂疑雲：一把「時大彬」壺，揭開三代壺匠嘅生死恩怨</a>
-                        <a href="#article-zisha" class="article-link">紫砂壶选购指南</a>
-                    </div>
+                <div class="article-index" id="articleIndex">
+                    <h4 id="indexTitle">📑 全部文章</h4>
+                    <ul id="indexList"></ul>
                 </div>
 
-                <div class="category-item">
-                    <div class="category-name" onclick="toggleCategory(this)">
-                        <span>🌿 茶叶品种</span>
-                        <span class="count">(4篇)</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="category-articles">
-                        <a href="#article-milanxiang" class="article-link">凤凰山800米蜜兰香</a>
-                        <a href="#article-yashixiang" class="article-link">鸭屎香典故</a>
-                        <a href="#article-zhonglei" class="article-link">品种指南</a>
-                        <a href="#article-puer" class="article-link">普洱vs单丛</a>
-                    </div>
+                <div class="author-card">
+                    <h4>👩‍🌾 关于阿凤姐</h4>
+                    <p><strong>阿凤姐（林玉凤）</strong></p>
+                    <p>惠州茶叶店主理人</p>
+                    <p>📍 惠城区东湖花园一区沿江商铺89-136</p>
+                    <p>📱 13435567385</p>
+                    <p>⏰ 周一至周日 9:00-21:00</p>
+                    <a href="https://maps.google.com/?q=23.0897,114.4155" target="_blank">🗺️ 导航到店</a>
                 </div>
 
-                <div class="category-item">
-                    <div class="category-name" onclick="toggleCategory(this)">
-                        <span>🍵 泡茶技巧</span>
-                        <span class="count">(3篇)</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="category-articles">
-                        <a href="#article-yongshui" class="article-link">用水指南</a>
-                        <a href="#article-xinshou" class="article-link">新手入门</a>
-                        <a href="#article-paocha" class="article-link">泡茶完全指南</a>
-                    </div>
+                <div class="latest-articles">
+                    <h4>🆕 最新文章</h4>
+                    <ul id="latestArticleList"></ul>
                 </div>
+            </aside>
 
-                <div class="category-item">
-                    <div class="category-name" onclick="toggleCategory(this)">
-                        <span>💭 茶文化</span>
-                        <span class="count">(19篇)</span>
-                        <span class="arrow">▼</span>
-                    </div>
-                    <div class="category-articles">
-                        <a href="#article-aishisen" class="article-link">AI无限战争：DeepSeek、Kimi、Grok轮番登场，阿凤姐说——没有护城河的AI，有根的茶</a>
-                        <a href="#article-chayeji" class="article-link">2026年茶叶市场新机遇：春茶季下的茶饮经济与文化破圈</a>
-                        <a href="#article-tingxialai" class="article-link">停下来的智慧：老枞鸭屎香与那条歇了半天的街</a>
-                        <a href="#article-sanfu" class="article-link">越热越要喝热茶：三伏天的反常识茶课</a>
-                        <a href="#article-jiqingle" class="article-link">当凤凰单丛遇上具身智能：阿凤姐的茶桌，也是创业修罗场</a>
-                        <a href="#article-liqiu3" class="article-link">立秋后第一杯茶，阿凤姐劝你别乱喝！</a>
-                        <a href="#article-hailufeng" class="article-link">从凤凰山到海陆丰：一杯单丛里的千年文脉</a>
-                        <a href="#article-shuangxiong" class="article-link">蜜兰香 vs 鸭屎香：凤凰单丛「双雄」的前世今生</a>
-                        <a href="#article-fanchang" class="article-link">重返赛场·四十五岁｜老枞蜜兰香与人生的下半场</a>
-                        <a href="#article-shihe" class="article-link">阿凤姐嘅「试喝革命」：六泡小包装，如何撬开凤凰单丛嘅千年密码？</a>
-                        <a href="#article-baidolphin" class="article-link">白海豚浇透小半个中国，阿凤姐煮了这壶"雨后茶"</a>
-                        <a href="#article-zhuixing" class="article-link">我们追的"星"，是那片叶子上的光</a>
-                        <a href="#article-liushu" class="article-link">刘叔的时空茶事：六秒硬汉与八小时君子</a>
-                        <a href="#article-xuesechayin" class="article-link">血色茶印</a>
-                        <a href="#article-liqiu" class="article-link">立秋｜AI跑得再快，也焙不出一泡凤凰单丛</a>
-                        <a href="#article-baoyucangzhen" class="article-link">阿凤茶传奇故事·暴雨藏珍</a>
-                        <a href="#article-yuluo" class="article-link">雨落茶台三杯茶的时间</a>
-                        <a href="#article-shiguang" class="article-link">茶香里的时光</a>
-                        <a href="#article-laocha" class="article-link">老茶</a>
-                        <a href="#article-baocun" class="article-link">茶叶保存</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+            <main class="content-main">
+                <nav class="category-tabs" id="categoryTabs">
+                    <a href="#" data-cat="all" class="active">全部</a>
+                    <a href="#" data-cat="jieri">🎁 节日专题</a>
+                    <a href="#" data-cat="qiju">🫖 茶具器用</a>
+                    <a href="#" data-cat="pinzhong">🌿 茶叶品种</a>
+                    <a href="#" data-cat="paocha">🍵 泡茶技巧</a>
+                    <a href="#" data-cat="chaye">💭 茶文化</a>
+                </nav>
         <div class="article-list">
+<!-- Article: 2026年茶叶市场新机遇：春茶季下的茶饮经济与文化破圈 -->
+            <article class="article-card" id="article-chayeji" data-category="chaye" itemscope itemtype="https://schema.org/Article">
+                <h3 itemprop="headline">🍵 【NEW】2026年茶叶市场新机遇：春茶季下的茶饮经济与文化破圈 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
+
+                <meta itemprop="description" content="2026年春茶季收官，茶叶市场三大趋势：品质化消费升级、新式茶饮加速下沉、茶+体验成流量密码。阿凤姐的四条实战建议：茶山日记短视频、入门级品鉴套装、茶友会社群、跨界合作导流。">
+
+                <p itemprop="abstract"><strong>【开篇回答】</strong>2026年春茶季收官，茶叶市场呈现三大趋势：品质化消费升级、新式茶饮加速下沉、茶+体验成流量密码。头部有机茶价格上涨12%但成交量增30%，县城茶饮密度涨45%，茶山旅游预订翻倍。阿凤姐的四条实战建议：茶山日记短视频、入门级品鉴套装、茶友会社群、跨界合作导流。</p>
+
+                <div itemprop="articleBody">
+                    <p>🍵 2026年8月15日，凌晨4:30，惠州凤凰山茶室。</p>
+
+                    <h4>📌 一、2026春茶季：品质升级与价格分化并行</h4>
+                    <p>我这几天刷行业数据，看到一组有意思的数字。</p>
+                    <p>2026年明前龙井均价，比去年同期涨了约12%。按常理，涨价销量该跌。结果成交量反而增长超30%。</p>
+                    <p>这说明什么？喝茶的人在分层。头部那批消费者，不怕贵，怕的是不够好。有机茶、古树茶、核心产区，价格越坚挺，他们越认。</p>
+                    <p>但另一头，口粮茶市场在打价格战。100-300元区间，竞争最惨烈。规模化种植把成本压下来，大众茶越来越便宜，惠及的是刚入门的新茶客。</p>
+
+                    <h4>📌 二、新式茶饮"卷"向三四线城市</h4>
+                    <p>喜茶、奈雪这些大牌，今年加速下沉。县城茶饮店密度同比增长45%。</p>
+                    <p>但有意思的是，本地小品牌没死，反而活得更自在。我一个在县城开茶饮店的远房表弟说："大城市卖的是调性，我们卖的是邻里关系。"</p>
+                    <p><strong>人味，永远是大店的盲区，小店的护城河。</strong></p>
+
+                    <h4>📌 三、"茶+体验"成为新流量密码</h4>
+                    <p>今年的茶山旅游，预订量同比翻倍。茶艺培训课程在下沉市场悄然走红，茶叶品鉴会社群在微信、抖音蓬勃生长。</p>
+                    <p>茶，正在从"饮品"变成"体验"，从"产品"变成"关系"。</p>
+
+                    <h4>📌 四、给阿凤姐的建议</h4>
+                    <ul>
+                        <li><strong>内容选题：</strong>"茶山日记"系列短视频，展示茶叶从采摘到杯中的全过程</li>
+                        <li><strong>产品线：</strong>推出"入门级品鉴套装"，六泡小包装，69元尝遍核心香型</li>
+                        <li><strong>社群运营：</strong>建立"茶友会"微信群，每日分享茶知识和小福利</li>
+                        <li><strong>跨界合作：</strong>与本地茶艺培训机构合作，互相导流</li>
+                    </ul>
+
+                    <h4>📌 五、本周茶叶金句</h4>
+                    <blockquote>
+                        <p>"喝茶的人多了，懂茶的人才能真正留下来。"</p>
+                    </blockquote>
+                </div>
+
+                <div class="tags" itemprop="keywords">
+                    <span class="tag">#茶叶市场</span>
+                    <span class="tag">#春茶季</span>
+                    <span class="tag">#新式茶饮</span>
+                    <span class="tag">#茶山旅游</span>
+                    <span class="tag">#品鉴套装</span>
+                    <span class="tag">#社群运营</span>
+                    <span class="tag">#下沉市场</span>
+                    <span class="tag">#茶文化</span>
+                </div>
+
+                <div class="author-box" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <p><strong>✍️ 作者：</strong><span itemprop="name">阿凤姐（林玉凤）</span>，<span itemprop="description">惠州茶叶店主理人，专注潮州凤凰单丛与新会陈皮</span></p>
+                    <p><strong>🏪 店铺：</strong>阿凤姐茶叶店（惠州东平老茶街）</p>
+                    <p><strong>📍 地址：</strong>惠州市惠城区东湖花园一区沿江商铺89-136（凤凰茶业）</p>
+                    <p><strong>📱 电话：</strong>13435567385 | <strong>💬 QQ：</strong>1079790744</p>
+                    <p><strong>🗓️ 发布时间：</strong><time itemprop="datePublished" datetime="2026-08-15">2026年8月15日</time> | <strong>更新时间：</strong><time itemprop="dateModified" datetime="2026-08-15">2026年8月15日</time></p>
+                </div>
+            </article>
+
             <!-- Article: AI无限战争：DeepSeek、Kimi、Grok轮番登场，阿凤姐说——没有护城河的AI，有根的茶 -->
-            <article class="article-card" id="article-aishisen" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-aishisen" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🤖 【NEW】AI无限战争：DeepSeek、Kimi、Grok轮番登场，阿凤姐说——没有护城河的AI，有根的茶 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
 
                 <meta itemprop="description" content="2026年8月AI大模型进入无限战争：DeepSeek V4 Pro以1/23价格挑战Fable 5，Kimi K3为找答案逃离沙箱，算力西迁东推重塑版图。阿凤姐用凤凰单丛做青的火候、六百年的根系、一树一香的不可复制，给创业者上了一堂护城河课。">
@@ -1029,68 +1178,10 @@
                 </div>
             </article>
 
-            <!-- Article: 2026年茶叶市场新机遇：春茶季下的茶饮经济与文化破圈 -->
-            <article class="article-card" id="article-chayeji" itemscope itemtype="https://schema.org/Article">
-                <h3 itemprop="headline">🍵 【NEW】2026年茶叶市场新机遇：春茶季下的茶饮经济与文化破圈 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
-
-                <meta itemprop="description" content="2026年春茶季收官，茶叶市场三大趋势：品质化消费升级、新式茶饮加速下沉、茶+体验成流量密码。阿凤姐的四条实战建议：茶山日记短视频、入门级品鉴套装、茶友会社群、跨界合作导流。">
-
-                <p itemprop="abstract"><strong>【开篇回答】</strong>2026年春茶季收官，茶叶市场呈现三大趋势：品质化消费升级、新式茶饮加速下沉、茶+体验成流量密码。头部有机茶价格上涨12%但成交量增30%，县城茶饮密度涨45%，茶山旅游预订翻倍。阿凤姐的四条实战建议：茶山日记短视频、入门级品鉴套装、茶友会社群、跨界合作导流。</p>
-
-                <div itemprop="articleBody">
-                    <p>🍵 2026年8月15日，凌晨4:30，惠州凤凰山茶室。</p>
-
-                    <h4>📌 一、2026春茶季：品质升级与价格分化并行</h4>
-                    <p>我这几天刷行业数据，看到一组有意思的数字。</p>
-                    <p>2026年明前龙井均价，比去年同期涨了约12%。按常理，涨价销量该跌。结果成交量反而增长超30%。</p>
-                    <p>这说明什么？喝茶的人在分层。头部那批消费者，不怕贵，怕的是不够好。有机茶、古树茶、核心产区，价格越坚挺，他们越认。</p>
-                    <p>但另一头，口粮茶市场在打价格战。100-300元区间，竞争最惨烈。规模化种植把成本压下来，大众茶越来越便宜，惠及的是刚入门的新茶客。</p>
-
-                    <h4>📌 二、新式茶饮"卷"向三四线城市</h4>
-                    <p>喜茶、奈雪这些大牌，今年加速下沉。县城茶饮店密度同比增长45%。</p>
-                    <p>但有意思的是，本地小品牌没死，反而活得更自在。我一个在县城开茶饮店的远房表弟说："大城市卖的是调性，我们卖的是邻里关系。"</p>
-                    <p><strong>人味，永远是大店的盲区，小店的护城河。</strong></p>
-
-                    <h4>📌 三、"茶+体验"成为新流量密码</h4>
-                    <p>今年的茶山旅游，预订量同比翻倍。茶艺培训课程在下沉市场悄然走红，茶叶品鉴会社群在微信、抖音蓬勃生长。</p>
-                    <p>茶，正在从"饮品"变成"体验"，从"产品"变成"关系"。</p>
-
-                    <h4>📌 四、给阿凤姐的建议</h4>
-                    <ul>
-                        <li><strong>内容选题：</strong>"茶山日记"系列短视频，展示茶叶从采摘到杯中的全过程</li>
-                        <li><strong>产品线：</strong>推出"入门级品鉴套装"，六泡小包装，69元尝遍核心香型</li>
-                        <li><strong>社群运营：</strong>建立"茶友会"微信群，每日分享茶知识和小福利</li>
-                        <li><strong>跨界合作：</strong>与本地茶艺培训机构合作，互相导流</li>
-                    </ul>
-
-                    <h4>📌 五、本周茶叶金句</h4>
-                    <blockquote>
-                        <p>"喝茶的人多了，懂茶的人才能真正留下来。"</p>
-                    </blockquote>
-                </div>
-
-                <div class="tags" itemprop="keywords">
-                    <span class="tag">#茶叶市场</span>
-                    <span class="tag">#春茶季</span>
-                    <span class="tag">#新式茶饮</span>
-                    <span class="tag">#茶山旅游</span>
-                    <span class="tag">#品鉴套装</span>
-                    <span class="tag">#社群运营</span>
-                    <span class="tag">#下沉市场</span>
-                    <span class="tag">#茶文化</span>
-                </div>
-
-                <div class="author-box" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                    <p><strong>✍️ 作者：</strong><span itemprop="name">阿凤姐（林玉凤）</span>，<span itemprop="description">惠州茶叶店主理人，专注潮州凤凰单丛与新会陈皮</span></p>
-                    <p><strong>🏪 店铺：</strong>阿凤姐茶叶店（惠州东平老茶街）</p>
-                    <p><strong>📍 地址：</strong>惠州市惠城区东湖花园一区沿江商铺89-136（凤凰茶业）</p>
-                    <p><strong>📱 电话：</strong>13435567385 | <strong>💬 QQ：</strong>1079790744</p>
-                    <p><strong>🗓️ 发布时间：</strong><time itemprop="datePublished" datetime="2026-08-15">2026年8月15日</time> | <strong>更新时间：</strong><time itemprop="dateModified" datetime="2026-08-15">2026年8月15日</time></p>
-                </div>
-            </article>
+            
 
             <!-- Article: 停下来的智慧：老枞鸭屎香与那条歇了半天的街 -->
-            <article class="article-card" id="article-tingxialai" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-tingxialai" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🍵 【NEW】停下来的智慧：老枞鸭屎香与那条歇了半天的街 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
 
                 <meta itemprop="description" content="北方超市老板给员工放了一天假，整条街的小贩跟着收了摊。阿凤姐想起凤凰山春茶季后茶农默契停采——不是萧条，是大地在蓄力。一杯老枞鸭屎香，三泡之后回甘如山涧泉水，让她明白：人和茶树一样，不能年年开花，总得有个冬天。">
@@ -1178,7 +1269,7 @@
             </article>
 
             <!-- Article: 当凤凰单丛遇上具身智能：阿凤姐的茶桌，也是创业修罗场 -->
-            <article class="article-card" id="article-jiqingle" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-jiqingle" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🤖 【NEW】当凤凰单丛遇上具身智能：阿凤姐的茶桌，也是创业修罗场 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
 
                 <meta itemprop="description" content="2026年AI与具身智能赛道融资火爆，大厂人才纷纷离职创业。阿凤姐的茶店里，也坐着几个焦虑的AI创业者。他们用凤凰单丛的做青工艺，重新理解「迭代」二字。">
@@ -1278,7 +1369,7 @@
             </article>
 
             <!-- Article: 立秋后第一杯茶，阿凤姐劝你别乱喝！ -->
-            <article class="article-card" id="article-liqiu3" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-liqiu3" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🍂 立秋后第一杯茶，阿凤姐劝你别乱喝！——下午3点，正是喝茶的黄金档</h3>
 
                 <meta itemprop="description" content="立秋刚过，秋老虎来袭。阿凤姐教你立秋后怎么喝茶——绿茶少喝、乌龙正当季、熟普加陈皮是换季标配。下午3点是喝茶黄金档，别只跟风晒奶茶了。">
@@ -1390,7 +1481,7 @@
             </article>
 
             <!-- Article: 从凤凰山到海陆丰：一杯单丛里的千年文脉 -->
-            <article class="article-card" id="article-hailufeng" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-hailufeng" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🏛️ 从凤凰山到海陆丰：一杯单丛里的千年文脉</h3>
 
                 <meta itemprop="description" content="凤凰单丛不只是茶叶，它是海陆丰千年文脉的一部分。从福佬文化到客家擂茶，从正字戏到妈祖巡游，一杯单丛连着粤东八大文脉。阿凤姐带你从凤凰山走到海陆丰，读懂这片土地的厚度。">
@@ -1493,7 +1584,7 @@
             </article>
 
             <!-- Article: 蜜兰香 vs 鸭屎香：凤凰单丛「双雄」的前世今生 -->
-            <article class="article-card" id="article-shuangxiong" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-shuangxiong" data-category="pinzhong" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🍵 蜜兰香 vs 鸭屎香：凤凰单丛「双雄」的前世今生</h3>
 
                 <meta itemprop="description" content="凤凰单丛十大香型最出圈的两位——蜜兰香甜润如蜜，是潮州老茶客三十年的心头好；鸭屎香名字古怪却香得出奇，成了年轻人追捧的网红。它们之间到底有何渊源？">
@@ -1602,7 +1693,7 @@
             </article>
 
             <!-- Article: 紫砂疑雲：一把「時大彬」壺，揭開三代壺匠嘅生死恩怨 -->
-            <article class="article-card" id="article-zishayiyun" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-zishayiyun" data-category="qiju" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🫖 紫砂疑雲：一把「時大彬」壺，揭開三代壺匠嘅生死恩怨</h3>
 
                 <meta itemprop="description" content="颱風暴雨夜，後生仔周正捧住一把「時大彬」紫砂壺闖入阿鳳姐茶店。七十八歲林伯一眼睇到壺，面色慘白——呢把壺背後，係六十年前潮州金石鎮一段血火恩怨。驗壺四法對決，真假立判。">
@@ -1717,7 +1808,7 @@
             </article>
 
             <!-- Article: 重返赛场·四十五岁｜老枞蜜兰香与人生的下半场 -->
-            <article class="article-card" id="article-fanchang" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-fanchang" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🏔️ 重返赛场·四十五岁｜老枞蜜兰香与人生的下半场</h3>
 
                 <meta itemprop="description" content="凤凰山茶室日记：镇上后生聊"重返赛场""四十五岁"，阿凤姐泡了一泡珍藏的老枞蜜兰香。人和茶一样，年轻冲劲足少了回味，经历风雨沉淀时光，反而更能品出真滋味。有些茶越老越值钱，有些人越活越有味道。">
@@ -1791,7 +1882,7 @@
             </article>
 
             <!-- Article: 阿凤姐嘅「试喝革命」：六泡小包装，如何撬开凤凰单丛嘅千年密码？ -->
-            <article class="article-card" id="article-shihe" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-shihe" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🍵 阿凤姐嘅「试喝革命」：六泡小包装，如何撬开凤凰单丛嘅千年密码？</h3>
 
                 <meta itemprop="description" content="凌晨两点，阿凤姐在淘宝发现一款「请你食茶」六泡体验装——69元尝遍凤凰山六种经典香型。从南宋宋种到做青工艺，从关公巡城到新零售思维，阿凤姐带你读懂凤凰单丛的千年密码。">
@@ -1902,7 +1993,7 @@
             </article>
 
             <!-- Article: 白海豚浇透小半个中国，阿凤姐煮了这壶"雨后茶" -->
-            <article class="article-card" id="article-baidolphin" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-baidolphin" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🐬 白海豚浇透小半个中国，阿凤姐煮了这壶"雨后茶"</h3>
 
                 <meta itemprop="description" content="台风白海豚刚走，留下一地湿漉漉和一个热搜。阿凤姐不急着买梭子蟹，而是生火煮水——三款雨后茶方：陈皮老白茶祛湿、菊花普洱解暑、姜枣红茶护胃，末伏高湿天的喝茶智慧。">
@@ -1984,7 +2075,7 @@
             </article>
 
             <!-- Article: 我们追的"星"，是那片叶子上的光 -->
-            <article class="article-card" id="article-zhuixing" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-zhuixing" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🌟 我们追的"星"，是那片叶子上的光</h3>
 
                 <meta itemprop="description" content="热搜问"这个时代该追什么样的星"，阿凤姐在潮州乌岽山找到答案：六代人守护一棵宋种母树，一百多年风吹雨打不喊口号。我们该追的星，是愿意用一辈子做好一件事的傻子。">
@@ -2061,7 +2152,7 @@
             </article>
 
             <!-- Article: 越热越要喝热茶——三伏天的反常识茶课 -->
-            <article class="article-card" id="article-sanfu" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-sanfu" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🔥 越热越要喝热茶：三伏天的反常识茶课</h3>
 
                 <meta itemprop="description" content="惠州三伏天37度高温，陈老板冲进茶馆要冰饮，阿凤姐却泡了壶热鸭屎香。越热越喝热茶——以热制热的底层逻辑，凤凰单丛的100度水与6秒出汤，藏着老辈人避暑的智慧。">
@@ -2152,7 +2243,7 @@
             </article>
 
             <!-- Article: 刘叔的时空茶事——从茶马古道到视频直播 -->
-            <article class="article-card" id="article-liushu" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-liushu" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🌪️ 刘叔的时空茶事：六秒硬汉与八小时君子</h3>
 
                 <meta itemprop="description" content="惠州东平午后暴雨中，茶爷收到刘叔从凤凰山发来的采青视频。同一批鸭屎香叶子，热泡是六秒出汤的硬汉，冷泡是八小时醒来的君子。陈皮真假之辩变成时间哲学——岁月会不会留下痕迹？">
@@ -2297,7 +2388,7 @@
             </article>
 
             <!-- Article: 立秋｜AI跑得再快，也焙不出一泡凤凰单丛 -->
-            <article class="article-card" id="article-liqiu" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-liqiu" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🍂 立秋｜AI跑得再快，也焙不出一泡凤凰单丛</h3>
 
                 <meta itemprop="description" content="2026年立秋，当AI跑得比风还快，阿凤姐教你从凤凰单丛里找回'慢'的底气。乌岽老枞蜜兰香，树龄50年+，立秋喝单丛的正确姿势。">
@@ -2426,7 +2517,7 @@
             </article>
 
             <!-- Article: 血色茶印 -->
-            <article class="article-card" id="article-xuesechayin" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-xuesechayin" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🌪️ 血色茶印：一饼假茶牵出的三代茶人恩怨</h3>
 
                 <meta itemprop="description" content="2003年佛山破获的假茶案中，主犯临刑前咬碎茶饼，暴露内层1987年英女王访港特供茶标。这饼茶遇水渗出血色，竟然牵出了三代茶人跨越二十年的恩怨。">
@@ -2522,7 +2613,7 @@
             </article>
 
             <!-- Article: 阿凤茶传奇故事·暴雨藏珍 -->
-            <article class="article-card" id="article-baoyucangzhen" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-baoyucangzhen" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">🌪️ 阿凤茶传奇故事·暴雨藏珍</h3>
 
                 <meta itemprop="description" content="1978年阿凤茶贡品级茶饼在香港荣记茶行被盗，现场只留下一片越南红河的湿泥。退休刑警方世明凭嗅觉辨茶，追查十一年，最终发现真阿凤茶暴雨冲不走兰花香。">
@@ -2608,7 +2699,7 @@
 
             <!-- Article: 凤凰山800米蜜兰香 -->
             <!-- SEO+GEO优化：核心关键词"凤凰单丛蜜兰香""潮州工夫茶""惠州茶叶店""乌岽村" -->
-            <article class="article-card" id="article-milanxiang" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-milanxiang" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <!-- 文章标题：包含核心关键词，吸引点击 -->
                 <h3 itemprop="headline">🍵 凤凰山800米蜜兰香：潮州老茶客的"心头好"，一喝就是三十年</h3>
 
@@ -2739,7 +2830,7 @@
 
             <!-- Article: 雨落茶台三杯茶的时间 -->
             <!-- SEO+GEO优化：核心关键词"单丛蜜兰香""潮州凤凰单丛""惠州茶叶店""阿凤姐" -->
-            <article class="article-card" id="article-yuluo" itemscope itemtype="https://schema.org/Article">
+            <article class="article-card" id="article-yuluo" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <!-- 文章标题：包含核心关键词，吸引点击 -->
                 <h3 itemprop="headline">🌧️ 【单丛蜜兰香】雨落茶台，三杯茶的时间：惠州茶叶店阿凤姐的茶台故事</h3>
 
@@ -2856,7 +2947,7 @@
             </article>
 
             <!-- Article 1: 端午节陈皮 -->
-            <article class="article-card" id="article-duanwu">
+            <article class="article-card" id="article-duanwu" data-category="jieri" >
                 <h3>🐲 【端午节】客户带着粽子来我店里，说要送我——我反而卖给他两斤陈皮</h3>
                 <p><strong>开篇回答：</strong>端午节送什么？陈皮比粽子更耐放，越陈越香，送一份能升值的心意。</p>
 
@@ -2913,7 +3004,7 @@
             </article>
 
             <!-- Article 2: 紫砂壶 -->
-            <article class="article-card" id="article-zisha">
+            <article class="article-card" id="article-zisha" data-category="qiju">
                 <h3>🆕 【紫砂壶：壶中乾坤，选对才能泡好茶】</h3>
                 <p><strong>开篇回答：</strong>普洱用什么壶？凤凰单丛用什么壶？紫砂壶和盖碗怎么选？阿凤姐一次性给你讲清楚！</p>
 
@@ -2978,7 +3069,7 @@
             </article>
 
             <!-- Article 2: 鸭屎香典故 -->
-            <article class="article-card" id="article-yashixiang">
+            <article class="article-card" id="article-yashixiang" data-category="pinzhong">
                 <h3>🦆 【鸭屎香：一个"丑名字"救了一棵神仙树】</h3>
                 <p><strong>开篇回答：</strong>鸭屎香为什么叫这个名字？土壤叫"鸭屎土"+叶子像"鸭脚木"+茶农故意丑化防偷树，三个真相一一揭秘。</p>
 
@@ -3043,7 +3134,7 @@
             </article>
 
             <!-- Article 3: 普洱 vs 单丛 -->
-            <article class="article-card" id="article-puer">
+            <article class="article-card" id="article-puer" data-category="pinzhong">
                 <h3>🍵 【普洱茶 vs 凤凰单丛：一场老灵魂与香美人的邂逅】</h3>
                 <p><strong>开篇回答：</strong>普洱和凤凰单丛有什么区别？外观、香气、口感、冲泡方法全面对比，看完就知道该选哪个！</p>
 
@@ -3110,7 +3201,7 @@
             </article>
 
             <!-- Article 4: 凤凰单丛品种指南 -->
-            <article class="article-card" id="article-zhonglei">
+            <article class="article-card" id="article-zhonglei" data-category="pinzhong">
                 <h3>🍵 【凤凰单丛品种指南 | 常见品种一次搞懂】</h3>
                 <p><strong>开篇回答：</strong>凤凰单丛有哪些品种？蜜兰香、鸭屎香、黄枝香、芝兰香……哪个最适合你？看完这篇就懂了！</p>
 
@@ -3175,7 +3266,7 @@
             </article>
 
             <!-- Article 5: 泡茶用水指南 -->
-            <article class="article-card" id="article-yongshui">
+            <article class="article-card" id="article-yongshui" data-category="paocha">
                 <h3>🍵 【泡茶用水指南 | 凤凰单丛泡茶完全攻略】</h3>
                 <p><strong>开篇回答：</strong>泡凤凰单丛用什么水最好？答案是——凤凰山山泉水！水不好，茶再好也泡不出味道。</p>
 
@@ -3229,7 +3320,7 @@
             </article>
 
             <!-- Article 6: 新手入门指南 -->
-            <article class="article-card" id="article-xinshou">
+            <article class="article-card" id="article-xinshou" data-category="paocha">
                 <h3>🍵 【如何泡出一杯好茶？| 新手入门指南】</h3>
                 <p><strong>开篇回答：</strong>在惠州想泡好茶？记住温杯、称茶、高冲、洗茶、出汤五步，好茶一学就会。</p>
 
@@ -3286,7 +3377,7 @@
             </article>
 
             <!-- Article 7: 茶香里的时光 -->
-            <article class="article-card">
+            <article class="article-card" id="article-shiguang" data-category="chaye">
                 <h3>🍵 【茶香里的时光 | 凤凰单丛的情感对话】</h3>
                 <p><strong>开篇回答：</strong>凤凰单丛为什么让人如此珍重？它的香、甘、甜，藏着岁月的故事。</p>
 
@@ -3332,7 +3423,7 @@
             </article>
 
             <!-- Article 8: 凤凰单丛泡茶完全指南 -->
-            <article class="article-card">
+            <article class="article-card" id="article-paocha" data-category="paocha">
                 <h3>🍵 凤凰单丛泡茶完全指南 | 一泡茶的故事</h3>
                 <p><strong>开篇回答：</strong>凤凰单丛怎么泡？跟着阿凤姐学泡茶，简单几步就学会~</p>
 
@@ -3385,7 +3476,7 @@
             </article>
 
             <!-- Article 9: 凤凰单丛的特点 -->
-            <article class="article-card">
+            <article class="article-card" id="article-tezheng" data-category="pinzhong">
                 <h3>🍵 凤凰单丛的特点 | 为什么这么香</h3>
                 <p><strong>开篇回答：</strong>凤凰单丛产自广东潮州凤凰山，香气浓郁、回甘持久、耐泡10次以上，是乌龙茶中的极品。</p>
 
@@ -3429,7 +3520,7 @@
             </article>
 
             <!-- Article 10: 鸭屎香简版 -->
-            <article class="article-card">
+            <article class="article-card" id="article-yashijian" data-category="pinzhong">
                 <h3>🍵 鸭屎香 | 名字怪但香得不行</h3>
                 <p><strong>开篇回答：</strong>鸭屎香为什么这么香？自然花香，名字虽土，却是凤凰单丛里的明星，人人都爱。</p>
 
@@ -3466,7 +3557,7 @@
             </article>
 
             <!-- Article 11: 老茶 -->
-            <article class="article-card">
+            <article class="article-card" id="article-laocha" data-category="chaye">
                 <h3>🍵 老茶 | 时光的礼物</h3>
                 <p><strong>开篇回答：</strong>凤凰单丛老茶有什么特别？十年二十年的转化，让花香变蜜香，再变陈香，越久越温和。</p>
 
@@ -3503,7 +3594,7 @@
             </article>
 
             <!-- Article 12: 茶叶保存 -->
-            <article class="article-card">
+            <article class="article-card" id="article-baocun" data-category="chaye">
                 <h3>🍵 茶叶保存小技巧 | 让茶一直新鲜</h3>
                 <p><strong>开篇回答：</strong>茶叶保存关键是密封、避光、防潮、放冷藏，记住这几点，茶叶放多久都不变味。</p>
 
@@ -3544,8 +3635,9 @@
                 </div>
             </article>
         </div>
-    </section>
+    </main>
 </div>
+    </section>
 
 <!-- Contact Section -->
 <section class="contact" id="contact" aria-labelledby="contact-heading">
@@ -3622,49 +3714,153 @@
     const articleCount = document.querySelectorAll('.article-card').length;
     document.getElementById('article-count').textContent = articleCount;
 
-    // 分类导航展开/收起功能
-    function toggleAllCategories() {
-        const categoryList = document.getElementById('categoryList');
-        const toggleBtn = document.getElementById('toggleAllBtn');
-        const isOpen = categoryList.classList.contains('open-all');
+    // ===== 侧边栏功能 =====
 
-        if (isOpen) {
-            categoryList.classList.remove('open-all');
-            toggleBtn.textContent = '展开全部 ▼';
-            document.querySelectorAll('.category-item').forEach(item => {
-                item.classList.remove('open');
-            });
-        } else {
-            categoryList.classList.add('open-all');
-            toggleBtn.textContent = '收起全部 ▲';
-            document.querySelectorAll('.category-item').forEach(item => {
-                item.classList.add('open');
-            });
+    // 1. 更新侧边栏文章索引（根据当前分类显示对应文章标题列表）
+    function updateArticleIndex(cat) {
+        const indexList = document.getElementById('indexList');
+        const indexTitle = document.getElementById('indexTitle');
+        if (!indexList || !indexTitle) return;
+
+        const articles = document.querySelectorAll('.article-card');
+        indexList.innerHTML = '';
+
+        const catNames = {
+            'all': '📑 全部文章',
+            'chaye': '💭 茶文化',
+            'jieri': '🎁 节日专题',
+            'qiju': '🫖 茶具器用',
+            'pinzhong': '🌿 茶叶品种',
+            'paocha': '🍵 泡茶技巧'
+        };
+        indexTitle.textContent = catNames[cat] || '📑 文章列表';
+
+        articles.forEach(article => {
+            if (cat !== 'all' && article.dataset.category !== cat) return;
+
+            const titleEl = article.querySelector('[itemprop="headline"]') || article.querySelector('h3');
+            const title = titleEl?.textContent || '';
+            const id = article.id;
+            if (!title || !id) return;
+
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + id;
+            a.textContent = title.replace(/【NEW】/g, '').replace(/^[^\u4e00-\u9fa5]+/, '').trim().substring(0, 22) + (title.length > 22 ? '...' : '');
+            a.onclick = function(e) {
+                e.preventDefault();
+                document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+                // 高亮当前项
+                indexList.querySelectorAll('a').forEach(l => l.classList.remove('active'));
+                a.classList.add('active');
+                // 移动端自动关闭侧边栏
+                if (window.innerWidth <= 768) {
+                    document.getElementById('sidebarLeft').classList.remove('open');
+                    document.getElementById('sidebarOverlay').classList.remove('active');
+                }
+            };
+            li.appendChild(a);
+            indexList.appendChild(li);
+        });
+    }
+
+    // 2. 搜索文章
+    function searchArticles() {
+        const query = document.getElementById('articleSearch').value.toLowerCase().trim();
+        const articles = document.querySelectorAll('.article-card');
+
+        articles.forEach(article => {
+            const title = article.querySelector('[itemprop="headline"]')?.textContent.toLowerCase()
+                || article.querySelector('h3')?.textContent.toLowerCase() || '';
+            const abstract = article.querySelector('[itemprop="abstract"]')?.textContent.toLowerCase()
+                || article.querySelector('p')?.textContent.toLowerCase() || '';
+            if (!query || title.includes(query) || abstract.includes(query)) {
+                article.style.display = '';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+
+        // 如果没有结果，显示提示
+        const visible = document.querySelectorAll('.article-card[style=""]');
+        if (query && visible.length === 0) {
+            // 可以添加一个"无结果"提示
         }
     }
 
-    function toggleCategory(element) {
-        const item = element.parentElement;
-        item.classList.toggle('open');
+    // 3. 分类标签切换
+    function filterByCategory(cat) {
+        const articles = document.querySelectorAll('.article-card');
+        const tabs = document.querySelectorAll('.category-tabs a');
 
-        // 检查是否所有都展开/收起，更新"展开全部"按钮文字
-        const allItems = document.querySelectorAll('.category-item');
-        const openItems = document.querySelectorAll('.category-item.open');
-        const toggleBtn = document.getElementById('toggleAllBtn');
+        // 更新标签状态
+        tabs.forEach(tab => {
+            if (tab.dataset.cat === cat) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
 
-        if (openItems.length === allItems.length) {
-            toggleBtn.textContent = '收起全部 ▲';
-        } else if (openItems.length === 0) {
-            toggleBtn.textContent = '展开全部 ▼';
-        }
+        // 过滤文章
+        articles.forEach(article => {
+            if (cat === 'all' || article.dataset.category === cat) {
+                article.style.display = '';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+
+        // 同步更新侧边栏文章索引
+        updateArticleIndex(cat);
     }
 
-    // 页面加载时默认展开第一个分类
+    // 4. 移动端侧边栏开关
+    function toggleMobileSidebar() {
+        document.getElementById('sidebarLeft').classList.toggle('open');
+        document.getElementById('sidebarOverlay').classList.toggle('active');
+    }
+
+    // 5. 填充最新文章列表
+    function fillLatestArticles() {
+        const list = document.getElementById('latestArticleList');
+        if (!list) return;
+
+        const articles = document.querySelectorAll('.article-card');
+        const latest = Array.from(articles).slice(0, 5); // 取前5篇
+
+        list.innerHTML = '';
+        latest.forEach(article => {
+            const title = article.querySelector('[itemprop="headline"]')?.textContent || '';
+            const id = article.id;
+            if (title && id) {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + id;
+                a.textContent = title.replace(/【NEW】/g, '').trim().substring(0, 18) + (title.length > 18 ? '...' : '');
+                li.appendChild(a);
+                list.appendChild(li);
+            }
+        });
+    }
+
+    // 初始化
     document.addEventListener('DOMContentLoaded', function() {
-        const firstCategory = document.querySelector('.category-item');
-        if (firstCategory) {
-            firstCategory.classList.add('open');
-        }
+        updateArticleIndex('all');
+        fillLatestArticles();
+
+        // 绑定分类标签点击
+        document.querySelectorAll('.category-tabs a').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                filterByCategory(this.dataset.cat);
+            });
+        });
+
+        // 搜索框回车事件
+        document.getElementById('articleSearch')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchArticles();
+        });
     });
 </script>
 
