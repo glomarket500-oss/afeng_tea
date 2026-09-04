@@ -323,48 +323,81 @@
             margin-top: 10px;
         }
 
-        /* 知识文章卡片 */
+        /* 知识文章卡片 - 方案A：轻水墨 */
         .article-list {
             display: grid;
-            gap: 25px;
+            gap: 30px;
         }
 
         .article-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid #6b8e23;
+            background: #f5f0e8;
+            border-radius: 4px;
+            padding: 30px 30px 30px 36px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-left: 3px solid #2d5016;
+            position: relative;
             transition: transform 0.3s;
         }
 
+        .article-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #2d5016 0%, #6b8e23 50%, #2d5016 100%);
+            opacity: 0.8;
+        }
+
         .article-card:hover {
-            transform: translateX(5px);
+            transform: translateX(3px);
         }
 
         .article-card h3 {
             color: #2d5016;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', serif;
+            margin-bottom: 18px;
+            font-size: 1.6em;
+            font-family: 'Ma Shan Zheng', cursive;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed #c8b89a;
+            padding-bottom: 12px;
         }
 
         .article-card h4 {
-            color: #4a7023;
-            margin: 20px 0 10px;
-            font-size: 1.1em;
+            color: #f5f0e8;
+            margin: 24px 0 12px;
+            font-size: 1.05em;
+            font-family: 'Noto Serif SC', serif;
+            font-weight: 700;
+            background: #2d5016;
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .article-card h4::after {
+            content: '';
+            position: absolute;
+            right: -10px; top: 0;
+            width: 0; height: 0;
+            border-left: 10px solid #2d5016;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
         }
 
         .article-card p {
-            line-height: 1.8;
+            line-height: 1.9;
             margin-bottom: 15px;
-            color: #555;
+            color: #4a3f35;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.98em;
         }
 
         .article-card ul {
             margin-left: 30px;
-            color: #555;
+            color: #4a3f35;
             line-height: 2;
+            font-family: 'Noto Serif SC', serif;
         }
 
         .article-card li {
@@ -411,19 +444,21 @@
 
         .tag {
             display: inline-block;
-            background: #e8f5e9;
+            background: transparent;
             color: #2d5016;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            margin: 5px 5px 5px 0;
-            text-decoration: none;
-            transition: background 0.3s;
+            padding: 3px 10px;
+            border-radius: 2px;
+            font-size: 0.8em;
+            margin: 4px 6px 4px 0;
+            border: 1px solid #2d5016;
+            font-family: 'Noto Serif SC', serif;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
         .tag:hover {
             background: #2d5016;
-            color: white;
+            color: #f5f0e8;
         }
 
         /* 作者信息框 */
