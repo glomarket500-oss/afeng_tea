@@ -812,6 +812,13 @@
         .latest-articles a:hover {
             color: #8b5e3c;
         }
+        .latest-articles a .latest-date {
+            display: block;
+            font-size: 0.78em;
+            color: #8b7355;
+            margin-top: 2px;
+            font-family: 'Noto Serif SC', serif;
+        }
 
         /* 分类标签页 */
         .category-tabs {
@@ -931,7 +938,7 @@
     </div>
     <div class="hero-text">
         <h2>茶韵讲古<br>一品茶韵，品读千年茶文化</h2>
-        <p class="update-time">📅 最近更新：<time datetime="2026-09-06">2026年09月06日</time></p>
+        <p class="update-time">📅 最近更新：<time datetime="2026-09-06T09:30:00">2026年09月06日 09:30:00</time></p>
     </div>
 </section>
 
@@ -6141,7 +6148,7 @@
     <p>🍃 阿凤姐的故事 | 专注茶韵故事分享</p>
     <p>惠州凤凰单丛茶叶专卖店 | 批发零售均可</p>
     <p style="font-size:0.85em; color:#999; margin-top:10px;">
-        🔄 上次更新：<time datetime="2026-09-06">2026年09月06日</time> |
+        🔄 上次更新：<time datetime="2026-09-06T09:30:00">2026年09月06日 09:30:00</time> |
         共 <span id="article-count">30</span> 篇茶韵故事 |
         <a href="sitemap.xml" style="color:#999;">网站地图</a>
     </p>
@@ -6305,11 +6312,22 @@
         latest.forEach(article => {
             const title = article.querySelector('[itemprop="headline"]')?.textContent || '';
             const id = article.id;
+            const timeEl = article.querySelector('time[itemprop="datePublished"]');
+            let dateLabel = '';
+            if (timeEl) {
+                const datetime = timeEl.getAttribute('datetime') || '';
+                const display = (timeEl.textContent || '').trim();
+                dateLabel = display || datetime;
+            }
             if (title && id) {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.href = '#' + id;
-                a.textContent = title.replace(/【NEW】/g, '').trim().substring(0, 18) + (title.length > 18 ? '...' : '');
+                a.innerHTML = '<span class="latest-title">' +
+                    title.replace(/【NEW】/g, '').trim().substring(0, 18) +
+                    (title.length > 18 ? '...' : '') +
+                    '</span>' +
+                    (dateLabel ? '<span class="latest-date">' + dateLabel + '</span>' : '');
                 li.appendChild(a);
                 list.appendChild(li);
             }

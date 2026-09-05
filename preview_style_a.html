@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方案A预览 — 轻水墨风格</title>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #e8e4dc;
+    padding: 40px 20px;
+    color: #3a2e2a;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2.2em;
+    color: #2d5016;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #8b7355;
+    margin-bottom: 50px;
+    font-size: 0.95em;
+  }
+  .compare-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  @media (max-width: 768px) {
+    .compare-wrap { grid-template-columns: 1fr; }
+  }
+  .label {
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* ========== 旧样式（现有） ========== */
+  .old-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-left: 4px solid #6b8e23;
+  }
+  .old-card h3 {
+    color: #2d5016;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', serif;
+  }
+  .old-card h4 {
+    color: #4a7023;
+    margin: 20px 0 10px;
+    font-size: 1.1em;
+  }
+  .old-card p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+  }
+  .old-card .tags {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+  .old-card .tag {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2d5016;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    margin: 5px 5px 5px 0;
+  }
+
+  /* ========== 方案A：轻水墨 ========== */
+  .new-card {
+    background: #f5f0e8;
+    border-radius: 4px;
+    padding: 30px 30px 30px 36px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 3px solid #2d5016;
+    position: relative;
+  }
+  .new-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #2d5016 0%, #6b8e23 50%, #2d5016 100%);
+    opacity: 0.8;
+  }
+  .new-card h3 {
+    color: #2d5016;
+    margin-bottom: 18px;
+    font-size: 1.6em;
+    font-family: 'Ma Shan Zheng', cursive;
+    letter-spacing: 1px;
+    border-bottom: 1px dashed #c8b89a;
+    padding-bottom: 12px;
+  }
+  .new-card h4 {
+    color: #f5f0e8;
+    margin: 24px 0 12px;
+    font-size: 1.05em;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 700;
+    background: #2d5016;
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 2px;
+    position: relative;
+  }
+  .new-card h4::after {
+    content: '';
+    position: absolute;
+    right: -10px; top: 0;
+    width: 0; height: 0;
+    border-left: 10px solid #2d5016;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+  }
+  .new-card p {
+    line-height: 1.9;
+    margin-bottom: 15px;
+    color: #4a3f35;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.98em;
+  }
+  .new-card .tags {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #d4c8b0;
+  }
+  .new-card .tag {
+    display: inline-block;
+    background: transparent;
+    color: #2d5016;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 0.8em;
+    margin: 4px 6px 4px 0;
+    border: 1px solid #2d5016;
+    font-family: 'Noto Serif SC', serif;
+  }
+  .new-card .author-box {
+    margin-top: 20px;
+    padding: 16px;
+    background: #eae4d8;
+    border-radius: 2px;
+    border-left: 3px solid #8b6914;
+    font-size: 0.88em;
+    color: #5a4d3f;
+    font-family: 'Noto Serif SC', serif;
+  }
+
+  .divider {
+    text-align: center;
+    margin: 40px 0;
+    color: #aaa;
+    font-size: 0.85em;
+  }
+  .note {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.8;
+  }
+  .note strong { color: #2d5016; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>方案A — 轻水墨风格预览</h1>
+  <p class="subtitle">左侧 = 现有样式 ｜ 右侧 = 方案A改动后</p>
+
+  <div class="compare-wrap">
+    <!-- 旧样式 -->
+    <div>
+      <div class="label">现有样式</div>
+      <div class="old-card">
+        <h3>台风天，阿凤姐冲上山——只为守护那棵七百年的宋种 <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
+        <h4>第一幕：暴雨中的电话</h4>
+        <p>九月五日清晨，阿凤姐的茶庄还没开门，手机就响了。</p>
+        <p>「凤姐！出大事了！」电话那头是乌屺村阿坤，声音带着喘，「台风『沙德尔』登陆了，山里狂风暴雨……」</p>
+        <h4>第二幕：风雨山路</h4>
+        <p>上山的路上，雨大到挡风玻璃都看不清。阿凤姐一边开车一边听广播……</p>
+        <div class="tags">
+          <span class="tag">#凤凰单丛</span>
+          <span class="tag">#宋种</span>
+          <span class="tag">#台风沙德尔</span>
+          <span class="tag">#潮州暴雨</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 方案A -->
+    <div>
+      <div class="label">方案A · 轻水墨</div>
+      <div class="new-card">
+        <h3>台风天，阿凤姐冲上山——只为守护那棵七百年的宋种 <span style="background:#e53935;color:white;font-size:0.55em;padding:2px 8px;border-radius:2px;margin-left:5px;vertical-align:middle;font-family:sans-serif;">NEW</span></h3>
+        <h4>第一幕：暴雨中的电话</h4>
+        <p>九月五日清晨，阿凤姐的茶庄还没开门，手机就响了。</p>
+        <p>「凤姐！出大事了！」电话那头是乌屺村阿坤，声音带着喘，「台风『沙德尔』登陆了，山里狂风暴雨……」</p>
+        <h4>第二幕：风雨山路</h4>
+        <p>上山的路上，雨大到挡风玻璃都看不清。阿凤姐一边开车一边听广播……</p>
+        <div class="tags">
+          <span class="tag">凤凰单丛</span>
+          <span class="tag">宋种</span>
+          <span class="tag">台风沙德尔</span>
+          <span class="tag">潮州暴雨</span>
+        </div>
+        <div class="author-box">
+          <strong>✍️ 作者：</strong>阿凤姐（林玉凤）<br>
+          <strong>📍 店铺：</strong>惠州市惠城区东湖花园一区沿江商铺89-136<br>
+          <strong>⏰ 发布：</strong>2026年9月5日 15:30:00
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>方案A 改动点：</strong><br>
+    1. 卡片背景：纯白 → 米白叙纹纸色（#f5f0e8）<br>
+    2. 标题字体：普通黑体 → Ma Shan Zheng 书法体，底部加虚线分隔<br>
+    3. 左侧边框：绿色实线 → 深墨绿渐变竖线<br>
+    4. 章节标题：普通绿色 → 深墨绿底色 + 白字 + 箭头装饰（类似海报模块条）<br>
+    5. 正文：无衬线体 → Noto Serif SC 宋体<br>
+    6. 标签：绿色圆角 → 方形线框式，更古朴<br>
+    7. 作者区域：增加浅色底 + 左侧金线边框
+  </div>
+</div>
+</body>
+</html>

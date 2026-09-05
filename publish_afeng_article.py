@@ -177,18 +177,19 @@ def generate_article_html(article_id, title, body, tags, date_str):
 
 
 def update_global_date():
-    """更新 index.html 中的全局'最近更新'和'上次更新'日期为今天"""
-    today_str = datetime.now().strftime("%Y年%m月%d日")
-    today_iso = datetime.now().strftime("%Y-%m-%d")
+    """更新 index.html 中的全局'最近更新'和'上次更新'日期为今天（精确到秒）"""
+    today_str = datetime.now().strftime("%Y年%m月%d日 %H:%M:%S")
+    today_iso = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     
     with open(INDEX_HTML, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # 替换最近更新（hero 区域）
+    # 替换最近更新（hero 区域）+ 上次更新（页脚）
     content = re.sub(
-        r'<time datetime="\d{4}-\d{2}-\d{2}">\d{4}年\d{1,2}月\d{1,2}日</time>',
-        f'<time datetime="{today_iso}">{today_str}</time>',
-        content
+        r'<time datetime="[\d\-T:]+">[\d年月日\sT:\-年月日]+</time>',
+        lambda m: f'<time datetime="{today_iso}">{today_str}</time>',
+        content,
+        count=2
     )
     
     with open(INDEX_HTML, 'w', encoding='utf-8') as f:
