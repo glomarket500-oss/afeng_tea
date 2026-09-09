@@ -124,10 +124,14 @@ def generate_article_html(article_id, title, body, tags, date_str):
     tags_html = '\n'.join([f'        <span class="tag">#{t}</span>' for t in tags_list])
 
     # ISO 日期 + 精确到秒的显示格式
+    # 如果 frontmatter 的 date 只有日期（YYYY-MM-DD），就用当前时刻补上时分秒
     try:
         dt = datetime.strptime(date_str, "%Y-%m-%d")
-        iso_date = dt.strftime("%Y-%m-%d")
-        display_date = dt.strftime("%Y年%m月%d日")
+        # 只有日期，补成今天此时
+        now = datetime.now()
+        dt = dt.replace(hour=now.hour, minute=now.minute, second=now.second)
+        iso_date = dt.strftime("%Y-%m-%dT%H:%M:%S")
+        display_date = dt.strftime("%Y年%m月%d日 %H:%M:%S")
     except:
         try:
             dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M")
