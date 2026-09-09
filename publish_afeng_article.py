@@ -18,7 +18,7 @@ from pathlib import Path
 # === 配置 ===
 REPO_DIR = r"C:\Users\a\Desktop\afeng_tea_repo"
 INDEX_HTML = os.path.join(REPO_DIR, "index.html")
-VAULT_DIR = r"C:\Users\a\Desktop\MianAI知识库\vault\阿凤姐的故事"
+VAULT_DIR = r"C:\Users\a\Desktop\MianAI知识库\MianAI知识库\vault\阿凤姐的故事"
 VERCEL_URL = "https://afeng-tea.vercel.app"
 
 
@@ -150,6 +150,8 @@ def generate_article_html(article_id, title, body, tags, date_str):
     article_html = f'''<!-- Article: {title} -->
             <article class="article-card" id="{article_id}" data-category="chaye" itemscope itemtype="https://schema.org/Article">
                 <h3 itemprop="headline">{title} <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
+
+                <p class="article-meta-time">📅 发布于 <time itemprop="datePublished" datetime="{iso_date}">{display_date}</time></p>
 
                 <meta itemprop="description" content="{desc}">
 
