@@ -21,6 +21,47 @@ INDEX_HTML = os.path.join(REPO_DIR, "index.html")
 VAULT_DIR = r"C:\Users\a\Desktop\MianAI知识库\MianAI知识库\vault\阿凤姐的故事"
 VERCEL_URL = "https://afeng-tea.vercel.app"
 
+# === 文章配图库（Unsplash 免费图片 CDN）===
+# 每张图都经过 vision_analyze 验证主题相关性
+# 尺寸统一 w=800（800px 宽），够清晰且加载快
+IMAGE_LIBRARY = {
+    # 主题: (photo_id, 图注中文, 适合的关键词)
+    "tea_gift": ("1576092768241-dec231879fc3", "一份用心准备的茶礼", ["礼盒", "中秋", "送礼", "海外", "乡愁", "礼品", "团购", "企业", "福利", "diy"]),
+    "tea_set": ("1564890369478-c89ca6d9cde9", "工夫茶具一席间", ["工夫", "茶具", "器用", "泡茶", "冲泡", "器物", "紫砂", "盖碗", "杯", "壶"]),
+    "tea_farming": ("1571934811356-5cc061b6821f", "茶碗中的时光", ["文化", "传承", "老师傅", "非遗", "冲泡", "陈年", "老茶", "工艺", "历史", "传统", "采茶", "做青"]),
+    "tea_box": ("1597481499750-3e6b22637e12", "精致的茶礼盒", ["中秋", "送礼", "礼盒", "水果茶", "调饮", "创新", "年轻", "新茶饮", "品牌", "联名", "包装"]),
+    "tea_nature": ("1567922045116-2a00fae2ed03", "茶山云雾与一片叶子", ["茶山", "自然", "秋茶", "白露", "节气", "产地", "凤凰山", "乌岽", "云雾", "古树", "生态"]),
+    "tea_brewing": ("1556679343-c7306c1976bc", "一杯好茶的诞生", ["冲泡", "泡茶", "水温", "技艺", "三泡", "出汤", "品饮", "教学", "入门", "新手"]),
+}
+
+def pick_article_image(title, tags_list):
+    """根据文章标题和标签，挑选一张主题最相关的图"""
+    text = (title + " " + " ".join(tags_list)).lower()
+    
+    # 优先匹配 tags 关键词
+    matches = []
+    for theme, (photo_id, caption, keywords) in IMAGE_LIBRARY.items():
+        score = sum(1 for kw in keywords if kw.lower() in text)
+        matches.append((score, theme, photo_id, caption))
+    
+    # 按分数从高到低排序
+    matches.sort(reverse=True)
+    
+    # 选分数最高的；如果都没匹配上，用 tea_nature 兜底
+    best = matches[0] if matches else None
+    if not best or best[0] == 0:
+        photo_id, caption = IMAGE_LIBRARY["tea_nature"][:2]
+    else:
+        photo_id, caption = best[2], best[3]
+    
+    url = f"https://images.unsplash.com/photo-{photo_id}?w=800&q=80"
+    
+    return f'''                <figure class="article-hero-image">
+                    <img src="{url}" alt="{escape_html(caption)}" loading="lazy" />
+                    <figcaption>{escape_html(caption)} · 图源 Unsplash</figcaption>
+                </figure>
+'''
+
 
 def escape_html(text):
     """转义HTML特殊字符"""
@@ -123,7 +164,10 @@ def generate_article_html(article_id, title, body, tags, date_str):
     # tags
     tags_list = [t.strip() for t in tags.split(',') if t.strip()]
     tags_html = '\n'.join([f'        <span class="tag">#{t}</span>' for t in tags_list])
-    
+
+    # 根据标题/标签挑选主题相关图片（Unsplash 免费 CDN）
+    image_html = pick_article_image(title, tags_list)
+
     # ISO 日期 + 精确到秒的显示格式
     try:
         dt = datetime.strptime(date_str, "%Y-%m-%d")
@@ -152,6 +196,8 @@ def generate_article_html(article_id, title, body, tags, date_str):
                 <h3 itemprop="headline">{title} <span style="background:#e53935;color:white;font-size:0.65em;padding:2px 8px;border-radius:8px;margin-left:5px;">NEW</span></h3>
 
                 <p class="article-meta-time">📅 发布于 <time itemprop="datePublished" datetime="{iso_date}">{display_date}</time></p>
+
+{image_html}
 
                 <meta itemprop="description" content="{desc}">
 
