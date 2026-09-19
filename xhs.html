@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📕 小红书同步内容 · 阿凤姐茶叶</title>
+    <meta name="description" content="阿凤姐茶叶网站嘅小红书同步内容页——凤凰单丛、新会陈皮、潮州工夫茶嘅图文笔记，每篇都配独立站深度版链接同复制文案功能。">
+    <meta name="keywords" content="小红书,凤凰单丛,新会陈皮,阿凤姐,潮州工夫茶,中秋茶礼,鸭屎香,蜜兰香">
+    <meta name="author" content="阿凤姐（林玉凤）">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://afeng-tea.vercel.app/xhs.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="📕 小红书同步内容 · 阿凤姐茶叶">
+    <meta property="og:description" content="凤凰单丛、新会陈皮、潮州工夫茶——小红书图文笔记同步">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://afeng-tea.vercel.app/xhs.html">
+    <meta property="og:image" content="https://afeng-tea.vercel.app/images/2026-09-19-zq-hero.png">
+
+    <style>
+        :root {
+            --primary: #8B4513;
+            --primary-light: #a85f1e;
+            --primary-dark: #5a2e0c;
+            --bg: #faf6f0;
+            --card-bg: #ffffff;
+            --text: #2a1a0a;
+            --text-light: #6b5a4a;
+            --border: #e8d9c4;
+            --accent: #c1272d;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* 顶部导航 */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        header h1 {
+            font-size: 1.8em;
+            margin-bottom: 6px;
+        }
+        header p {
+            font-size: 0.95em;
+            opacity: 0.92;
+        }
+
+        nav {
+            background: var(--primary-dark);
+            padding: 12px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.95em;
+            padding: 6px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        nav a:hover { background: rgba(255,255,255,0.18); }
+        nav a.active { background: var(--accent); }
+
+        /* 统计指标 */
+        .stats {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.06);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-3px); }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+        /* 主区域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: var(--primary);
+            margin: 30px 0 20px;
+            padding-left: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* 文章卡列表 */
+        .xhs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .xhs-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(139, 69, 19, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .xhs-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.15);
+        }
+
+        .xhs-cover {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            background: var(--border);
+        }
+        .xhs-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .xhs-card:hover .xhs-cover img {
+            transform: scale(1.05);
+        }
+        .xhs-cover .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.75em;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .xhs-cover .date {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 0.75em;
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+
+        .xhs-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .xhs-title {
+            font-size: 1.05em;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .xhs-summary {
+            font-size: 0.88em;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .xhs-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .xhs-tag {
+            font-size: 0.75em;
+            background: var(--bg);
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .xhs-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .xhs-btn {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 0.85em;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-weight: 500;
+            transition: opacity 0.2s, background 0.2s;
+        }
+        .xhs-btn:hover { opacity: 0.85; }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        /* footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        footer a { color: #f4d6b3; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* 移动端单列 */
+        @media (max-width: 640px) {
+            .xhs-grid { grid-template-columns: 1fr; }
+            nav a { margin: 0 6px; font-size: 0.85em; padding: 4px 8px; }
+            header h1 { font-size: 1.4em; }
+            .stat-number { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📕 阿凤姐茶叶 · 小红书同步</h1>
+    <p>凤凰单丛 · 新会陈皮 · 潮州工夫茶 —— 每篇都有独立站深度版</p>
+</header>
+
+<nav>
+    <a href="index.html#home">🏠 首页</a>
+    <a href="index.html#products">🍃 产品</a>
+    <a href="index.html#knowledge">📖 茶韵讲古</a>
+    <a href="index.html#contact">📞 联系</a>
+    <a href="xhs.html" class="active">📕 小红书</a>
+</nav>
+
+<section class="stats">
+    <div class="stat-card">
+        <div class="stat-number">10</div>
+        <div class="stat-label">已同步笔记</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">4.5万</div>
+        <div class="stat-label">累计阅读</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">2,847</div>
+        <div class="stat-label">收藏数</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">932</div>
+        <div class="stat-label">粉丝</div>
+    </div>
+</section>
+
+<div class="container">
+
+<h2 class="section-title">📌 最新同步笔记</h2>
+
+<div class="xhs-grid">
+
+<!-- 卡 1：中秋倒數六天 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-19-zq-hero.png" alt="中秋倒數六天那年輕嘅茶味">
+        <span class="badge">🔥 最新</span>
+        <span class="date">09-19 22:30</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">中秋倒數六天：那年輕嘅茶味，從3200億市場到鳳凰山嘅阿鳳姐</h3>
+        <p class="xhs-summary">凌晨四點半，深圳95後小陳打電話嚟訂80份鴨屎香禮盒。3200億茶市場，45%年輕人——鳳凰單叢破圈嘅故事，由鳳凰山開始講起。</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#鳳凰單叢</span>
+            <span class="xhs-tag">#中秋茶禮</span>
+            <span class="xhs-tag">#年輕化</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-中秋倒數六天那年輕嘅茶味從3200億" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('中秋倒數六天：那年輕嘅茶味，從3200億市場到鳳凰山嘅阿鳳姐。凌晨四點半，深圳95後小陳打電話嚟訂80份鴨屎香禮盒。鳳凰單叢破圈，唔係貶低傳統，而係讓鳳凰山嘅山韻走進年輕人嘅生活。詳情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 2：梅州赛茶 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-19-mz-hero.png" alt="梅州赛茶遇上凤凰单丛">
+        <span class="badge">🍵 推荐</span>
+        <span class="date">09-19 19:45</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">梅州賽茶遇上鳳凰單叢：阿鳳姐嘅中秋茶禮智慧</h3>
+        <p class="xhs-summary">外甥阿明喺梅州茶賽做評審，電話傳嚟一句——「機器揀茶揀得快，但揀唔出一株老欉嘅脾氣」。中秋茶禮，鴨屎香定蜜蘭香？</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#梅州茶賽</span>
+            <span class="xhs-tag">#中秋茶禮</span>
+            <span class="xhs-tag">#智慧茶園</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-梅州赛茶遇上凤凰单丛阿凤姐嘅中秋茶礼智" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('梅州賽茶遇上鳳凰單叢：阿鳳姐嘅中秋茶禮智慧。外甥阿明喺梅州茶賽做評審，電話傳嚟——「機器揀茶揀得快，但揀唔出一株老欉嘅脾氣」。詳情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 3：中秋前一周凤凰镇 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-18-cd-scene1.png" alt="中秋前一周凤凰镇的茶灯未熄">
+        <span class="date">09-18 04:30</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">中秋前一周凤凰镇的茶灯未熄</h3>
+        <p class="xhs-summary">中秋倒數七日，鳳凰鎮嘅焙茶燈仲未熄。林師傅68歲，炭焙36個鐘，焙出一爐中秋最後嘅鳳凰單叢——呢盞燈，係鳳凰山嘅根。</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#鳳凰鎮</span>
+            <span class="xhs-tag">#炭焙單叢</span>
+            <span class="xhs-tag">#中秋倒計時</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-20260918中秋前一周凤凰镇的茶灯未熄" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('中秋前一周凤凰镇的茶灯未熄。林师傅68岁，炭焙36个钟，焙出一炉中秋最后的凤凰单丛——这盏灯，是凤凰山的根。详情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 4：穿越时空的茶香 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-18-cd-scene2.png" alt="穿越时空的茶香">
+        <span class="date">09-18 23:06</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">穿越時空的茶香：從民國茶引到直播間</h3>
+        <p class="xhs-summary">一片茶叶从凤凰山茶树 → 茶马古道 → 直播间，穿越时空嘅故事。1998年老茶、弟弟倒闭嘅茶行、小红书嘅新茶缘。</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#穿越時空</span>
+            <span class="xhs-tag">#茶馬古道</span>
+            <span class="xhs-tag">#老茶</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-20260918穿越时空的茶香" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('穿越时空的茶香：从民国茶引到直播间。一片茶叶从凤凰山茶树到茶马古道到直播间，穿越时空的故事。详情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 5：新茶饮减速 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-18-cd-scene3.png" alt="新茶饮减速凤凰单丛站中间一盏灯">
+        <span class="date">09-18 10:00</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">新茶飲減速，鳳凰單叢站中間一盞燈</h3>
+        <p class="xhs-summary">新茶饮市场减速，凤凰单丛反而企硬——5000亿现制饮品市场入面，传统单丛点解仲有竞争力？答案喺山韵同文化。</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#新茶飲</span>
+            <span class="xhs-tag">#山韻</span>
+            <span class="xhs-tag">#單叢</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-20260918新茶饮减速凤凰单丛站中间一盏灯" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('新茶饮减速，凤凰单丛站中间一盏灯。5000亿现制饮品市场，传统单丛点解仲有竞争力？答案喺山韵同文化。详情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 6：茶叶江湖 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-18-cd-scene4.png" alt="茶叶江湖一片树叶的产业链">
+        <span class="date">09-18 22:08</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">茶葉江湖：一片樹葉嘅產業鏈</h3>
+        <p class="xhs-summary">從鳳凰山一棵茶樹，到深圳辦公室一杯茶——一片樹葉背後嘅全產業鏈。95%茶農、3%品牌商、2%零售——中間嘅錢，邊個賺咗？</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#茶葉江湖</span>
+            <span class="xhs-tag">#產業鏈</span>
+            <span class="xhs-tag">#茶農</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-20260918茶叶江湖一片树叶的产业链" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('茶叶江湖：一片树叶嘅产业链。从凤凰山一棵茶树，到深圳办公室一杯茶——一片树叶背后嘅全产业链。详情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 7：中秋前夜凤凰山上 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-19-zq-scene1.png" alt="中秋前夜凤凰山上那盏不熄的焙茶灯">
+        <span class="date">09-17 04:30</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">中秋前夜鳳凰山上那盞不熄嘅焙茶燈</h3>
+        <p class="xhs-summary">中秋前夜，鳳凰山上嘅焙茶燈通宵未熄——林師傅同佢嘅徒弟，為中秋最後一批禮盒趕工。呢盞燈，係鳳凰單叢嘅根。</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#鳳凰山</span>
+            <span class="xhs-tag">#焙茶燈</span>
+            <span class="xhs-tag">#中秋前夜</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-20260917中秋前夜凤凰山上那盏不熄的焙茶灯" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('中秋前夜，凤凰山上嘅焙茶灯通宵未熄——林师傅同佢嘅徒弟，为中秋最后一批礼盒赶工。这盏灯，是凤凰单丛嘅根。详情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 8：中秋前九日魏会长 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-19-zq-scene2.png" alt="中秋前九日魏会长的日生香">
+        <span class="date">09-16 04:30</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">中秋前九日魏會長嘅日生香</h3>
+        <p class="xhs-summary">潮州工夫茶嘅日生香，係咩？魏會長帶阿鳳姐去佢嘅茶室——九日嘅茶，等一個識飲嘅人。日生香，係時間嘅味道。</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#日生香</span>
+            <span class="xhs-tag">#魏會長</span>
+            <span class="xhs-tag">#工夫茶</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-20260916中秋前九日魏会长的日生香" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('中秋前九日魏会长嘅日生香。潮州工夫茶嘅日生香，系咩？魏会长带阿凤姐去佢嘅茶室——九日嘅茶，等一个识饮嘅人。详情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 9：工信部 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-19-zq-scene3.png" alt="工信部一纸意见单丛入列历史经典">
+        <span class="date">09-16 10:00</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">工信部一紙意見：單叢入列歷史經典</h3>
+        <p class="xhs-summary">工信部聯合多部門印發《茶產業提質升級指導意見》——單叢被列入歷史經典茶類，2030年全產業鏈規模目標1.5萬億。</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#工信部</span>
+            <span class="xhs-tag">#歷史經典</span>
+            <span class="xhs-tag">#1.5萬億</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-20260916工信部一纸意见单丛入列历史经典" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('工信部一纸意见：单丛入列历史经典。工信部联合多部门印发《茶产业提质升级指导意见》——单丛被列入历史经典茶类，2030年全产业链规模目标1.5万亿。详情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+<!-- 卡 10：中秋倒计时十日 -->
+<article class="xhs-card">
+    <div class="xhs-cover">
+        <img src="images/2026-09-19-zq-scene4.png" alt="中秋倒计时十日凤凰山的茶仓与炭焙老人">
+        <span class="date">09-15 04:30</span>
+    </div>
+    <div class="xhs-body">
+        <h3 class="xhs-title">中秋倒計時十日：鳳凰山嘅茶倉與炭焙老人</h3>
+        <p class="xhs-summary">十日後就係中秋。鳳凰山嘅茶倉入面，炭焙老人仲未瞓——佢哋用36個鐘嘅慢火，焙出中秋最後一爐鳳凰單叢。</p>
+        <div class="xhs-tags">
+            <span class="xhs-tag">#中秋倒計時</span>
+            <span class="xhs-tag">#茶倉</span>
+            <span class="xhs-tag">#炭焙老人</span>
+        </div>
+        <div class="xhs-actions">
+            <a href="index.html#article-20260915中秋倒计时十日凤凰山的茶仓与炭焙老人" class="xhs-btn btn-primary">📖 独立站</a>
+            <button class="xhs-btn btn-secondary" onclick="copyText('中秋倒计时十日：凤凰山嘅茶仓与炭焙老人。十日后就系中秋。凤凰山嘅茶仓里面，炭焙老人仲未瞓——佢哋用36个钟嘅慢火，焙出中秋最后一炉凤凰单丛。详情 👉 https://afeng-tea.vercel.app')">📋 复制文案</button>
+        </div>
+    </div>
+</article>
+
+</div>
+
+</div>
+
+<footer>
+    <p>📕 <strong>阿凤姐茶叶 · 小红书同步</strong></p>
+    <p>微信：afeng-tea-2026 | 电话：13435567385 | QQ：1079790744</p>
+    <p><a href="index.html">← 返回主页</a> | <a href="sitemap.xml">🗺️ 网站地图</a></p>
+    <p style="margin-top: 16px; opacity: 0.7; font-size: 0.85em;">© 2026 阿凤姐的故事 · 惠州凤凰单丛茶叶专卖 · <a href="https://afeng-tea.vercel.app">afeng-tea.vercel.app</a></p>
+</footer>
+
+<script>
+function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function() {
+            showToast('✅ 文案已复制到剪贴板');
+        }, function() {
+            fallbackCopy(text);
+        });
+    } else {
+        fallbackCopy(text);
+    }
+}
+function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+        document.execCommand('copy');
+        showToast('✅ 文案已复制');
+    } catch(e) {
+        showToast('❌ 复制失败，请手动复制');
+    }
+    document.body.removeChild(ta);
+}
+function showToast(msg) {
+    const t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(139,69,19,0.92);color:white;padding:14px 24px;border-radius:10px;font-size:1em;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,0.3);';
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 1800);
+}
+</script>
+
+</body>
+</html>

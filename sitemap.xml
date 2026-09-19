@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- 主页 -->
+    <url>
+        <loc>https://afeng-tea.vercel.app/</loc>
+        <lastmod>2026-09-19T22:30:00+08:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- 小红书同步页 -->
+    <url>
+        <loc>https://afeng-tea.vercel.app/xhs.html</loc>
+        <lastmod>2026-09-19T22:30:00+08:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- 2026-09-19 文章 -->
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-中秋倒數六天那年輕嘅茶味從3200億</loc>
+        <lastmod>2026-09-19T22:30:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-梅州赛茶遇上凤凰单丛阿凤姐嘅中秋茶礼智</loc>
+        <lastmod>2026-09-19T19:45:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- 2026-09-18 文章 -->
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260918穿越时空的茶香</loc>
+        <lastmod>2026-09-18T23:06:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260918茶叶江湖一片树叶的产业链</loc>
+        <lastmod>2026-09-18T22:08:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260918中秋前一周凤凰镇的茶灯未熄</loc>
+        <lastmod>2026-09-18T04:30:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260918新茶饮减速凤凰单丛站中间一盏灯</loc>
+        <lastmod>2026-09-18T10:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- 2026-09-17 文章 -->
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260917中秋前夜凤凰山上那盏不熄的焙茶灯</loc>
+        <lastmod>2026-09-17T04:30:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- 2026-09-16 文章 -->
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260916中秋前九日魏会长的日生香</loc>
+        <lastmod>2026-09-16T04:30:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260916工信部一纸意见单丛入列历史经典</loc>
+        <lastmod>2026-09-16T10:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- 2026-09-15 文章 -->
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260915中秋倒计时十日凤凰山的茶仓与炭焙老人</loc>
+        <lastmod>2026-09-15T04:30:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-20260915阿凤姐看凤凰单丛测评</loc>
+        <lastmod>2026-09-15T10:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- 历史文章（按月份分组）-->
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-凤凰单丛茶马古道｜为什么这盏茶能香千年？惠州茶行阿凤姐带你读懂单丛老茶</loc>
+        <lastmod>2026-09-02T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://afeng-tea.vercel.app/index.html#article-songzhong</loc>
+        <lastmod>2026-09-03T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>
