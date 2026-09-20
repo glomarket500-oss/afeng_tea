@@ -4,163 +4,524 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>📱 阿凤姐社群 · Follow on Social</title>
-<meta name="description" content="阿凤姐茶叶社群媒体整合页——小红书、YouTube、LinkedIn、Facebook、Instagram、TikTok、Twitter/X。">
+<meta name="description" content="阿凤姐茶叶社群媒体整合页——小红书、YouTube、LinkedIn、Facebook、Instagram、TikTok、Twitter/X、微信、微博。凤凰单丛，从茶园到杯中。">
 <meta name="author" content="阿凤姐（林玉凤）">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://afeng-tea.vercel.app/social.html">
+<link rel="canonical" href="https://feng-tea.com/social.html">
 <meta property="og:title" content="📱 阿凤姐社群 · Follow on Social">
-<meta property="og:description" content="阿凤姐茶叶社群媒体整合页">
+<meta property="og:description" content="30年制茶世家，凤凰单丛，从茶园到杯中">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://feng-tea.com/social.html">
+<meta property="og:image" content="https://feng-tea.com/images/2026-09-19-zq-hero.png">
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#faf9f7;color:#302c29;font-family:"PingFang HK","Microsoft JhengHei",sans-serif;line-height:1.85}
-:root{--accent:#8B4513;--accent-soft:#f7f0ea;--border:#eee;--muted:#7a685a;--card-shadow:0 2px 12px rgba(0,0,0,.06)}
-nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:14px 5vw;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-.logo{font-size:1.15rem;font-weight:700;letter-spacing:1px}
-.logo span{font-weight:400;font-size:.8rem;color:#888;margin-left:6px}
-.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end}
-.nav-links a{margin-left:18px;font-size:.88rem;color:#555;text-decoration:none}
-.nav-links a:hover{color:var(--accent)}
-.nav-links a.active{color:var(--accent);font-weight:700}
-main{max-width:1180px;margin:0 auto;padding:32px 5vw 60px}
-.page-title{text-align:center;margin-bottom:32px}
-.page-title h1{font-size:1.7rem;margin:0 0 8px}
-.page-title p{color:var(--muted);margin:0;font-size:.95rem}
-.hero{padding:24px 0 12px}
-.hero p{color:var(--muted);margin:6px 0 0;font-size:.95rem}
-.social-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:24px}
-.social-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:22px 18px;text-align:center;box-shadow:var(--card-shadow);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column;align-items:center;gap:8px}
-.social-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.1)}
-.social-emoji{font-size:2.2rem;line-height:1}
-.social-name{font-size:1.05rem;font-weight:700;color:#1a1a1a;margin:4px 0 0}
-.social-name-en{font-size:.82rem;color:var(--muted);margin-bottom:8px}
-.copy-btn{margin-top:auto;width:100%;font-size:.85rem;padding:8px 0;border-radius:6px;border:1px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer;font-family:inherit;transition:background .2s,color .2s}
-.copy-btn:hover{background:var(--accent-soft)}
-.copy-btn.copied{background:var(--accent);color:#fff}
-.copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#2c2c2c;color:#fff;padding:10px 22px;border-radius:6px;font-size:.88rem;opacity:0;transition:opacity .3s;z-index:999;pointer-events:none}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FAF7F2;
+  --card:#FFFFFF;
+  --border:#E8DCC4;
+  --primary:#8B4513;
+  --primary-dark:#5A2E0C;
+  --accent:#C9302C;
+  --accent-soft:#F5E1DD;
+  --ink:#3E2723;
+  --ink-soft:#6D4C41;
+  --ink-muted:#A08878;
+}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"PingFang HK","PingFang SC","Microsoft JhengHei",sans-serif;
+  line-height:1.85;
+  margin:0;
+}
+
+/* 顶部 Header */
+.site-header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  padding:24px 5vw;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.logo{
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--primary-dark);
+  letter-spacing:1px;
+}
+.logo span{
+  font-weight:400;
+  font-size:.85rem;
+  color:var(--ink-muted);
+  margin-left:8px;
+}
+.nav-links{display:flex;flex-wrap:wrap;gap:18px}
+.nav-links a{
+  font-size:.88rem;
+  color:var(--ink-soft);
+  text-decoration:none;
+}
+.nav-links a:hover{color:var(--primary)}
+.nav-links a.active{color:var(--primary);font-weight:700}
+
+/* 核心 CTA 区块 */
+.hero{
+  background:linear-gradient(135deg,#fff 0%,var(--bg) 100%);
+  padding:48px 5vw 36px;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.hero h1{
+  font-size:2rem;
+  font-weight:700;
+  color:var(--primary-dark);
+  margin-bottom:12px;
+  letter-spacing:1px;
+}
+.hero .slogan{
+  font-size:1rem;
+  color:var(--ink-soft);
+  margin-bottom:8px;
+}
+.hero .desc{
+  font-size:.95rem;
+  color:var(--ink-muted);
+  margin-bottom:24px;
+}
+.hero-cta{
+  display:inline-flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.btn{
+  display:inline-block;
+  padding:12px 28px;
+  border-radius:6px;
+  font-size:.95rem;
+  font-weight:600;
+  text-decoration:none;
+  cursor:pointer;
+  border:none;
+  font-family:inherit;
+  transition:transform .2s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+}
+.btn-primary:hover{background:#A82520}
+.btn-secondary{
+  background:var(--primary);
+  color:#fff;
+}
+.btn-secondary:hover{background:var(--primary-dark)}
+.btn-ghost{
+  background:#fff;
+  color:var(--primary);
+  border:1px solid var(--primary);
+}
+
+/* 主区域 */
+main{max-width:1200px;margin:0 auto;padding:32px 5vw 60px}
+.section-title{
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--primary-dark);
+  margin:32px 0 20px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--border);
+}
+
+/* 9 个社媒卡片 Grid 2 列 */
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+@media (max-width:768px){
+  .social-grid{grid-template-columns:1fr}
+}
+.social-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:transform .25s,box-shadow .25s;
+  min-height:200px;
+}
+.social-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 22px rgba(139,69,19,.12);
+}
+.social-card-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.social-icon{
+  width:44px;
+  height:44px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.8rem;
+  background:var(--bg);
+  border-radius:10px;
+}
+.social-names{flex:1}
+.social-name{
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--ink);
+}
+.social-name-en{
+  font-size:.78rem;
+  color:var(--ink-muted);
+  margin-top:2px;
+}
+.social-desc{
+  font-size:.88rem;
+  color:var(--ink-soft);
+  line-height:1.6;
+  margin:4px 0;
+}
+.social-actions{
+  display:flex;
+  gap:8px;
+  margin-top:auto;
+  padding-top:10px;
+}
+.social-actions .btn{
+  flex:1;
+  padding:8px 0;
+  font-size:.85rem;
+  text-align:center;
+}
+
+/* 特色栏目 */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+@media (max-width:768px){
+  .feature-grid{grid-template-columns:1fr}
+}
+.feature-card{
+  background:linear-gradient(135deg,var(--accent-soft),#fff);
+  border:1px solid var(--accent);
+  border-radius:10px;
+  padding:20px;
+  text-align:center;
+}
+.feature-card .emoji{font-size:2rem;margin-bottom:8px}
+.feature-card h3{
+  font-size:1.05rem;
+  color:var(--primary-dark);
+  margin-bottom:6px;
+}
+.feature-card p{
+  font-size:.85rem;
+  color:var(--ink-soft);
+  margin-bottom:12px;
+  line-height:1.5;
+}
+
+/* footer */
+footer{
+  background:#fff;
+  border-top:1px solid var(--border);
+  padding:24px 5vw;
+  text-align:center;
+  font-size:.85rem;
+  color:var(--ink-muted);
+}
+footer p{margin:6px 0}
+footer a{color:var(--primary);text-decoration:none;margin:0 6px}
+footer a:hover{text-decoration:underline}
+footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;border:1px solid var(--border);border-radius:4px}
+
+/* 复制toast */
+.copy-toast{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--primary-dark);
+  color:#fff;
+  padding:10px 22px;
+  border-radius:6px;
+  font-size:.88rem;
+  opacity:0;
+  transition:opacity .3s;
+  z-index:999;
+  pointer-events:none;
+}
 .copy-toast.show{opacity:1}
-@media (max-width:640px){.social-grid{grid-template-columns:1fr 1fr}.page-title h1{font-size:1.35rem}}
-@media (max-width:420px){.social-grid{grid-template-columns:1fr}}
-footer{text-align:center;padding:24px 5vw;font-size:.82rem;color:#999;border-top:1px solid var(--border);margin-top:48px}
-footer a{color:var(--accent);margin:0 4px;text-decoration:none}
-footer p{margin:4px 0}
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="logo">阿凤姐茶叶<span>· 惠州凤凰单丛</span></div>
-  <div class="nav-links">
+<!-- 顶部 Header -->
+<header class="site-header">
+  <div class="logo">阿凤姐茶叶<span>· 凤凰单丛，从茶园到杯中</span></div>
+  <nav class="nav-links">
     <a href="index.html">首页</a>
     <a href="index.html#products">产品</a>
     <a href="index.html#knowledge">茶韵讲古</a>
     <a href="xhs.html">小红书</a>
     <a href="social.html" class="active">社媒</a>
     <a href="index.html#contact">联系</a>
+  </nav>
+</header>
+
+<!-- 核心 CTA 区块 -->
+<section class="hero">
+  <h1>📱 阿凤姐社群 · Follow on Social</h1>
+  <p class="slogan">30 年制茶世家，只做一杯好茶</p>
+  <p class="desc">凤凰单丛 · 潮州工夫茶 · 惠州茶礼——9 大社群平台一站关注</p>
+  <div class="hero-cta">
+    <a href="index.html#products" class="btn btn-primary">🎁 中秋茶礼 · 立即预订</a>
+    <a href="xhs.html" class="btn btn-secondary">📕 查看小红书同步</a>
   </div>
-</nav>
+</section>
 
 <main>
 
-<div class="page-title">
-  <h1>📱 阿凤姐社群 · Follow on Social</h1>
-  <p>凤凰单丛 · 潮州工夫茶 · 惠州茶礼——7 个社群平台一站关注</p>
-</div>
+<!-- 9 个社媒卡片 -->
+<h2 class="section-title">9 大社群平台</h2>
 
 <div class="social-grid">
 
 <div class="social-card">
-  <div class="social-emoji">📕</div>
-  <div class="social-name">小红书</div>
-  <div class="social-name-en">Xiaohongshu / RED</div>
-  <button class="copy-btn" data-key="xhs">📋 复制文案</button>
+  <div class="social-card-header">
+    <div class="social-icon">📕</div>
+    <div class="social-names">
+      <div class="social-name">小红书</div>
+      <div class="social-name-en">Xiaohongshu / RED</div>
+    </div>
+  </div>
+  <div class="social-desc">图文笔记 · 每週3更 · 中秋茶礼图文最多</div>
+  <div class="social-actions">
+    <a href="https://www.xiaohongshu.com/" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="xhs">复制链接</button>
+  </div>
 </div>
 
 <div class="social-card">
-  <div class="social-emoji">📺</div>
-  <div class="social-name">YouTube</div>
-  <div class="social-name-en">YouTube</div>
-  <button class="copy-btn" data-key="youtube">📋 复制文案</button>
+  <div class="social-card-header">
+    <div class="social-icon">📺</div>
+    <div class="social-names">
+      <div class="social-name">YouTube</div>
+      <div class="social-name-en">YouTube</div>
+    </div>
+  </div>
+  <div class="social-desc">长视频 · 茶艺教学 · 凤凰山实拍 · 中英双语</div>
+  <div class="social-actions">
+    <a href="https://www.youtube.com/" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="youtube">复制链接</button>
+  </div>
 </div>
 
 <div class="social-card">
-  <div class="social-emoji">💼</div>
-  <div class="social-name">LinkedIn</div>
-  <div class="social-name-en">LinkedIn</div>
-  <button class="copy-btn" data-key="linkedin">📋 复制文案</button>
+  <div class="social-card-header">
+    <div class="social-icon">💼</div>
+    <div class="social-names">
+      <div class="social-name">LinkedIn</div>
+      <div class="social-name-en">LinkedIn</div>
+    </div>
+  </div>
+  <div class="social-desc">B2B 批发 · 企业礼品采购 · 商务客户对接</div>
+  <div class="social-actions">
+    <a href="https://www.linkedin.com/" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="linkedin">复制链接</button>
+  </div>
 </div>
 
 <div class="social-card">
-  <div class="social-emoji">📘</div>
-  <div class="social-name">Facebook</div>
-  <div class="social-name-en">Facebook</div>
-  <button class="copy-btn" data-key="facebook">📋 复制文案</button>
+  <div class="social-card-header">
+    <div class="social-icon">📘</div>
+    <div class="social-names">
+      <div class="social-name">Facebook</div>
+      <div class="social-name-en">Facebook</div>
+    </div>
+  </div>
+  <div class="social-desc">海外华人群 · 茶友社区 · 跨境电商粉丝</div>
+  <div class="social-actions">
+    <a href="https://www.facebook.com/" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="facebook">复制链接</button>
+  </div>
 </div>
 
 <div class="social-card">
-  <div class="social-emoji">📸</div>
-  <div class="social-name">Instagram</div>
-  <div class="social-name-en">Instagram</div>
-  <button class="copy-btn" data-key="instagram">📋 复制文案</button>
+  <div class="social-card-header">
+    <div class="social-icon">📸</div>
+    <div class="social-names">
+      <div class="social-name">Instagram</div>
+      <div class="social-name-en">Instagram</div>
+    </div>
+  </div>
+  <div class="social-desc">视觉系 · 茶园美学 · 摄影日常 · 海外Z世代</div>
+  <div class="social-actions">
+    <a href="https://www.instagram.com/" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="instagram">复制链接</button>
+  </div>
 </div>
 
 <div class="social-card">
-  <div class="social-emoji">🎵</div>
-  <div class="social-name">TikTok</div>
-  <div class="social-name-en">TikTok</div>
-  <button class="copy-btn" data-key="tiktok">📋 复制文案</button>
+  <div class="social-card-header">
+    <div class="social-icon">🎵</div>
+    <div class="social-names">
+      <div class="social-name">TikTok</div>
+      <div class="social-name-en">TikTok</div>
+    </div>
+  </div>
+  <div class="social-desc">15秒短视频 · 工夫茶冲泡 · 年轻化爆款</div>
+  <div class="social-actions">
+    <a href="https://www.tiktok.com/" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="tiktok">复制链接</button>
+  </div>
 </div>
 
 <div class="social-card">
-  <div class="social-emoji">🐦</div>
-  <div class="social-name">Twitter / X</div>
-  <div class="social-name-en">Twitter / X</div>
-  <button class="copy-btn" data-key="twitter">📋 复制文案</button>
+  <div class="social-card-header">
+    <div class="social-icon">🐦</div>
+    <div class="social-names">
+      <div class="social-name">Twitter / X</div>
+      <div class="social-name-en">Twitter / X</div>
+    </div>
+  </div>
+  <div class="social-desc">茶行业观察 · 行业动态 · 国际市场视角</div>
+  <div class="social-actions">
+    <a href="https://twitter.com/" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="twitter">复制链接</button>
+  </div>
+</div>
+
+<div class="social-card">
+  <div class="social-card-header">
+    <div class="social-icon">💬</div>
+    <div class="social-names">
+      <div class="social-name">微信</div>
+      <div class="social-name-en">WeChat</div>
+    </div>
+  </div>
+  <div class="social-desc">国内主战场 · 中秋下单 · 茶友直聊</div>
+  <div class="social-actions">
+    <a href="weixin://" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="wechat">复制ID</button>
+  </div>
+</div>
+
+<div class="social-card">
+  <div class="social-card-header">
+    <div class="social-icon">📲</div>
+    <div class="social-names">
+      <div class="social-name">微博</div>
+      <div class="social-name-en">Weibo</div>
+    </div>
+  </div>
+  <div class="social-desc">国内社交 · 节日话题 · 凤凰山日常</div>
+  <div class="social-actions">
+    <a href="https://weibo.com/" class="btn btn-secondary">立即跳转</a>
+    <button class="btn btn-ghost copy-btn" data-key="weibo">复制链接</button>
+  </div>
 </div>
 
 </div>
 
-<div class="copy-toast" id="copyToast">已复制到剪贴簿</div>
+<!-- 特色栏目 -->
+<h2 class="section-title">特色栏目</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+  <div class="emoji">🎁</div>
+  <h3>中秋茶礼预告</h3>
+  <p>距中秋仲有 6 日，最后接单日 9 月 23 日。鸭屎香 + 蜜兰香双礼盒。</p>
+  <a href="index.html#products" class="btn btn-primary">立即预订</a>
+</div>
+
+<div class="feature-card">
+  <div class="emoji">🎥</div>
+  <h3>凤凰山溯源直播</h3>
+  <p>每週六下午 3 点，凤凰山茶园实景直播，乌岽山顶老欉茶树 + 炭焙房全过程。</p>
+  <a href="https://www.xiaohongshu.com/" class="btn btn-secondary">查看预告</a>
+</div>
+
+<div class="feature-card">
+  <div class="emoji">🍵</div>
+  <h3>茶友会报名</h3>
+  <p>惠州下角店每季一次茶友会，免费试茶 + 凤凰单丛知识分享。限 20 人。</p>
+  <a href="index.html#contact" class="btn btn-secondary">立即报名</a>
+</div>
+
+</div>
 
 </main>
 
+<!-- footer -->
 <footer>
-  <p>📱 <strong>阿凤姐社群 · 7 平台同步</strong></p>
-  <p>微信 afeng-tea-2026 · 电话 13435567385 · QQ 1079790744</p>
-  <p><a href="index.html">← 返回主页</a> · <a href="sitemap.xml">网站地图</a></p>
-  <p style="margin-top:8px">© 2026 阿凤姐的故事 · 惠州凤凰单丛茶叶专卖 · <a href="https://afeng-tea.vercel.app">afeng-tea.vercel.app</a></p>
+  <p>📱 <strong>阿凤姐茶叶 · 9 平台同步</strong></p>
+  <p class="qr">[微信二维码占位 · 扫码加 afeng-tea-2026]</p>
+  <p>微信：afeng-tea-2026 · 电话：13435567385 · QQ：1079790744</p>
+  <p>邮箱：<a href="mailto:service@feng-tea.com">service@feng-tea.com</a></p>
+  <p><a href="index.html">← 返回主页</a> · <a href="xhs.html">小红书同步</a> · <a href="sitemap.xml">网站地图</a></p>
+  <p style="margin-top:8px">© 2026 阿凤姐的故事 · 惠州凤凰单丛茶叶专卖</p>
+  <p style="font-size:.78rem;color:var(--ink-muted)">粤ICP备 2026000001号 · <a href="https://feng-tea.com">feng-tea.com</a></p>
 </footer>
 
+<div class="copy-toast" id="copyToast">已复制到剪贴簿</div>
+
 <script>
-const copyData = {
-  xhs: '阿凤姐茶叶 · 凤凰单丛 · 潮州工夫茶。小红书 ID：@阿凤姐茶叶，每周一三五更新图文笔记。详情 👉 https://afeng-tea.vercel.app',
-  youtube: '阿凤姐茶叶 · YouTube频道。每周二四六更新茶艺视频、凤凰山茶园实拍、工夫茶冲泡教学。订阅 👉 https://afeng-tea.vercel.app',
-  linkedin: '阿凤姐茶叶 · LinkedIn 商务页。专注凤凰单丛、潮州工夫茶、惠州茶礼 B2B 批发零售。联系 👉 afeng-tea-2026',
-  facebook: '阿凤姐茶叶 · Facebook 主页。分享茶园实景、潮州工夫茶文化、惠州茶礼故事。关注 👉 https://afeng-tea.vercel.app',
-  instagram: '阿凤姐茶叶 · Instagram。凤凰山茶园实景、工夫茶美学、中秋茶礼视觉。关注 👉 https://afeng-tea.vercel.app',
-  tiktok: '阿凤姐茶叶 · TikTok 短视频。15秒工夫茶冲泡、凤凰单丛科普、惠州茶店日常。关注 👉 https://afeng-tea.vercel.app',
-  twitter: '阿凤姐茶叶 · Twitter/X。茶行业观察、凤凰单丛市场动态、潮汕茶文化。关注 👉 https://afeng-tea.vercel.app'
+const copyData={
+  xhs:'阿凤姐茶叶小红书主页：https://www.xiaohongshu.com/',
+  youtube:'阿凤姐茶叶 YouTube 频道：https://www.youtube.com/',
+  linkedin:'阿凤姐茶叶 LinkedIn 商务页：https://www.linkedin.com/',
+  facebook:'阿凤姐茶叶 Facebook 主页：https://www.facebook.com/',
+  instagram:'阿凤姐茶叶 Instagram：https://www.instagram.com/',
+  tiktok:'阿凤姐茶叶 TikTok：https://www.tiktok.com/',
+  twitter:'阿凤姐茶叶 Twitter/X：https://twitter.com/',
+  wechat:'afeng-tea-2026',
+  weibo:'阿凤姐茶叶微博：https://weibo.com/'
 };
-document.querySelectorAll('.copy-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const key = btn.dataset.key;
-    const txt = copyData[key] || '';
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(txt).then(() => {
-        btn.classList.add('copied');
-        btn.innerText = '✅ 已复制';
-        showToast();
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          btn.innerText = '📋 复制文案';
-        }, 1800);
-      });
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const key=btn.dataset.key;
+    const txt=copyData[key]||'';
+    const doShow=()=>{
+      btn.classList.add('btn-primary');
+      btn.innerText='✅ 已复制';
+      showToast();
+      setTimeout(()=>{
+        btn.classList.remove('btn-primary');
+        btn.innerText='复制链接';
+      },1800);
+    };
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(txt).then(doShow);
+    }else{
+      const ta=document.createElement('textarea');
+      ta.value=txt;
+      document.body.appendChild(ta);
+      ta.select();
+      try{document.execCommand('copy');doShow()}catch(e){}
+      document.body.removeChild(ta);
     }
   });
 });
-function showToast() {
-  const t = document.getElementById('copyToast');
+function showToast(){
+  const t=document.getElementById('copyToast');
   t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 1800);
+  setTimeout(()=>t.classList.remove('show'),1800);
 }
 </script>
 
