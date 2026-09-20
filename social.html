@@ -311,7 +311,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">图文笔记 · 每週3更 · 中秋茶礼图文最多</div>
   <div class="social-actions">
-    <a href="https://www.xiaohongshu.com/" class="btn btn-secondary">立即跳转</a>
+    <a href="xhs.html" class="btn btn-secondary">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="xhs">复制链接</button>
   </div>
 </div>
@@ -326,7 +326,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">长视频 · 茶艺教学 · 凤凰山实拍 · 中英双语</div>
   <div class="social-actions">
-    <a href="https://www.youtube.com/" class="btn btn-secondary">立即跳转</a>
+    <a href="#" class="btn btn-secondary" data-platform="youtube">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="youtube">复制链接</button>
   </div>
 </div>
@@ -341,7 +341,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">B2B 批发 · 企业礼品采购 · 商务客户对接</div>
   <div class="social-actions">
-    <a href="https://www.linkedin.com/" class="btn btn-secondary">立即跳转</a>
+    <a href="#" class="btn btn-secondary" data-platform="linkedin">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="linkedin">复制链接</button>
   </div>
 </div>
@@ -356,7 +356,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">海外华人群 · 茶友社区 · 跨境电商粉丝</div>
   <div class="social-actions">
-    <a href="https://www.facebook.com/" class="btn btn-secondary">立即跳转</a>
+    <a href="#" class="btn btn-secondary" data-platform="facebook">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="facebook">复制链接</button>
   </div>
 </div>
@@ -371,7 +371,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">视觉系 · 茶园美学 · 摄影日常 · 海外Z世代</div>
   <div class="social-actions">
-    <a href="https://www.instagram.com/" class="btn btn-secondary">立即跳转</a>
+    <a href="#" class="btn btn-secondary" data-platform="instagram">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="instagram">复制链接</button>
   </div>
 </div>
@@ -386,7 +386,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">15秒短视频 · 工夫茶冲泡 · 年轻化爆款</div>
   <div class="social-actions">
-    <a href="https://www.tiktok.com/" class="btn btn-secondary">立即跳转</a>
+    <a href="#" class="btn btn-secondary" data-platform="tiktok">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="tiktok">复制链接</button>
   </div>
 </div>
@@ -401,7 +401,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">茶行业观察 · 行业动态 · 国际市场视角</div>
   <div class="social-actions">
-    <a href="https://x.com" class="btn btn-secondary">立即跳转</a>
+    <a href="#" class="btn btn-secondary" data-platform="twitter">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="twitter">复制链接</button>
   </div>
 </div>
@@ -416,7 +416,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">国内主战场 · 中秋下单 · 茶友直聊</div>
   <div class="social-actions">
-    <a href="https://weixin.qq.com" class="btn btn-secondary">立即跳转</a>
+    <a href="#" class="btn btn-secondary" data-platform="wechat">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="wechat">复制ID</button>
   </div>
 </div>
@@ -431,7 +431,7 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   </div>
   <div class="social-desc">国内社交 · 节日话题 · 凤凰山日常</div>
   <div class="social-actions">
-    <a href="https://weibo.com/" class="btn btn-secondary">立即跳转</a>
+    <a href="#" class="btn btn-secondary" data-platform="weibo">立即跳转</a>
     <button class="btn btn-ghost copy-btn" data-key="weibo">复制链接</button>
   </div>
 </div>
@@ -516,6 +516,21 @@ document.querySelectorAll('.copy-btn').forEach(btn=>{
       try{document.execCommand('copy');doShow()}catch(e){}
       document.body.removeChild(ta);
     }
+  });
+});
+// 「立即跳转」按钮 - 站外平台同步页占位提示
+document.querySelectorAll('.social-actions a.btn-secondary[data-platform]').forEach(btn=>{
+  btn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    const platform=btn.dataset.platform;
+    const map={youtube:'YouTube 同步页',linkedin:'LinkedIn 同步页',facebook:'Facebook 同步页',instagram:'Instagram 同步页',tiktok:'TikTok 同步页',twitter:'Twitter/X 同步页',wechat:'微信同步页（扫码加好友）',weibo:'微博同步页'};
+    const t=document.getElementById('copyToast');
+    t.innerText=`${map[platform]}即将上线，请用「复制链接」功能手动发布`;
+    t.classList.add('show');
+    setTimeout(()=>{
+      t.classList.remove('show');
+      t.innerText='已复制到剪贴簿';
+    },2200);
   });
 });
 function showToast(){
