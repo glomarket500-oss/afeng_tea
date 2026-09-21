@@ -358,67 +358,17 @@
         /* 知识文章卡片 - 方案A：轻水墨 */
         .article-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .article-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-        }
-        .article-card.expanded {
-            cursor: default;
-        }
-        .article-card .article-hero-image {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-        .article-card .article-hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .article-card .article-content {
-            padding: 20px;
-        }
-        .article-card .article-body-full {
-            display: none;
-        }
-        .article-card.expanded .article-body-full {
-            display: block;
-        }
-        .article-card h3 {
-            font-size: 1.2rem;
-            margin: 0 0 10px 0;
-            color: #2d5016;
-        }
-        .article-card .article-meta-time {
-            font-size: 0.85rem;
-            color: #888;
-            margin: 0 0 10px 0;
-        }
-        .article-card .article-abstract {
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.6;
-            margin: 0;
-        }
-        .article-card .article-read-more {
-            display: inline-block;
-            margin-top: 12px;
-            color: #3d6b1e;
-            font-size: 0.9rem;
-            font-weight: 500;
+            background: #f5f0e8;
+            border-radius: 4px;
+            padding: 30px 30px 30px 36px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-left: 3px solid #2d5016;
+            position: relative;
+            transition: transform 0.3s;
         }
 
         .article-card::before {
