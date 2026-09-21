@@ -394,9 +394,9 @@
 
         .article-card {
             background: #fff;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             padding: 0;
@@ -404,15 +404,15 @@
             flex-direction: column;
         }
         .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
         }
         .article-card.expanded {
             cursor: default;
         }
         .article-card .article-hero-image {
             margin: 0;
-            height: 200px;
+            height: 160px;
             overflow: hidden;
             order: 1;
         }
@@ -422,16 +422,16 @@
             object-fit: cover;
         }
         .article-card h3 {
-            font-size: 1.1rem;
-            margin: 15px 20px 8px 20px;
+            font-size: 1rem;
+            margin: 12px 15px 6px 15px;
             color: #2d5016;
             line-height: 1.4;
             order: 2;
         }
         .article-card .article-meta-time {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #888;
-            margin: 0 20px 15px 20px;
+            margin: 0 15px 12px 15px;
             order: 3;
         }
         .article-card [itemprop="abstract"] {
