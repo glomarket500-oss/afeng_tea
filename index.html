@@ -400,6 +400,8 @@
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             padding: 0;
+            display: flex;
+            flex-direction: column;
         }
         .article-card:hover {
             transform: translateY(-4px);
@@ -412,35 +414,39 @@
             margin: 0;
             height: 200px;
             overflow: hidden;
+            order: 1;
         }
         .article-card .article-hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .article-card .article-info {
-            padding: 20px;
-        }
         .article-card h3 {
             font-size: 1.1rem;
-            margin: 0 0 8px 0;
+            margin: 15px 20px 8px 20px;
             color: #2d5016;
             line-height: 1.4;
+            order: 2;
         }
         .article-card .article-meta-time {
             font-size: 0.85rem;
             color: #888;
-            margin: 0 0 10px 0;
+            margin: 0 20px 15px 20px;
+            order: 3;
         }
         .article-card [itemprop="abstract"] {
             display: none;
         }
         .article-card [itemprop="articleBody"] {
             display: none;
+            order: 4;
+            padding: 0 20px 20px 20px;
         }
         .article-card .tags,
         .article-card .author-box {
             display: none;
+            order: 5;
+            padding: 0 20px 20px 20px;
         }
         .article-card.expanded [itemprop="abstract"],
         .article-card.expanded [itemprop="articleBody"],
