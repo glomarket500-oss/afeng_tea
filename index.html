@@ -109,20 +109,6 @@
 </script>
 
 
-<script>
-// 文章卡片点击展开/收起
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.article-card').forEach(function(card) {
-        card.addEventListener('click', function() {
-            if (card.classList.contains('expanded')) return;
-            document.querySelectorAll('.article-card.expanded').forEach(function(c) {
-                c.classList.remove('expanded');
-            });
-            card.classList.add('expanded');
-            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-    });
-});
-</script>
+
 </body>
 </html>
