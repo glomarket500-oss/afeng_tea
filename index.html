@@ -93,6 +93,21 @@
             readMore.style.display = 'none';
         });
     });
+    // 文章卡片点击展开/收起
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            // 如果已经展开了，就不处理
+            if (card.classList.contains('expanded')) return;
+            // 先把其他展开的收起来
+            document.querySelectorAll('.article-card.expanded').forEach(c => {
+                c.classList.remove('expanded');
+            });
+            // 展开当前
+            card.classList.add('expanded');
+            // 滚动到当前卡片
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
 </script>
 
     <!-- 面包屑导航结构化数据 -->
@@ -121,6 +136,21 @@
             if (card.classList.contains('expanded')) return;
             card.classList.add('expanded');
             readMore.style.display = 'none';
+        });
+    });
+    // 文章卡片点击展开/收起
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            // 如果已经展开了，就不处理
+            if (card.classList.contains('expanded')) return;
+            // 先把其他展开的收起来
+            document.querySelectorAll('.article-card.expanded').forEach(c => {
+                c.classList.remove('expanded');
+            });
+            // 展开当前
+            card.classList.add('expanded');
+            // 滚动到当前卡片
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 </script>
@@ -358,17 +388,68 @@
         /* 知识文章卡片 - 方案A：轻水墨 */
         .article-list {
             display: grid;
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
         }
 
         .article-card {
-            background: #f5f0e8;
-            border-radius: 4px;
-            padding: 30px 30px 30px 36px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            border-left: 3px solid #2d5016;
-            position: relative;
-            transition: transform 0.3s;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            padding: 0;
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .article-card.expanded {
+            cursor: default;
+        }
+        .article-card .article-hero-image {
+            margin: 0;
+            height: 200px;
+            overflow: hidden;
+        }
+        .article-card .article-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .article-card .article-info {
+            padding: 20px;
+        }
+        .article-card h3 {
+            font-size: 1.1rem;
+            margin: 0 0 8px 0;
+            color: #2d5016;
+            line-height: 1.4;
+        }
+        .article-card .article-meta-time {
+            font-size: 0.85rem;
+            color: #888;
+            margin: 0 0 10px 0;
+        }
+        .article-card [itemprop="abstract"] {
+            display: none;
+        }
+        .article-card [itemprop="articleBody"] {
+            display: none;
+        }
+        .article-card .tags,
+        .article-card .author-box {
+            display: none;
+        }
+        .article-card.expanded [itemprop="abstract"],
+        .article-card.expanded [itemprop="articleBody"],
+        .article-card.expanded .tags,
+        .article-card.expanded .author-box {
+            display: block;
+        }
+        .article-card.expanded {
+            grid-column: 1 / -1;
         }
 
         .article-card::before {
@@ -6639,6 +6720,21 @@
             if (card.classList.contains('expanded')) return;
             card.classList.add('expanded');
             readMore.style.display = 'none';
+        });
+    });
+    // 文章卡片点击展开/收起
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            // 如果已经展开了，就不处理
+            if (card.classList.contains('expanded')) return;
+            // 先把其他展开的收起来
+            document.querySelectorAll('.article-card.expanded').forEach(c => {
+                c.classList.remove('expanded');
+            });
+            // 展开当前
+            card.classList.add('expanded');
+            // 滚动到当前卡片
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 </script>
