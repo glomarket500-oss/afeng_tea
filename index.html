@@ -108,6 +108,17 @@
             card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
+    // 文章卡片点击展开/收起
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (card.classList.contains('expanded')) return;
+            document.querySelectorAll('.article-card.expanded').forEach(c => {
+                c.classList.remove('expanded');
+            });
+            card.classList.add('expanded');
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
 </script>
 
     <!-- 面包屑导航结构化数据 -->
@@ -150,6 +161,17 @@
             // 展开当前
             card.classList.add('expanded');
             // 滚动到当前卡片
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    // 文章卡片点击展开/收起
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (card.classList.contains('expanded')) return;
+            document.querySelectorAll('.article-card.expanded').forEach(c => {
+                c.classList.remove('expanded');
+            });
+            card.classList.add('expanded');
             card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
@@ -1065,7 +1087,26 @@
         .sidebar-overlay.active {
             display: block;
         }
-    </style>
+            .article-card [itemprop="abstract"] {
+            display: none;
+        }
+        .article-card [itemprop="articleBody"] {
+            display: none;
+        }
+        .article-card .tags,
+        .article-card .author-box {
+            display: none;
+        }
+        .article-card.expanded [itemprop="abstract"],
+        .article-card.expanded [itemprop="articleBody"],
+        .article-card.expanded .tags,
+        .article-card.expanded .author-box {
+            display: block;
+        }
+        .article-card.expanded {
+            grid-column: 1 / -1;
+        }
+</style>
 </head>
 <body>
 
@@ -6740,6 +6781,17 @@
             // 展开当前
             card.classList.add('expanded');
             // 滚动到当前卡片
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    // 文章卡片点击展开/收起
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (card.classList.contains('expanded')) return;
+            document.querySelectorAll('.article-card.expanded').forEach(c => {
+                c.classList.remove('expanded');
+            });
+            card.classList.add('expanded');
             card.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
