@@ -266,21 +266,38 @@ footer .qr{display:inline-block;margin:12px 0;padding:8px;background:#fafafa;bor
   pointer-events:none;
 }
 .copy-toast.show{opacity:1}
-</style>
+        nav {
+            background: #3d6b1e;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            white-space: nowrap;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }</style>
 </head>
 <body>
 
 <!-- 顶部 Header -->
 <header class="site-header">
   <div class="logo">阿凤姐茶叶<span>· 凤凰单丛，从茶园到杯中</span></div>
-  <nav class="nav-links">
-    <a href="index.html">首页</a>
-    <a href="index.html#products">产品</a>
-    <a href="index.html#knowledge">茶韵讲古</a>
-    <a href="xhs.html">小红书</a>
-    <a href="social.html" class="active">社媒</a>
-    <a href="index.html#contact">联系</a>
-  </nav>
+  <nav>
+    <a href="index.html#home">首頁</a>
+    <a href="index.html#products">產品展示</a>
+    <a href="index.html#knowledge">茶韻講古</a>
+    <a href="index.html#contact">聯繫我們</a>
+    <a href="social.html" class="active">🔗 連結</a>
+</nav>
 </header>
 
 <!-- 核心 CTA 区块 -->
