@@ -115,4 +115,17 @@
         <priority>0.5</priority>
     </url>
 
+
+    <url>
+        <loc>https://feng-tea.com/index.html#article-秋分茶王赛的故事</loc>
+        <lastmod>2026-09-27T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://feng-tea.com/index.html#article-一碗不是茶的茶汕尾鹹茶與菜茶的文</loc>
+        <lastmod>2026-09-27T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
 </urlset>
