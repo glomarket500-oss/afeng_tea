@@ -307,24 +307,25 @@
         }
 
 
-    /* 强制横排，用flex百分百生效 */
+    /* 强制横排，用浮动百分百生效 */
     .video-grid {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      gap: 24px !important;
+      display: block !important;
       width: 100% !important;
+      overflow: hidden !important;
       box-sizing: border-box !important;
       padding: 0 !important;
     }
     .video-card {
-      width: calc(33.33% - 16px) !important;
+      width: 32% !important;
       float: left !important;
+      margin: 0 0.66% 20px 0.66% !important;
       box-sizing: border-box !important;
-      margin: 0 !important;
+      display: block !important;
     }
     @media (max-width: 768px) {
       .video-card {
         width: 100% !important;
+        margin: 0 0 20px 0 !important;
       }
     }
     </style>
