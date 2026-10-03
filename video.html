@@ -307,19 +307,24 @@
         }
 
 
-    /* 强制横排，防止CSS冲突 */
+    /* 强制横排，用flex百分百生效 */
     .video-grid {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
       gap: 24px !important;
       width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 0 !important;
     }
     .video-card {
-      width: 100% !important;
+      width: calc(33.33% - 16px) !important;
+      float: left !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
     }
     @media (max-width: 768px) {
-      .video-grid {
-        grid-template-columns: 1fr !important;
+      .video-card {
+        width: 100% !important;
       }
     }
     </style>
