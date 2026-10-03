@@ -450,9 +450,12 @@ function playVideo(src, title) {
 function closeModal() {
     var modal = document.getElementById('videoModal');
     var video = document.getElementById('modalVideo');
+    var source = document.getElementById('modalSource');
     modal.classList.remove('active');
     video.pause();
-    video.src = '';
+    video.currentTime = 0;
+    source.src = '';
+    video.load();
 }
 document.getElementById('videoModal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
