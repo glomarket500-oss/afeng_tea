@@ -328,6 +328,27 @@
         margin: 0 0 20px 0 !important;
       }
     }
+    /* 强制三列flex布局，防止推送后排版错乱，所有卡片等高 */
+    .video-grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 20px !important;
+      width: 100% !important;
+    }
+    .video-card {
+      width: calc(33.333% - 14px) !important;
+      margin: 0 !important;
+      height: 420px !important;
+      overflow: hidden !important;
+    }
+    .video-card img {
+      width: 100% !important;
+      height: 200px !important;
+      object-fit: cover !important;
+    }
+    .card-follow-btn {
+      margin-top: 10px !important;
+    }
     </style>
 </head>
 <body>
@@ -358,7 +379,7 @@
             <!-- 影片卡片 -->
             <div class="video-card" onclick="playVideo('https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/20261004-050748_doc_45f4c6e29118_video.mp4')">
                 <div class="thumbnail">
-                    <img src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/assets/video-covers/cover_20261004-050748.jpg" alt="新工艺鸭屎香冲泡" loading="lazy">
+                    <img src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/assets/video-covers/cover_20261004-050748.jpg" alt="鸭屎香清香" loading="lazy">
                     <span class="duration">0:25</span>
                     <div class="play-overlay"><span class="play-icon">▶</span></div>
                 </div>
