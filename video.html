@@ -328,6 +328,17 @@
         margin: 0 0 20px 0 !important;
       }
     }
+    /* 强制三列flex布局，防止推送后排版错乱 */
+    .video-grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 20px !important;
+      width: 100% !important;
+    }
+    .video-card {
+      width: calc(33.333% - 14px) !important;
+      margin: 0 !important;
+    }
     </style>
 </head>
 <body>
