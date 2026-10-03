@@ -433,13 +433,19 @@ function playVideo(src, title) {
     var video = document.getElementById('modalVideo');
     var source = document.getElementById('modalSource');
     var titleEl = document.getElementById('modalTitle');
+    // 先清空之前的视频，停止播放
+    video.pause();
+    video.currentTime = 0;
     source.src = src;
     titleEl.textContent = title;
     video.load();
     modal.classList.add('active');
-    video.play().catch(function() {
-        console.warn('Video play failed');
-    });
+    // 延迟一点再播放，避免加载冲突
+    setTimeout(function() {
+        video.play().catch(function() {
+            console.warn('Video play failed');
+        });
+    }, 200);
 }
 function closeModal() {
     var modal = document.getElementById('videoModal');
