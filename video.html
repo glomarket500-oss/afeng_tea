@@ -68,7 +68,7 @@
         }
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
         .video-card {
@@ -166,7 +166,7 @@
         }
         .placeholder-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
         .placeholder-card {
@@ -408,7 +408,7 @@ function playVideo(src, title) {
     video.load();
     modal.classList.add('active');
     video.play().catch(function() {
-        alert('請將影片檔案放入 videos/ 資料夾。\n\n目前為示例佔位狀態。');
+        console.warn('Video play failed');
     });
 }
 function closeModal() {
