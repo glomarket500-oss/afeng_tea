@@ -212,6 +212,96 @@
             header h1 { font-size: 1.8em; }
             .page-title h2 { font-size: 1.5em; }
         }
+
+        /* Card follow button */
+        .card-follow-btn {
+            padding: 10px 16px 16px;
+            text-align: center;
+        }
+        .btn-follow {
+            display: inline-block;
+            background: linear-gradient(135deg, #2d5016, #4a7023);
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.88em;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-follow:hover {
+            background: linear-gradient(135deg, #4a7023, #6b8e23);
+            transform: translateY(-1px);
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Follow section */
+        .follow-section {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b1e 50%, #4a7023 100%);
+            color: white;
+            padding: 50px 20px;
+            margin-top: 50px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .follow-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .follow-section h2 {
+            font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', serif;
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .follow-sub {
+            font-size: 0.7em;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            opacity: 0.9;
+            font-weight: normal;
+        }
+        .platform-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 28px 0 20px;
+        }
+        .platform-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            padding: 14px 18px;
+            min-width: 110px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+        }
+        .platform-btn:hover {
+            background: rgba(255,255,255,0.22);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+            border-color: rgba(255,255,255,0.5);
+        }
+        .p-icon { font-size: 1.6em; margin-bottom: 4px; }
+        .p-name { font-weight: bold; font-size: 0.95em; margin-bottom: 2px; }
+        .p-desc { font-size: 0.75em; opacity: 0.75; }
+        .follow-note {
+            font-size: 0.88em;
+            opacity: 0.85;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: rgba(0,0,0,0.15);
+            border-radius: 8px;
+            display: inline-block;
+        }
+
     </style>
 </head>
 <body>
@@ -253,6 +343,9 @@
                     <span>👁 0 觀看</span>
                     <span>📅 2026-10-03</span>
                 </div>
+
+            <div class="card-follow-btn">
+                <a href="https://channels.weixin.qq.com/platform/pages/home" target="_blank" class="btn-follow">▶ 关注视频号看更多</a>
             </div>
         </div>
 
@@ -332,6 +425,46 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeModal();
 });
 </script>
+
+
+    <div class="follow-section">
+        <div class="follow-inner">
+            <h2>关注阿凤姐全平台账号<br><span class="follow-sub">拿茶叶专属优惠</span></h2>
+            <div class="platform-grid">
+                <a href="https://channels.weixin.qq.com/platform/pages/home" target="_blank" class="platform-btn wechat">
+                    <span class="p-icon">💬</span>
+                    <span class="p-name">视频号</span>
+                    <span class="p-desc">阿凤姐的茶故事</span>
+                </a>
+                <a href="https://www.xiaohongshu.com/" target="_blank" class="platform-btn xhs">
+                    <span class="p-icon">📕</span>
+                    <span class="p-name">小红书</span>
+                    <span class="p-desc">茶叶干货分享</span>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" class="platform-btn youtube">
+                    <span class="p-icon">▶️</span>
+                    <span class="p-name">YouTube</span>
+                    <span class="p-desc">茶视频精选</span>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" class="platform-btn linkedin">
+                    <span class="p-icon">💼</span>
+                    <span class="p-name">LinkedIn</span>
+                    <span class="p-desc">商务合作</span>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" class="platform-btn facebook">
+                    <span class="p-icon">👤</span>
+                    <span class="p-name">Facebook</span>
+                    <span class="p-desc">品牌主页</span>
+                </a>
+                <a href="https://weibo.com/" target="_blank" class="platform-btn weibo">
+                    <span class="p-icon">🌐</span>
+                    <span class="p-name">微博</span>
+                    <span class="p-desc">实时动态</span>
+                </a>
+            </div>
+            <p class="follow-note">📱 添加客服微信 <strong>afeng-tea-2026</strong>，备注「茶叶」，享首单9折</p>
+        </div>
+    </div>
 
 <footer>
     <p>📍 惠州市惠城区东湖花园一区沿江商铺89-136（凤凰茶业）</p>
