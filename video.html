@@ -306,6 +306,22 @@
             display: inline-block;
         }
 
+
+    /* 强制横排，防止CSS冲突 */
+    .video-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 24px !important;
+      width: 100% !important;
+    }
+    .video-card {
+      width: 100% !important;
+    }
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
     </style>
 </head>
 <body>
