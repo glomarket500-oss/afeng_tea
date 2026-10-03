@@ -213,6 +213,16 @@
         footer a { color: #a8d5a2; }
         @media (max-width: 600px) {
             nav a { margin: 0 8px; font-size: 0.9em; }
+            .video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}{ font-size: 1.8em; }
             .page-title h2 { font-size: 1.5em; }
         }
 
