@@ -66,17 +66,17 @@ nav a:hover{background:rgba(255,255,255,0.2);text-decoration:none}
 .page-title{background:rgba(45,80,22,0.85);color:white;padding:40px 20px;text-align:center}
 .page-title h2{font-size:2em;margin-bottom:10px}
 .page-title p{font-size:1em;opacity:0.9}
-.container{max-width:1200px;margin:30px auto;padding:0 20px}
-.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.container{max-width:1020px;margin:30px auto;padding:0 20px}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
 @media(max-width:900px){.video-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.video-grid{grid-template-columns:1fr}}
 .video-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:flex;flex-direction:column;transition:transform 0.25s ease,box-shadow 0.25s ease}
 .video-card:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
-.video-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#2d5016;flex-shrink:0}
+.video-thumb{position:relative;aspect-ratio:9/16;overflow:hidden;background:#2d5016;flex-shrink:0}
 .video-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,255,255,0.9);border:0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5em;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,0.3);transition:background 0.3s,transform 0.2s;color:#2d5016;padding-left:4px}
 .video-card:hover .play-btn{background:white;transform:translate(-50%,-50%) scale(1.06)}
-.duration{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.7);color:white;font-size:0.8em;padding:2px 6px;border-radius:4px}
+.duration{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.72);color:white;font-size:0.8em;padding:2px 7px;border-radius:4px}
 .video-info{padding:16px;flex:1;display:flex;flex-direction:column}
 .video-info h3{font-size:1.05em;margin-bottom:8px;color:#3a2e2a;line-height:1.4}
 .video-desc{font-size:0.85em;color:#666;line-height:1.5;margin-bottom:12px;flex:1}
@@ -90,17 +90,23 @@ nav a:hover{background:rgba(255,255,255,0.2);text-decoration:none}
 .card-cta .btn-follow{background:#fff;color:#2d5016;font-weight:bold}
 .card-cta .btn-follow:hover{background:#eef6e6}
 .card-cta .cta-sub{font-size:0.78em;color:#c3dcae;margin:12px 0 0;text-align:center}
+.cta-list{list-style:none;margin:0 0 18px;padding:0}
+.cta-list li{font-size:0.86em;color:#dcead0;line-height:1.9;padding-left:18px;position:relative}
+.cta-list li:before{content:"•";position:absolute;left:4px;color:#a8d5a2}
 .page-note{max-width:1200px;margin:18px auto 0;padding:0 20px;color:#6b7a5e;font-size:0.85em;text-align:center}
 footer{background:#2d5016;color:white;text-align:center;padding:20px;margin-top:60px}
 footer a{color:#a8d5a2}
 #toast{position:fixed;left:50%;bottom:40px;transform:translateX(-50%) translateY(20px);background:rgba(20,30,12,0.94);color:#fff;padding:12px 22px;border-radius:24px;font-size:0.9em;opacity:0;pointer-events:none;transition:opacity 0.25s,transform 0.25s;z-index:10000}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-#vp{position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px}
-#vp video{max-width:92%;max-height:78vh;border-radius:8px;background:#000}
-#vp .vp-close{position:absolute;top:16px;right:28px;color:#fff;font-size:2.2em;line-height:1;cursor:pointer;background:none;border:0;font-family:inherit}
-#vp .vp-err{display:none;color:#f0c9c9;font-size:0.9em;margin-top:14px;text-align:center;max-width:520px}
+#vp{position:fixed;inset:0;background:rgba(0,0,0,0.96);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:12px}
+#vp video{width:96vw;height:84vh;max-width:96vw;max-height:84vh;object-fit:contain;border-radius:8px;background:#000}
+#vp .vp-close{position:absolute;top:10px;right:20px;color:#fff;font-size:2.2em;line-height:1;cursor:pointer;background:none;border:0;font-family:inherit;z-index:2}
+#vp .vp-bar{display:flex;align-items:center;gap:14px;margin-top:10px;flex-wrap:wrap;justify-content:center}
+#vp .vp-cap{color:#cfd9c6;font-size:0.85em;text-align:center}
+#vp .vp-fs{background:rgba(255,255,255,0.16);color:#fff;border:0;border-radius:18px;padding:9px 20px;font-size:0.9em;cursor:pointer;font-family:inherit;transition:background 0.2s}
+#vp .vp-fs:hover{background:rgba(255,255,255,0.3)}
+#vp .vp-err{display:none;color:#f0c9c9;font-size:0.9em;margin-top:12px;text-align:center;max-width:520px}
 #vp.failed .vp-err{display:block}
-#vp .vp-cap{color:#cfd9c6;font-size:0.85em;margin-top:12px;text-align:center}
 </style>
 </head>
 <body>
@@ -126,8 +132,8 @@ footer a{color:#a8d5a2}
 
         <div class="video-card">
             <div class="video-thumb">
-                <img src="assets/video-covers/video-01-zhongshan-dawuye.jpg" alt="中山大烏葉｜B站茶友點單" loading="lazy" width="1280" height="720">
-                <button class="play-btn" type="button" aria-label="播放：中山大烏葉" onclick="playVideo('中山大烏葉','https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/bili_bv1fe4y1a7vp.mp4','assets/video-covers/video-01-zhongshan-dawuye.jpg')">▶</button>
+                <img src="assets/video-covers/video-01-zhongshan-dawuye.jpg?v=2" alt="中山大烏葉｜B站茶友點單" loading="lazy" decoding="async" width="720" height="1280">
+                <button class="play-btn" type="button" aria-label="播放：中山大烏葉" onclick="playVideo('中山大烏葉','https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/bili_bv1fe4y1a7vp.mp4','assets/video-covers/video-01-zhongshan-dawuye.jpg?v=2')">▶</button>
                 <span class="duration">1:46</span>
             </div>
             <div class="video-info">
@@ -145,8 +151,8 @@ footer a{color:#a8d5a2}
 
         <div class="video-card">
             <div class="video-thumb">
-                <img src="assets/video-covers/video-03-gangchulu-dawuye.jpg" alt="剛出爐的鳳凰大烏葉" loading="lazy" width="1280" height="720">
-                <button class="play-btn" type="button" aria-label="播放：剛出爐的鳳凰大烏葉" onclick="playVideo('剛出爐的鳳凰大烏葉','https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/20261003-233400_doc_f8466925988a_video.mp4','assets/video-covers/video-03-gangchulu-dawuye.jpg')">▶</button>
+                <img src="assets/video-covers/video-03-gangchulu-dawuye.jpg?v=2" alt="剛出爐的鳳凰大烏葉" loading="lazy" decoding="async" width="720" height="1280">
+                <button class="play-btn" type="button" aria-label="播放：剛出爐的鳳凰大烏葉" onclick="playVideo('剛出爐的鳳凰大烏葉','https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/20261003-233400_doc_f8466925988a_video.mp4','assets/video-covers/video-03-gangchulu-dawuye.jpg?v=2')">▶</button>
                 <span class="duration">0:26</span>
             </div>
             <div class="video-info">
@@ -164,7 +170,13 @@ footer a{color:#a8d5a2}
 
         <div class="video-card card-cta">
             <h3>更多實拍短片製作中</h3>
-            <p>烏岽山採茶、荔枝木炭焙、開湯試茶、倉儲陳化——每週更新。<br>想先看片，或者想先試茶，加微信傾。</p>
+            <p>每週更新，拍好一條上一條：</p>
+            <ul class="cta-list">
+                <li>烏岽山採茶 · 清晨上山</li>
+                <li>荔枝木炭焙 · 36 小時睇火</li>
+                <li>開湯試茶 · 一泡一泡對比</li>
+                <li>倉儲陳化 · 乾倉點存皮</li>
+            </ul>
             <button class="btn-follow" type="button" onclick="copyWechat()">📋 複製微信號 afeng-tea-2026</button>
             <p class="cta-sub">電話 13435567385 ｜ 到店試茶請先預約</p>
         </div>
@@ -236,12 +248,27 @@ function playVideo(title, src, poster) {
     cap.className = 'vp-cap';
     cap.textContent = title;
 
+    var fs = document.createElement('button');
+    fs.className = 'vp-fs';
+    fs.type = 'button';
+    fs.textContent = '⛶ 全屏觀看';
+    fs.onclick = function () {
+        if (video.requestFullscreen) { video.requestFullscreen(); }
+        else if (video.webkitEnterFullscreen) { video.webkitEnterFullscreen(); }
+        else if (video.webkitRequestFullscreen) { video.webkitRequestFullscreen(); }
+    };
+
+    var bar = document.createElement('div');
+    bar.className = 'vp-bar';
+    bar.appendChild(cap);
+    bar.appendChild(fs);
+
     var err = document.createElement('div');
     err.className = 'vp-err';
     err.textContent = '短片載入失敗，請檢查網絡後重試，或加微信 ' + WECHAT_ID + ' 索取。';
 
     box.appendChild(video);
-    box.appendChild(cap);
+    box.appendChild(bar);
     box.appendChild(err);
     document.body.appendChild(box);
 
