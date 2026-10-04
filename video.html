@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>茶園實拍短片 - 阿鳳姐的故事</title>
-<meta name="description" content="惠州阿鳳姐茶業實拍短片：鳳凰單叢中山大烏葉、剛出爐的炭焙大烏葉。茶園、炭焙房、開湯試茶，全部本店實拍。">
-<meta name="keywords" content="鳳凰單叢,大烏葉,炭焙,烏岽山,惠州茶葉店,阿鳳姐,茶園實拍">
+<meta name="description" content="惠州阿鳳姐茶業實拍短片：中山大烏葉、剛出爐的炭焙大烏葉。果園日常、沖泡演示、避坑知識，全部本店實拍，點開即播不用跳轉。">
+<meta name="keywords" content="鳳凰單叢,大烏葉,炭焙,烏岽山,惠州茶葉店,阿鳳姐,茶園實拍,短視頻">
 <meta name="author" content="阿鳳姐（林玉鳳）">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://feng-tea.com/video.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="茶園實拍短片 - 阿鳳姐的故事">
-<meta property="og:description" content="惠州阿鳳姐茶業實拍短片：茶園、炭焙房、開湯試茶，全部本店實拍。">
+<meta property="og:description" content="果園日常、沖泡演示、避坑知識，全部本店實拍，點開即播不用跳轉。">
 <meta property="og:url" content="https://feng-tea.com/video.html">
 <meta property="og:image" content="https://feng-tea.com/assets/video-covers/video-01-zhongshan-dawuye.jpg">
 <meta property="og:locale" content="zh_HK">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="茶園實拍短片 - 阿鳳姐的故事">
-<meta name="twitter:description" content="茶園、炭焙房、開湯試茶，全部本店實拍。">
+<meta name="twitter:description" content="果園日常、沖泡演示、避坑知識，全部本店實拍，點開即播不用跳轉。">
 <meta name="twitter:image" content="https://feng-tea.com/assets/video-covers/video-01-zhongshan-dawuye.jpg">
 <script type="application/ld+json">
 {
@@ -57,56 +57,50 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Microsoft JhengHei","PingFang SC",sans-serif;background:#f5f0e8;color:#3a2e2a;line-height:1.6}
-header{background:linear-gradient(135deg,#2d5016,#4a7023);color:white;padding:40px 20px;text-align:center}
-header h1{font-size:2.5em;margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
-header p{font-size:1.1em;opacity:0.9}
 nav{background:#3d6b1e;padding:12px;text-align:center;position:sticky;top:0;z-index:100;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 10px}
-nav a{color:white;text-decoration:none;margin:0;font-size:0.95em;padding:6px 12px;border-radius:5px;transition:background 0.3s}
-nav a:hover{background:rgba(255,255,255,0.2);text-decoration:none}
-.page-title{background:rgba(45,80,22,0.85);color:white;padding:40px 20px;text-align:center}
-.page-title h2{font-size:2em;margin-bottom:10px}
+nav a{color:white;text-decoration:none;font-size:0.95em;padding:6px 12px;border-radius:5px;transition:background 0.3s}
+nav a:hover{background:rgba(255,255,255,0.2)}
+header{background:linear-gradient(135deg,#2d5016,#4a7023);color:white;padding:36px 20px;text-align:center}
+header h1{font-size:2.4em;margin-bottom:8px;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+header p{font-size:1.05em;opacity:0.92}
+.page-title{background:rgba(45,80,22,0.85);color:white;padding:30px 20px;text-align:center}
+.page-title h2{font-size:1.9em;margin-bottom:8px}
 .page-title p{font-size:1em;opacity:0.9}
-.container{max-width:1200px;margin:30px auto;padding:0 20px}
-.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.container{max-width:1200px;margin:28px auto;padding:0 20px}
+
+/* 分類標籤 */
+.video-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px}
+.tab-btn{background:#fff;color:#3a2e2a;border:1px solid #d8cfc0;border-radius:20px;padding:8px 20px;font-size:0.92em;font-family:inherit;cursor:pointer;transition:all 0.2s}
+.tab-btn:hover{border-color:#4a7023;color:#2d5016}
+.tab-btn.active{background:linear-gradient(135deg,#2d5016,#4a7023);color:#fff;border-color:transparent}
+
+/* 短片卡片：縮略圖固定 200px，video 就地播放 */
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
 @media(max-width:900px){.video-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.video-grid{grid-template-columns:1fr}}
-.video-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:flex;flex-direction:column;transition:transform 0.25s ease,box-shadow 0.25s ease}
-.video-card:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
-.video-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#2d5016;flex-shrink:0}
-.video-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(255,255,255,0.9);border:0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5em;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,0.3);transition:background 0.3s,transform 0.2s;color:#2d5016;padding-left:4px}
-.video-card:hover .play-btn{background:white;transform:translate(-50%,-50%) scale(1.06)}
-.duration{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.72);color:white;font-size:0.8em;padding:2px 7px;border-radius:4px}
-.video-info{padding:16px;flex:1;display:flex;flex-direction:column}
-.video-info h3{font-size:1.05em;margin-bottom:8px;color:#3a2e2a;line-height:1.4}
-.video-desc{font-size:0.85em;color:#666;line-height:1.5;margin-bottom:12px;flex:1}
-.video-meta{display:flex;justify-content:space-between;color:#888;font-size:0.8em}
-.card-follow{padding:0 16px 16px}
-.btn-follow{display:block;width:100%;background:linear-gradient(135deg,#2d5016,#4a7023);color:white;text-decoration:none;padding:10px 20px;border:0;border-radius:20px;font-size:0.9em;text-align:center;cursor:pointer;font-family:inherit;transition:all 0.3s}
-.btn-follow:hover{background:linear-gradient(135deg,#4a7023,#6b8e23);transform:translateY(-1px);color:white}
-.card-cta{background:linear-gradient(160deg,#2d5016,#4a7023);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:28px 22px;min-height:100%}
-.card-cta h3{color:#fff;font-size:1.15em;margin-bottom:10px}
-.card-cta p{font-size:0.86em;color:#dcead0;line-height:1.7;margin-bottom:16px}
-.card-cta .btn-follow{background:#fff;color:#2d5016;font-weight:bold}
-.card-cta .btn-follow:hover{background:#eef6e6}
-.card-cta .cta-sub{font-size:0.78em;color:#c3dcae;margin:12px 0 0;text-align:center}
-.cta-list{list-style:none;margin:0 0 18px;padding:0}
-.cta-list li{font-size:0.86em;color:#dcead0;line-height:1.9;padding-left:18px;position:relative}
-.cta-list li:before{content:"•";position:absolute;left:4px;color:#a8d5a2}
-.page-note{max-width:1200px;margin:18px auto 0;padding:0 20px;color:#6b7a5e;font-size:0.85em;text-align:center}
-footer{background:#2d5016;color:white;text-align:center;padding:20px;margin-top:60px}
+.video-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.09);padding-bottom:14px;transition:box-shadow 0.25s ease}
+.video-card:hover{box-shadow:0 6px 18px rgba(0,0,0,0.14)}
+.video-thumb{position:relative;height:200px;overflow:hidden;background:#2d5016}
+.video-thumb img{position:absolute;top:0;left:0;width:100%;height:200px;object-fit:cover;display:block;z-index:1}
+.video-thumb video{position:absolute;top:0;left:0;width:100%;height:200px;object-fit:cover;display:block;z-index:2;background:#000}
+.video-thumb .duration{position:absolute;top:8px;right:8px;z-index:3;background:rgba(0,0,0,0.72);color:#fff;font-size:0.78em;padding:2px 7px;border-radius:4px}
+.video-card h3{font-size:1.02em;line-height:1.45;margin:14px 14px 8px;color:#2f2a24}
+.video-card p{font-size:0.86em;color:#666;line-height:1.6;margin:0 14px 12px}
+.video-stats{display:flex;flex-wrap:wrap;gap:14px;margin:0 14px;color:#8a8a8a;font-size:0.8em}
+.video-empty{display:flex;align-items:center;justify-content:center;height:200px;background:linear-gradient(160deg,#2d5016,#4a7023);color:#fff;font-size:1.05em;font-weight:bold;text-align:center;padding:0 16px}
+
+/* 底部提示 */
+.upload-hint{margin-top:36px;background:#fff;border-radius:12px;padding:26px 22px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.upload-hint h3{font-size:1.15em;color:#2d5016;margin-bottom:10px}
+.upload-hint p{font-size:0.9em;color:#666;margin-bottom:16px}
+.upload-hint .btn-wechat{display:inline-block;background:linear-gradient(135deg,#2d5016,#4a7023);color:#fff;border:0;border-radius:20px;padding:11px 26px;font-size:0.92em;font-family:inherit;cursor:pointer}
+.upload-hint .btn-wechat:hover{background:linear-gradient(135deg,#4a7023,#6b8e23)}
+.upload-hint .hint-sub{font-size:0.82em;color:#8a8a8a;margin:14px 0 0}
+
+footer{background:#2d5016;color:white;text-align:center;padding:20px;margin-top:56px}
 footer a{color:#a8d5a2}
 #toast{position:fixed;left:50%;bottom:40px;transform:translateX(-50%) translateY(20px);background:rgba(20,30,12,0.94);color:#fff;padding:12px 22px;border-radius:24px;font-size:0.9em;opacity:0;pointer-events:none;transition:opacity 0.25s,transform 0.25s;z-index:10000}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-#vp{position:fixed;inset:0;background:rgba(0,0,0,0.96);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:12px}
-#vp video{width:96vw;height:84vh;max-width:96vw;max-height:84vh;object-fit:contain;border-radius:8px;background:#000}
-#vp .vp-close{position:absolute;top:10px;right:20px;color:#fff;font-size:2.2em;line-height:1;cursor:pointer;background:none;border:0;font-family:inherit;z-index:2}
-#vp .vp-bar{display:flex;align-items:center;gap:14px;margin-top:10px;flex-wrap:wrap;justify-content:center}
-#vp .vp-cap{color:#cfd9c6;font-size:0.85em;text-align:center}
-#vp .vp-fs{background:rgba(255,255,255,0.16);color:#fff;border:0;border-radius:18px;padding:9px 20px;font-size:0.9em;cursor:pointer;font-family:inherit;transition:background 0.2s}
-#vp .vp-fs:hover{background:rgba(255,255,255,0.3)}
-#vp .vp-err{display:none;color:#f0c9c9;font-size:0.9em;margin-top:12px;text-align:center;max-width:520px}
-#vp.failed .vp-err{display:block}
 </style>
 </head>
 <body>
@@ -124,69 +118,83 @@ footer a{color:#a8d5a2}
 </header>
 <div class="page-title">
     <h2>🎬 茶園實拍短片</h2>
-    <p>茶園・炭焙房・茶杯——本店實拍，不轉載、不用 AI 生成</p>
+    <p>真實記錄 · 沒有濾鏡 · 現場直拍</p>
 </div>
-<div class="page-note">以下短片均為本店果園與炭焙房實拍。已有 2 條上線，其餘每週更新。</div>
-<div class="container">
-    <div class="video-grid">
 
-        <div class="video-card">
+<main class="container">
+
+    <div class="video-tabs">
+        <button class="tab-btn active" type="button" onclick="filterVideos('all', this)">全部</button>
+        <button class="tab-btn" type="button" onclick="filterVideos('farm', this)">果園日常</button>
+        <button class="tab-btn" type="button" onclick="filterVideos('brew', this)">沖泡演示</button>
+        <button class="tab-btn" type="button" onclick="filterVideos('tips', this)">避坑知識</button>
+    </div>
+
+    <div class="video-grid" id="videoGrid">
+
+        <div class="video-card" data-category="brew">
             <div class="video-thumb">
-                <img src="assets/video-covers/video-01-zhongshan-dawuye.jpg?v=3" alt="中山大烏葉｜B站茶友點單" loading="lazy" decoding="async" width="1280" height="720">
-                <button class="play-btn" type="button" aria-label="播放：中山大烏葉" onclick="playVideo('中山大烏葉','https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/bili_bv1fe4y1a7vp.mp4','assets/video-covers/video-01-zhongshan-dawuye.jpg?v=3')">▶</button>
-                <span class="duration">1:46</span>
+                <img src="assets/video-covers/video-01-zhongshan-dawuye.jpg?v=3" alt="中山大烏葉｜B站茶友點單">
+                <video controls playsinline preload="metadata"
+                       poster="assets/video-covers/video-01-zhongshan-dawuye.jpg?v=3"
+                       src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/bili_bv1fe4y1a7vp.mp4"></video>
+                <span class="duration">01:46</span>
             </div>
-            <div class="video-info">
-                <h3>中山大烏葉｜B站茶友點單</h3>
-                <p class="video-desc">專門給 B 站茶友安排的中山鳳凰大烏葉，實拍開箱與沖泡，口感醇厚、回甘持久。</p>
-                <div class="video-meta">
-                    <span>⏱ 1:46</span>
-                    <span>📅 2026-10-03</span>
-                </div>
-            </div>
-            <div class="card-follow">
-                <button class="btn-follow" type="button" onclick="copyWechat()">💬 加微信看更多實拍</button>
+            <h3>中山大烏葉｜B站茶友點單</h3>
+            <p>專門給 B 站茶友安排的中山鳳凰大烏葉，實拍開箱與沖泡，口感醇厚、回甘持久。</p>
+            <div class="video-stats">
+                <span>⏱ 1:46</span>
+                <span>📅 2026-10-03</span>
+                <span>🏷 沖泡演示</span>
             </div>
         </div>
 
-        <div class="video-card">
+        <div class="video-card" data-category="farm">
             <div class="video-thumb">
-                <img src="assets/video-covers/video-03-gangchulu-dawuye.jpg?v=3" alt="剛出爐的鳳凰大烏葉" loading="lazy" decoding="async" width="1280" height="720">
-                <button class="play-btn" type="button" aria-label="播放：剛出爐的鳳凰大烏葉" onclick="playVideo('剛出爐的鳳凰大烏葉','https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/20261003-233400_doc_f8466925988a_video.mp4','assets/video-covers/video-03-gangchulu-dawuye.jpg?v=3')">▶</button>
-                <span class="duration">0:26</span>
+                <img src="assets/video-covers/video-03-gangchulu-dawuye.jpg?v=3" alt="剛出爐的鳳凰大烏葉">
+                <video controls playsinline preload="metadata"
+                       poster="assets/video-covers/video-03-gangchulu-dawuye.jpg?v=3"
+                       src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/20261003-233400_doc_f8466925988a_video.mp4"></video>
+                <span class="duration">00:26</span>
             </div>
-            <div class="video-info">
-                <h3>剛出爐的鳳凰大烏葉</h3>
-                <p class="video-desc">炭焙房剛出爐的大烏葉，手工揀剔、條索緊結，開湯香氣高揚。中秋送禮與自飲都合適。</p>
-                <div class="video-meta">
-                    <span>⏱ 0:26</span>
-                    <span>📅 2026-10-03</span>
-                </div>
-            </div>
-            <div class="card-follow">
-                <button class="btn-follow" type="button" onclick="copyWechat()">💬 加微信看更多實拍</button>
+            <h3>剛出爐的鳳凰大烏葉</h3>
+            <p>炭焙房剛出爐的大烏葉，手工揀剔、條索緊結，開湯香氣高揚。中秋送禮與自飲都合適。</p>
+            <div class="video-stats">
+                <span>⏱ 0:26</span>
+                <span>📅 2026-10-03</span>
+                <span>🏷 果園日常</span>
             </div>
         </div>
 
-        <div class="video-card card-cta">
-            <h3>更多實拍短片製作中</h3>
-            <p>每週更新，拍好一條上一條：</p>
-            <ul class="cta-list">
-                <li>烏岽山採茶 · 清晨上山</li>
-                <li>荔枝木炭焙 · 36 小時睇火</li>
-                <li>開湯試茶 · 一泡一泡對比</li>
-                <li>倉儲陳化 · 乾倉點存皮</li>
-            </ul>
-            <button class="btn-follow" type="button" onclick="copyWechat()">📋 複製微信號 afeng-tea-2026</button>
-            <p class="cta-sub">電話 13435567385 ｜ 到店試茶請先預約</p>
+        <div class="video-card" data-category="tips">
+            <div class="video-thumb">
+                <div class="video-empty">更多實拍短片製作中</div>
+            </div>
+            <h3>每週更新，拍好一條上一條</h3>
+            <p>烏岽山採茶（清晨上山）· 荔枝木炭焙（36 小時睇火）· 開湯試茶（一泡一泡對比）· 倉儲陳化（乾倉點存皮）</p>
+            <div class="video-stats">
+                <span>📅 每週更新</span>
+                <span>🏷 製作中</span>
+            </div>
         </div>
 
     </div>
-</div>
+
+    <section class="upload-hint">
+        <h3>🎥 想看更多阿鳳姐的實拍？</h3>
+        <p>茶園採摘、炭焙出爐、開湯試茶——想先看片，或者想先試茶，加微信傾。</p>
+        <button class="btn-wechat" type="button" onclick="copyWechat()">📋 複製微信號 afeng-tea-2026</button>
+        <p class="hint-sub">電話 13435567385 ｜ 到店試茶請先預約 ｜ 惠城區東湖花園一區沿江商鋪 89-136</p>
+    </section>
+
+</main>
+
 <div id="toast">已複製微信號：afeng-tea-2026</div>
+
 <footer>
     <p>© 2026 阿鳳姐的故事 ｜ 阿鳳姐茶葉店（惠州鳳凰茶業）｜ 惠城區東湖花園一區沿江商鋪 89-136 ｜ 13435567385</p>
 </footer>
+
 <script>
 var WECHAT_ID = 'afeng-tea-2026';
 
@@ -215,70 +223,29 @@ function copyWechat() {
     }
 }
 
-function playVideo(title, src, poster) {
-    var old = document.getElementById('vp');
-    if (old) { old.remove(); }
+/* 就地播放：同時只播一條，其餘自動暫停 */
+function pauseOthers(current) {
+    var vids = document.querySelectorAll('.video-thumb video');
+    for (var i = 0; i < vids.length; i++) {
+        if (vids[i] !== current) { vids[i].pause(); }
+    }
+}
+document.addEventListener('play', function (e) {
+    if (e.target && e.target.tagName === 'VIDEO') { pauseOthers(e.target); }
+}, true);
 
-    var box = document.createElement('div');
-    box.id = 'vp';
-
-    var close = document.createElement('button');
-    close.className = 'vp-close';
-    close.type = 'button';
-    close.setAttribute('aria-label', '關閉');
-    close.textContent = '×';
-    close.onclick = function () { box.remove(); };
-    box.appendChild(close);
-
-    var video = document.createElement('video');
-    video.controls = true;
-    video.playsInline = true;
-    video.autoplay = true;
-    video.preload = 'metadata';
-    if (poster) { video.poster = poster; }
-    video.onerror = function () { box.classList.add('failed'); };
-
-    var source = document.createElement('source');
-    source.src = src;
-    source.type = 'video/mp4';
-    source.onerror = function () { box.classList.add('failed'); };
-    video.appendChild(source);
-
-    var cap = document.createElement('div');
-    cap.className = 'vp-cap';
-    cap.textContent = title;
-
-    var fs = document.createElement('button');
-    fs.className = 'vp-fs';
-    fs.type = 'button';
-    fs.textContent = '⛶ 全屏觀看';
-    fs.onclick = function () {
-        if (video.requestFullscreen) { video.requestFullscreen(); }
-        else if (video.webkitEnterFullscreen) { video.webkitEnterFullscreen(); }
-        else if (video.webkitRequestFullscreen) { video.webkitRequestFullscreen(); }
-    };
-
-    var bar = document.createElement('div');
-    bar.className = 'vp-bar';
-    bar.appendChild(cap);
-    bar.appendChild(fs);
-
-    var err = document.createElement('div');
-    err.className = 'vp-err';
-    err.textContent = '短片載入失敗，請檢查網絡後重試，或加微信 ' + WECHAT_ID + ' 索取。';
-
-    box.appendChild(video);
-    box.appendChild(bar);
-    box.appendChild(err);
-    document.body.appendChild(box);
-
-    box.addEventListener('click', function (e) { if (e.target === box) { box.remove(); } });
-    document.addEventListener('keydown', function esc(e) {
-        if (e.key === 'Escape') { box.remove(); document.removeEventListener('keydown', esc); }
-    });
-
-    var p = video.play();
-    if (p && p.catch) { p.catch(function () { /* 瀏覽器阻止自動播放，等用戶點播放鍵 */ }); }
+/* 分類切換 */
+function filterVideos(category, btn) {
+    var cards = document.querySelectorAll('.video-card');
+    var buttons = document.querySelectorAll('.tab-btn');
+    for (var b = 0; b < buttons.length; b++) { buttons[b].classList.remove('active'); }
+    if (btn) { btn.classList.add('active'); }
+    for (var i = 0; i < cards.length; i++) {
+        var cat = cards[i].getAttribute('data-category');
+        cards[i].style.display = (category === 'all' || cat === category) ? 'block' : 'none';
+    }
+    var vids = document.querySelectorAll('.video-thumb video');
+    for (var v = 0; v < vids.length; v++) { vids[v].pause(); }
 }
 </script>
 </body>
