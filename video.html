@@ -16,7 +16,7 @@ body{font-family:"PingFang SC","Microsoft JhengHei",sans-serif;background:#f5f0e
 .video-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);display:flex;flex-direction:column}
 .video-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000}
 .video-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(45,80,22,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.2s,background 0.2s;z-index:2}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;background:rgba(45,80,22,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.2s;z-index:2}
 .play-btn:hover{transform:translate(-50%,-50%) scale(1.1);background:rgba(45,80,22,1)}
 .play-btn svg{margin-left:3px}
 .duration{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.75);color:#fff;font-size:0.75em;padding:2px 6px;border-radius:4px;z-index:2}
@@ -28,10 +28,6 @@ body{font-family:"PingFang SC","Microsoft JhengHei",sans-serif;background:#f5f0e
 .card-follow-btn:hover{background:#3d6820}
 @media(max-width:900px){.video-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.video-grid{grid-template-columns:1fr}}
-.video-player-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:9999;display:none;flex-direction:column;align-items:center;justify-content:center}
-.video-player-overlay.active{display:flex}
-.video-player-overlay video{max-width:90%;max-height:80%;border-radius:8px}
-.close-player{position:absolute;top:20px;right:30px;color:#fff;font-size:2em;cursor:pointer}
 .site-footer{text-align:center;padding:30px;color:#999;font-size:0.85em;border-top:1px solid #ddd;margin-top:40px}
 </style>
 </head>
@@ -43,27 +39,7 @@ body{font-family:"PingFang SC","Microsoft JhengHei",sans-serif;background:#f5f0e
 <main class="container">
   <h2 class="page-title">📹 視頻專區</h2>
   <div class="video-grid">
-    <div class="video-card">
-      <div class="video-thumb">
-        <img src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/assets/video-covers/bili_BV1pn4y197Km.jpg" alt="凤凰单丛制作过程" loading="lazy">
-        <div class="play-btn" onclick="playVideo('bili_bv1pn4y197Km', 'https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/bili_BV1pn4y197Km.mp4')">
-          <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <span class="duration">1:48</span>
-      </div>
-      <div class="video-info">
-        <h3>凤凰单丛制作过程有多复杂，我来告诉你！</h3>
-        <p>真实制茶人分享凤凰单丛制作工艺，浪青、炭焙等传统工序全记录</p>
-        <div class="meta">
-          <span>👁 2,156 次观看</span>
-        </div>
-      </div>
-      <button class="card-follow-btn" onclick="window.open('https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxNzcxMzE0MQ==','_blank')">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-        关注阿凤姐
-      </button>
-    </div>
-    <div class="video-card">
+<div class="video-card">
       <div class="video-thumb">
         <img src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/assets/video-covers/bili_bv1fe4y1a7vp.jpg" alt="给B站的茶友安排中山的大乌叶" loading="lazy">
         <div class="play-btn" onclick="playVideo('bili_bv1fe4y1a7vp', 'https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/bili_bv1fe4y1a7vp.mp4')">
@@ -183,28 +159,28 @@ body{font-family:"PingFang SC","Microsoft JhengHei",sans-serif;background:#f5f0e
         关注阿凤姐
       </button>
     </div>
+<div class="video-card">
+      <div class="video-thumb">
+        <img src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/assets/video-covers/bili_bv1pn4y197Km.jpg" alt="凤凰单丛制作过程有多复杂" loading="lazy">
+        <div class="play-btn" onclick="window.open('https://www.bilibili.com/video/BV1pn4y197Km', '_blank')">
+          <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span class="duration">1:49</span>
+      </div>
+      <div class="video-info">
+        <h3>凤凰单丛制作过程有多复杂</h3>
+        <p>真实制茶人分享凤凰单丛制作工艺，浪青炭焙全记录</p>
+        <div class="meta">
+          <span>👁 2,156 次观看</span>
+        </div>
+      </div>
+      <button class="card-follow-btn" onclick="window.open('https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxNzcxMzE0MQ==','_blank')">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        关注阿凤姐
+      </button>
+    </div>
   </div>
 </main>
-<div class="video-player-overlay" id="playerOverlay">
-  <span class="close-player" onclick="closePlayer()">&times;</span>
-  <video id="videoPlayer" controls playsinline></video>
-</div>
-<script>
-function playVideo(id, src) {
-  const p = document.getElementById('videoPlayer');
-  p.src = src;
-  p.play();
-  document.getElementById('playerOverlay').classList.add('active');
-}
-function closePlayer() {
-  const p = document.getElementById('videoPlayer');
-  p.pause(); p.src='';
-  document.getElementById('playerOverlay').classList.remove('active');
-}
-document.getElementById('playerOverlay').addEventListener('click', function(e) {
-  if(e.target === this) closePlayer();
-});
-</script>
 <footer class="site-footer">
   <p>阿鳳姐的故事 | 梧桐樹茶業</p>
 </footer>
