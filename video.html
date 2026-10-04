@@ -353,6 +353,500 @@
 
 <div class="container">
 
+    
+    <div class="video-grid">
+        <!-- 视频1：本地大乌叶 -->
+        <div class="video-card" onclick="playVideo('https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/163995b34975e4f3cced99e54fa12dd0.mp4', '刚出炉的凤凰单丛大乌叶')">
+            <div class="video-thumb">
+                <img src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/assets/video-covers/163995b34975e4f3cced99e54fa12dd0.jpg" alt="刚出炉的凤凰单丛大乌叶">
+                <div class="play-btn">▶</div>
+                <span class="duration">0:26</span>
+            </div>
+            <div class="video-info">
+                <h3>刚出炉的凤凰单丛大乌叶</h3>
+                <div class="video-meta">
+                    <span>👁 1,654 觀看</span>
+                    <span>📅 2026-10-03</span>
+                </div>
+            </div>
+            <div class="card-follow-btn">
+                <a href="https://channels.weixin.qq.com/platform/pages/home" target="_blank" class="btn-follow">▶ 关注视频号看更多</a>
+            </div>
+        </div>
+
+        <!-- 视频2：阿凤姐讲鸭屎香 -->
+        <div class="video-card" onclick="playVideo('https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/30d7f935b5e9a16489ac188e2841c80f.mp4', '阿凤姐讲鸭屎香的故事')">
+            <div class="video-thumb">
+                <img src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/assets/video-covers/30d7f935b5e9a16489ac188e2841c80f.jpg" alt="阿凤姐讲鸭屎香的故事">
+                <div class="play-btn">▶</div>
+                <span class="duration">1:41</span>
+            </div>
+            <div class="video-info">
+                <h3>阿凤姐讲鸭屎香的故事</h3>
+                <div class="video-meta">
+                    <span>👁 3,291 觀看</span>
+                    <span>📅 2026-10-03</span>
+                </div>
+            </div>
+            <div class="card-follow-btn">
+                <a href="https://channels.weixin.qq.com/platform/pages/home" target="_blank" class="btn-follow">▶ 关注视频号看更多</a>
+            </div>
+        </div>
+
+        <!-- 视频3：炭焙工艺 -->
+        <div class="video-card" onclick="playVideo('https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/c3d623472f2d3d2b22bc20a1404f96a0.mp4', '炭焙工艺：荔枝木炭为什么香')">
+            <div class="video-thumb">
+                <img src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/assets/video-covers/cover-tanbei.mp4.png" alt="炭焙工艺">
+                <div class="play-btn">▶</div>
+                <span class="duration">0:15</span>
+            </div>
+            <div class="video-info">
+                <h3>炭焙工艺：荔枝木炭为什么香</h3>
+                <div class="video-meta">
+                    <span>👁 2,108 觀看</span>
+                    <span>📅 2026-10-03</span>
+                </div>
+            </div>
+            <div class="card-follow-btn">
+                <a href="https://channels.weixin.qq.com/platform/pages/home" target="_blank" class="btn-follow">▶ 关注视频号看更多</a>
+            </div>
+        </div>
+
+    </div>
+TYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿鳳姐的茶影片號 - 阿凤姐的故事</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", "Noto Serif SC", sans-serif;
+            background-color: #f5f0e8;
+            color: #3a2e2a;
+            line-height: 1.8;
+        }
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7023 50%, #6b8e23 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', serif;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        nav {
+            background: #3d6b1e;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            white-space: nowrap;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover { background: rgba(255,255,255,0.2); text-decoration: none; }
+        .page-title {
+            background: linear-gradient(rgba(45,80,22,0.85), rgba(45,80,22,0.9));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .page-title h2 {
+            font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', serif;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+        .page-title p { font-size: 1em; opacity: 0.9; }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .video-thumb {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            background: #2d5016;
+        }
+        .video-thumb img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        .video-thumb .play-btn {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px; height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: background 0.3s;
+        }
+        .video-card:hover .play-btn { background: white; }
+        .video-thumb .duration {
+            position: absolute;
+            bottom: 8px; right: 8px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 0.8em;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .video-info { padding: 16px; }
+        .video-info h3 {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #3a2e2a;
+            line-height: 1.4;
+        }
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.85em;
+        }
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .video-modal.active { display: flex; }
+        .video-modal video {
+            max-width: 100%;
+            max-height: 80vh;
+            width: 100%;
+        }
+        .video-modal .close-btn {
+            position: absolute;
+            top: 20px; right: 30px;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+        .video-modal .modal-title {
+            color: white;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        .placeholder-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .placeholder-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px dashed #ccc;
+        }
+        .placeholder-card .video-thumb {
+            background: linear-gradient(135deg, #2d5016, #4a7023);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .placeholder-card .video-thumb .play-btn {
+            width: 50px; height: 50px;
+            font-size: 1.2em;
+        }
+        .placeholder-note {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.95em;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .placeholder-note a {
+            color: #4a7023;
+        }
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+        footer a { color: #a8d5a2; }
+        @media (max-width: 600px) {
+            nav a { margin: 0 8px; font-size: 0.9em; }
+            .page-title h1 { font-size: 1.8em; }
+            .page-title h2 { font-size: 1.5em; }
+        }
+
+        /* Card follow button */
+        .card-follow-btn {
+            padding: 10px 16px 16px;
+            text-align: center;
+        }
+        .btn-follow {
+            display: inline-block;
+            background: linear-gradient(135deg, #2d5016, #4a7023);
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.88em;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-follow:hover {
+            background: linear-gradient(135deg, #4a7023, #6b8e23);
+            transform: translateY(-1px);
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Follow section */
+        .follow-section {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b1e 50%, #4a7023 100%);
+            color: white;
+            padding: 50px 20px;
+            margin-top: 50px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .follow-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .follow-section h2 {
+            font-family: 'Ma Shan Zheng', 'ZCOOL XiaoWei', serif;
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        .follow-sub {
+            font-size: 0.7em;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            opacity: 0.9;
+            font-weight: normal;
+        }
+        .platform-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 28px 0 20px;
+        }
+        .platform-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            padding: 14px 18px;
+            min-width: 110px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+        }
+        .platform-btn:hover {
+            background: rgba(255,255,255,0.22);
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+            border-color: rgba(255,255,255,0.5);
+        }
+        .p-icon { font-size: 1.6em; margin-bottom: 4px; }
+        .p-name { font-weight: bold; font-size: 0.95em; margin-bottom: 2px; }
+        .p-desc { font-size: 0.75em; opacity: 0.75; }
+        .follow-note {
+            font-size: 0.88em;
+            opacity: 0.85;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: rgba(0,0,0,0.15);
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+
+    /* 强制横排，用浮动百分百生效 */
+    .video-grid {
+      display: block !important;
+      width: 100% !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+      padding: 0 !important;
+    }
+    .video-card {
+      width: 32% !important;
+      float: left !important;
+      margin: 0 0.66% 20px 0.66% !important;
+      box-sizing: border-box !important;
+      display: block !important;
+    }
+    @media (max-width: 768px) {
+      .video-card {
+        width: 100% !important;
+        margin: 0 0 20px 0 !important;
+      }
+    }
+    
+    .video-card {
+      float: left;
+      width: 32%;
+      margin: 0 0.66%;
+      box-sizing: border-box;
+      display: block;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .video-thumb {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-thumb img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .play-btn {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px; height: 48px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 20px;
+      pointer-events: none;
+    }
+    .duration {
+      position: absolute;
+      bottom: 6px; right: 8px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .video-info {
+      padding: 12px;
+    }
+    .video-info h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: #3a2e2a;
+      line-height: 1.4;
+    }
+    .video-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 13px;
+      color: #888;
+    }
+    .card-follow-btn {
+      padding: 0 12px 12px;
+    }
+    .btn-follow {
+      display: block;
+      background: #4a7023;
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .btn-follow:hover {
+      background: #3d6b1e;
+    }
+    @media (max-width: 768px) {
+      .video-card { width: 100%; float: none; margin: 0 0 20px; }
+    }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">首頁</a>
+    <a href="index.html#products">產品展示</a>
+    <a href="index.html#knowledge">茶韻講古</a>
+    <a href="index.html#contact">聯繫我們</a>
+    <a href="social.html">🔗 連結</a>
+    <a href="video.html">🎬 短視頻</a>
+</nav>
+
+<header>
+    <h1>🍵 阿凤姐的故事</h1>
+    <p>来听阿凤姐讲古 · 茶里品读潮汕故事</p>
+</header>
+
+<div class="page-title">
+    <h2>🎬 阿鳳姐的茶影片號</h2>
+    <p>用一杯茶的時間，聽阿鳳姐講茶裏的故事</p>
+</div>
+
+<div class="container">
+
     <!-- 示例影片卡片（後續替換真實影片） -->
     <div class="video-grid">
             <!-- 影片卡片 -->
