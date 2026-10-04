@@ -328,6 +328,20 @@
         margin: 0 0 20px 0 !important;
       }
     }
+    /* 锁死卡片高度，永远不会被拉长 */
+    .video-card {
+      height: 420px !important;
+      overflow: hidden !important;
+    }
+    .video-card .thumbnail {
+      height: 200px !important;
+      overflow: hidden !important;
+    }
+    .video-card .thumbnail img {
+      width: 100% !important;
+      height: 200px !important;
+      object-fit: cover !important;
+    }
     </style>
 </head>
 <body>
