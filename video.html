@@ -50,6 +50,19 @@
         "duration": "PT26S",
         "contentUrl": "https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/20261003-233400_doc_f8466925988a_video.mp4"
       }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "VideoObject",
+        "name": "綠色鴨屎香｜開湯實拍",
+        "description": "綠色鴨屎香少見，條索緊卷、茶湯金黃透亮，開湯實拍。",
+        "thumbnailUrl": "https://feng-tea.com/assets/video-covers/video-04-yashixiang-lvse.jpg",
+        "uploadDate": "2026-10-04",
+        "duration": "PT25S",
+        "contentUrl": "https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/20261004-050748_doc_45f4c6e29118_video.mp4"
+      }
     }
   ]
 }
@@ -87,7 +100,6 @@ header p{font-size:1.05em;opacity:0.92}
 .video-card h3{font-size:1.02em;line-height:1.45;margin:14px 14px 8px;color:#2f2a24}
 .video-card p{font-size:0.86em;color:#666;line-height:1.6;margin:0 14px 12px}
 .video-stats{display:flex;flex-wrap:wrap;gap:14px;margin:0 14px;color:#8a8a8a;font-size:0.8em}
-.video-empty{display:flex;align-items:center;justify-content:center;height:200px;background:linear-gradient(160deg,#2d5016,#4a7023);color:#fff;font-size:1.05em;font-weight:bold;text-align:center;padding:0 16px}
 
 /* 底部提示 */
 .upload-hint{margin-top:36px;background:#fff;border-radius:12px;padding:26px 22px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
@@ -127,7 +139,6 @@ footer a{color:#a8d5a2}
         <button class="tab-btn active" type="button" onclick="filterVideos('all', this)">全部</button>
         <button class="tab-btn" type="button" onclick="filterVideos('farm', this)">果園日常</button>
         <button class="tab-btn" type="button" onclick="filterVideos('brew', this)">沖泡演示</button>
-        <button class="tab-btn" type="button" onclick="filterVideos('tips', this)">避坑知識</button>
     </div>
 
     <div class="video-grid" id="videoGrid">
@@ -166,15 +177,20 @@ footer a{color:#a8d5a2}
             </div>
         </div>
 
-        <div class="video-card">
+        <div class="video-card" data-category="brew">
             <div class="video-thumb">
-                <div class="video-empty">更多實拍短片製作中</div>
+                <img src="assets/video-covers/video-04-yashixiang-lvse.jpg?v=1" alt="綠色鴨屎香｜開湯實拍">
+                <video controls playsinline preload="metadata"
+                       poster="assets/video-covers/video-04-yashixiang-lvse.jpg?v=1"
+                       src="https://afeng-media-1455467655.cos.ap-guangzhou.myqcloud.com/tea-videos/20261004-050748_doc_45f4c6e29118_video.mp4"></video>
+                <span class="duration">00:25</span>
             </div>
-            <h3>每週更新，拍好一條上一條</h3>
-            <p>烏岽山採茶（清晨上山）· 荔枝木炭焙（36 小時睇火）· 開湯試茶（一泡一泡對比）· 倉儲陳化（乾倉點存皮）</p>
+            <h3>綠色鴨屎香｜開湯實拍</h3>
+            <p>綠色鴨屎香少見，條索緊卷、茶湯金黃透亮，一泡就聞到清香。開湯實拍，看得出水溫同出湯時間的分別。</p>
             <div class="video-stats">
-                <span>📅 每週更新</span>
-                <span>🏷 製作中</span>
+                <span>⏱ 0:25</span>
+                <span>📅 2026-10-04</span>
+                <span>🏷 沖泡演示</span>
             </div>
         </div>
 
