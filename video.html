@@ -328,14 +328,16 @@
         margin: 0 0 20px 0 !important;
       }
     }
-    /* 锁死卡片高度，永远不会被拉长 */
+    /* flex自动等高，同一排卡片自动一样高 */
     .video-card {
-      height: 420px !important;
       overflow: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
     }
     .video-card .thumbnail {
       height: 200px !important;
       overflow: hidden !important;
+      flex-shrink: 0 !important;
     }
     .video-card .thumbnail img {
       width: 100% !important;
