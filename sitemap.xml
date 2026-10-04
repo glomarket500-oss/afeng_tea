@@ -25,6 +25,14 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- 茶園實拍短片页 -->
+    <url>
+        <loc>https://feng-tea.com/video.html</loc>
+        <lastmod>2026-10-04T12:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- 2026-09-19 文章 -->
     <url>
         <loc>https://feng-tea.com/index.html#article-中秋倒數六天那年輕嘅茶味從3200億</loc>
