@@ -307,25 +307,33 @@
         }
 
 
-    /* 强制横排，用浮动百分百生效 */
+    /* 正确的三列flex布局，自动等高 */
     .video-grid {
-      display: block !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 20px !important;
       width: 100% !important;
-      overflow: hidden !important;
-      box-sizing: border-box !important;
       padding: 0 !important;
+      box-sizing: border-box !important;
     }
     .video-card {
-      width: 32% !important;
-      float: left !important;
-      margin: 0 0.66% 20px 0.66% !important;
-      box-sizing: border-box !important;
-      display: block !important;
+      width: calc(33.333% - 14px) !important;
+      margin: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .video-card .thumbnail {
+      height: 200px !important;
+      overflow: hidden !important;
+    }
+    .video-card .thumbnail img {
+      width: 100% !important;
+      height: 200px !important;
+      object-fit: cover !important;
     }
     @media (max-width: 768px) {
       .video-card {
         width: 100% !important;
-        margin: 0 0 20px 0 !important;
       }
     }
     /* flex自动等高，同一排卡片自动一样高 */
