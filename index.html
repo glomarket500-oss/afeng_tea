@@ -208,6 +208,32 @@
 .read-more{display:inline-block;color:#2d5016;font-weight:bold;font-size:.88em;text-decoration:none;
   border-bottom:1px solid #b7cfa0;padding-bottom:1px}
 .read-more:hover{color:#4a7023;border-color:#4a7023}
+
+/* ===== 側邊欄改版（列表可滾動 + 最新文章卡片） ===== */
+.article-index ul{max-height:330px;overflow-y:auto;margin:0;padding:0 2px 0 0;list-style:none;
+  scrollbar-width:thin;scrollbar-color:#c3d6ae transparent}
+.article-index ul::-webkit-scrollbar{width:6px}
+.article-index ul::-webkit-scrollbar-thumb{background:#c3d6ae;border-radius:3px}
+.article-index ul::-webkit-scrollbar-track{background:#f4f1ea;border-radius:3px}
+.article-index li{margin:0;border-bottom:1px solid #f2eee6}
+.article-index li:last-child{border-bottom:none}
+.article-index li a{display:block;padding:7px 6px;font-size:.86em;line-height:1.45;color:#5f5a52;
+  text-decoration:none;border-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.article-index li a:hover{background:#f4f7ef;color:#2d5016}
+.article-index li a.active{background:#eef4e6;color:#2d5016;font-weight:600}
+.article-index h4{margin-bottom:10px}
+.latest-articles ul{margin:0;padding:0;list-style:none}
+.latest-articles li{margin:0 0 8px}
+.latest-articles li:last-child{margin-bottom:0}
+.latest-articles li a{display:flex;gap:9px;align-items:flex-start;padding:5px;border-radius:9px;
+  text-decoration:none;color:inherit;transition:background .18s}
+.latest-articles li a:hover{background:#f4f7ef}
+.latest-thumb{flex:0 0 64px;width:64px;height:48px;object-fit:cover;border-radius:6px;display:block;background:#f0ece4}
+.latest-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.latest-title{font-size:.85em;line-height:1.38;color:#3a2e2a;display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.latest-date{font-size:.74em;color:#9a948a}
+@media(max-width:768px){.article-index ul{max-height:260px}}
 </style>
 
 </head>
@@ -414,30 +440,14 @@
             <aside class="sidebar-left" id="sidebarLeft">
 
                 <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileSidebar()">☰</button>
-
-
-
-                <div class="search-box">
+<div class="search-box">
 
                     <input type="text" id="articleSearch" placeholder="搜索文章标题...">
 
                     <button onclick="searchArticles()">🔍</button>
 
                 </div>
-
-
-
-                <div class="article-index" id="articleIndex">
-
-                    <h4 id="indexTitle">📑 全部文章</h4>
-
-                    <ul id="indexList"></ul>
-
-                </div>
-
-
-
-                <div class="author-card">
+<div class="author-card">
 
                     <h4>👩‍🌾 关于阿凤姐</h4>
 
@@ -454,18 +464,21 @@
                     <a href="https://maps.google.com/?q=23.0897,114.4155" target="_blank">🗺️ 导航到店</a>
 
                 </div>
-
-
-
-                <div class="latest-articles">
+<div class="latest-articles">
 
                     <h4>🆕 最新文章</h4>
 
                     <ul id="latestArticleList"></ul>
 
                 </div>
+<div class="article-index" id="articleIndex">
 
-            </aside>
+                    <h4 id="indexTitle">📑 全部文章</h4>
+
+                    <ul id="indexList"></ul>
+
+                </div>
+</aside>
 
 
 
@@ -1698,6 +1711,7 @@
 
         });
 
+    indexTitle.textContent = (catNames[cat] || '📑 文章列表') + '（' + indexList.children.length + ' 篇）';
     }
 
 
@@ -1863,15 +1877,15 @@
                 a.href = article.dataset.url || ('#' + id);
             a.removeAttribute('onclick');
 
-                a.innerHTML = '<span class="latest-title">' +
-
-                    title.replace(/\u3010NEW\u3011/g, '').trim().substring(0, 18) +
-
-                    (title.length > 18 ? '...' : '') +
-
+                const thumbEl = article.querySelector('.article-thumb img');
+                const thumb = thumbEl ? thumbEl.getAttribute('src') : '';
+                a.innerHTML = (thumb ? '<img class="latest-thumb" src="' + thumb + '" alt="" loading="lazy" decoding="async">' : '') +
+                    '<span class="latest-body"><span class="latest-title">' +
+                    title.replace(/\u3010NEW\u3011/g, '').trim().substring(0, 24) +
+                    (title.length > 24 ? '...' : '') +
                     '</span>' +
-
-                    (dateLabel ? '<span class="latest-date">' + dateLabel + '</span>' : '');
+                    (dateLabel ? '<span class="latest-date">' + dateLabel + '</span>' : '') +
+                    '</span>';
 
                 li.appendChild(a);
 
