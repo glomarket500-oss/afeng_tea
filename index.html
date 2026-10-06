@@ -2276,6 +2276,33 @@
 
 
 
+
+<script>
+// 最近更新 / 上次更新：自動跟隨最新一篇文章的發佈時間與總篇數
+(function () {
+    function run() {
+        var first = document.querySelector('.article-card time[itemprop="datePublished"]');
+        var total = document.querySelectorAll('.article-card').length;
+        if (total) {
+            var cnt = document.getElementById('article-count');
+            if (cnt) cnt.textContent = total;
+        }
+        if (!first) return;
+        var dt = first.getAttribute('datetime') || '';
+        var m = dt.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2}))?)?/);
+        if (!m) return;
+        var label = m[1] + '年' + m[2] + '月' + m[3] + '日' + (m[4] ? ' ' + m[4] + ':' + m[5] + ':' + (m[6] || '00') : '');
+        var nodes = document.querySelectorAll('.update-time time, footer time');
+        Array.prototype.forEach.call(nodes, function (el) {
+            el.setAttribute('datetime', dt);
+            el.textContent = label;
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+    } else { run(); }
+})();
+</script>
 </body>
 
 </html>
