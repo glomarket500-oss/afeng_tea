@@ -329,6 +329,35 @@
   font-family:inherit;letter-spacing:.3px;vertical-align:middle;transition:.2s}
 .expand-all-btn:hover{background:#f2f7ec;border-color:#4a7023}
 .product-badge{white-space:nowrap}
+
+/* 商品卡：整卡可點 + 縮圖清單 + 手機加大點擊區 */
+.product-card{cursor:pointer}
+.product-card .product-media{position:relative;line-height:0}
+.product-badge{position:absolute;top:10px;right:10px;background:rgba(45,80,22,.88);color:#fff;
+  font-size:.72em;padding:5px 12px;border-radius:20px;font-weight:600;letter-spacing:.3px;
+  border:none;cursor:pointer;font-family:inherit;line-height:1.5;white-space:nowrap;
+  transition:background .2s,transform .2s}
+.product-badge:hover{background:#2d5016}
+.product-badge.active{background:#2d5016;transform:scale(1.04)}
+.product-panel{margin-top:12px;padding-top:12px;border-top:1px dashed #e2d9cb;animation:ppIn .22s ease}
+.product-panel[hidden]{display:none}
+@keyframes ppIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.pp-title{margin:0 0 9px;font-size:.82em;color:#4a7023;font-weight:600}
+.pp-list{list-style:none;margin:0 0 11px;padding:0}
+.pp-list li{margin:0 0 4px}
+.pp-list a{display:flex;gap:8px;align-items:center;padding:3px 0;text-decoration:none;
+  font-size:.86em;color:#5f5a52}
+.pp-list a:hover .pp-txt{color:#2d5016}
+.pp-list .pp-thumb{flex:0 0 48px;width:48px!important;min-width:48px!important;max-width:48px!important;height:36px!important;object-fit:cover;border-radius:5px;display:block;background:#f0ece4}
+.pp-txt{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pp-date{color:#b0aca4;font-size:.9em;margin-left:5px}
+.pp-more{display:inline-block;font-size:.82em;color:#4a7023;font-weight:600;text-decoration:none;
+  border-bottom:1px solid #b7cfa0;padding-bottom:1px}
+.pp-more:hover{color:#2d5016;border-color:#2d5016}
+@media(max-width:768px){
+  .product-badge{padding:11px 16px;font-size:.82em;top:8px;right:8px}
+  .pp-list .pp-thumb{flex:0 0 56px;width:56px!important;min-width:56px!important;max-width:56px!important;height:42px!important}
+}
 </style>
 
 </head>
@@ -436,107 +465,127 @@
 
         <div class="products">
 
-            <article class="product-card">
-
-                <div class="product-media"><a class="product-link" href="products/dancong.html"><img src="dancong_orig.jpg" alt="潮州凤凰单丛茶叶" loading="lazy" style="width:100%;height:220px;object-fit:cover;"></a><button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 78 篇相关文章 · 🎥 3</button></div>
-
+            <article class="product-card" data-slug="dancong">
+                <div class="product-media">
+                    <img src="dancong_orig.jpg" alt="凤凰单丛" loading="lazy" style="width:100%;height:220px;object-fit:cover;">
+                    <button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 79 篇相关文章 · 🎥 3</button>
+                </div>
                 <div class="product-info">
-
-                    <h3><a href="products/dancong.html">凤凰单丛</a></h3>
-
+                    <h3>凤凰单丛</h3>
                     <p>潮州凤凰山，高山云雾出好茶。香气如兰，回甘如蜜，一盏入口，醉了人间。</p>
                     <div class="product-panel" hidden>
-                        <p class="pp-title">📖 相关文章（78 篇）</p>
-                        <ul class="pp-list"><li><a href="articles/shuangxiong.html">🍵 蜜兰香 vs 鸭屎香：凤凰单丛「双雄」的前世今生<span class="pp-date">2026-08-14</span></a></li><li><a href="articles/guixiang.html">🍵阿凤姐的下午三点：当凤凰单丛遇见归乡人<span class="pp-date">2026-08-23</span></a></li><li><a href="articles/zhonglei.html">🍵 【凤凰单丛品种指南 | 常见品种一次搞懂】<span class="pp-date">2026-09-28</span></a></li><li><a href="articles/yuanye-tea-1727866689.html">年轻人涌进原叶茶，小美跑来凤姐店里取经<span class="pp-date"></span></a></li><li><a href="articles/milanxiang.html">🍵 凤凰山800米蜜兰香：潮州老茶客的&amp;quot;心头好&amp;q<span class="pp-date">2026-07-24</span></a></li><li><a href="articles/liqiu.html">🍂 立秋｜AI跑得再快，也焙不出一泡凤凰单丛<span class="pp-date">2026-08-07</span></a></li></ul>
-                        <a class="pp-more" href="products/dancong.html">查看全部 78 篇与实拍视频 →</a>
+                        <p class="pp-title">📖 相关文章（79 篇）</p>
+                        <ul class="pp-list">
+                    <li><a href="articles/shuangxiong.html"><img class="pp-thumb" src="images/thumb/shuangxiong-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵 蜜兰香 vs 鸭屎香：凤凰单丛「双雄」的前世今生<span class="pp-date">2026-08-14</span></span></a></li>
+                    <li><a href="articles/guixiang.html"><img class="pp-thumb" src="images/thumb/guixiang-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵阿凤姐的下午三点：当凤凰单丛遇见归乡人<span class="pp-date">2026-08-23</span></span></a></li>
+                    <li><a href="articles/zhonglei.html"><img class="pp-thumb" src="images/thumb/zhonglei-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵 【凤凰单丛品种指南 | 常见品种一次搞懂】<span class="pp-date">2026-09-28</span></span></a></li>
+                    <li><a href="articles/yuanye-tea-1727866689.html"><img class="pp-thumb" src="images/thumb/2026-10-02-yuanye-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">年轻人涌进原叶茶，小美跑来凤姐店里取经<span class="pp-date"></span></span></a></li>
+                    <li><a href="articles/milanxiang.html"><img class="pp-thumb" src="images/thumb/milanxiang-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵 凤凰山800米蜜兰香：潮州老茶客的&amp;quot;心<span class="pp-date">2026-07-24</span></span></a></li>
+                    <li><a href="articles/liqiu.html"><img class="pp-thumb" src="images/thumb/liqiu-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍂 立秋｜AI跑得再快，也焙不出一泡凤凰单丛<span class="pp-date">2026-08-07</span></span></a></li>
+                        </ul>
+                        <a class="pp-more" href="products/dancong.html">🛍️ 进入商品页 · 查看全部 79 篇 →</a>
                     </div>
-
                 </div>
-
             </article>
 
 
 
-            <article class="product-card">
-
-                <div class="product-media"><a class="product-link" href="products/hongcha.html"><img src="product2.jpg" alt="蜜香红茶" loading="lazy" style="width:100%;height:220px;object-fit:cover;"></a><button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 26 篇相关文章</button></div>
-
+            <article class="product-card" data-slug="hongcha">
+                <div class="product-media">
+                    <img src="product2.jpg" alt="蜜香红茶" loading="lazy" style="width:100%;height:220px;object-fit:cover;">
+                    <button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 26 篇相关文章</button>
+                </div>
                 <div class="product-info">
-
-                    <h3><a href="products/hongcha.html">蜜香红茶</a></h3>
-
+                    <h3>蜜香红茶</h3>
                     <p>蜜香悠长，甘醇似暖阳。日常一盏，温柔了时光。</p>
                     <div class="product-panel" hidden>
                         <p class="pp-title">📖 相关文章（26 篇）</p>
-                        <ul class="pp-list"><li><a href="articles/baidolphin.html">🐬 白海豚浇透小半个中国，阿凤姐煮了这壶&amp;quot;雨后茶&amp;<span class="pp-date">2026-08-13</span></a></li><li><a href="articles/chawang.html">🏆 凤凰单丛十大茶王加冕，潮汕茶香再飘新高度<span class="pp-date">2026-08-17</span></a></li><li><a href="articles/laocha.html">🍵 老茶 | 时光的礼物<span class="pp-date">2026-09-28</span></a></li><li><a href="articles/milanxiang.html">🍵 凤凰山800米蜜兰香：潮州老茶客的&amp;quot;心头好&amp;q<span class="pp-date">2026-07-24</span></a></li><li><a href="articles/中秋前茶桌上的选择从送领导到留自己.html">中秋前，茶桌上的选择——从送领导到留自己喝<span class="pp-date"></span></a></li><li><a href="articles/basai.html">🏆 第八届凤凰单丛争霸赛，潮州茶王加冕——从凤凰山到浮滨岭头<span class="pp-date">2026-09-28</span></a></li></ul>
-                        <a class="pp-more" href="products/hongcha.html">查看全部 26 篇 →</a>
+                        <ul class="pp-list">
+                    <li><a href="articles/baidolphin.html"><img class="pp-thumb" src="images/thumb/baidolphin-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🐬 白海豚浇透小半个中国，阿凤姐煮了这壶&amp;quot;<span class="pp-date">2026-08-13</span></span></a></li>
+                    <li><a href="articles/chawang.html"><img class="pp-thumb" src="images/thumb/chawang-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🏆 凤凰单丛十大茶王加冕，潮汕茶香再飘新高度<span class="pp-date">2026-08-17</span></span></a></li>
+                    <li><a href="articles/laocha.html"><img class="pp-thumb" src="images/thumb/laocha-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵 老茶 | 时光的礼物<span class="pp-date">2026-09-28</span></span></a></li>
+                    <li><a href="articles/milanxiang.html"><img class="pp-thumb" src="images/thumb/milanxiang-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵 凤凰山800米蜜兰香：潮州老茶客的&amp;quot;心<span class="pp-date">2026-07-24</span></span></a></li>
+                    <li><a href="articles/中秋前茶桌上的选择从送领导到留自己.html"><img class="pp-thumb" src="images/thumb/2026-09-28-zhongqiu-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">中秋前，茶桌上的选择——从送领导到留自己喝<span class="pp-date"></span></span></a></li>
+                    <li><a href="articles/basai.html"><img class="pp-thumb" src="images/thumb/basai-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🏆 第八届凤凰单丛争霸赛，潮州茶王加冕——从凤凰山到<span class="pp-date">2026-09-28</span></span></a></li>
+                        </ul>
+                        <a class="pp-more" href="products/hongcha.html">🛍️ 进入商品页 · 查看全部 26 篇 →</a>
                     </div>
-
                 </div>
-
             </article>
 
 
 
-            <article class="product-card">
-
-                <div class="product-media"><a class="product-link" href="products/lvcha.html"><img src="product3.jpg" alt="高山绿茶" loading="lazy" style="width:100%;height:220px;object-fit:cover;"></a><button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 8 篇相关文章</button></div>
-
+            <article class="product-card" data-slug="lvcha">
+                <div class="product-media">
+                    <img src="product3.jpg" alt="高山绿茶" loading="lazy" style="width:100%;height:220px;object-fit:cover;">
+                    <button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 8 篇相关文章</button>
+                </div>
                 <div class="product-info">
-
-                    <h3><a href="products/lvcha.html">高山绿茶</a></h3>
-
+                    <h3>高山绿茶</h3>
                     <p>高海拔茶园，云雾润泽。清香淡雅，一杯山水在心头。</p>
                     <div class="product-panel" hidden>
                         <p class="pp-title">📖 相关文章（8 篇）</p>
-                        <ul class="pp-list"><li><a href="articles/liqiu3.html">🍂 立秋后第一杯茶，阿凤姐劝你别乱喝！——下午3点，正是喝茶<span class="pp-date">2026-08-15</span></a></li><li><a href="articles/xinshou.html">🍵 【如何泡出一杯好茶？| 新手入门指南】<span class="pp-date">2026-09-28</span></a></li><li><a href="articles/中秋前茶桌上的选择从送领导到留自己.html">中秋前，茶桌上的选择——从送领导到留自己喝<span class="pp-date"></span></a></li><li><a href="articles/xiawu3.html">🍵下午三点的茶，喝的是秋天的第一口消息<span class="pp-date">2026-08-18</span></a></li><li><a href="articles/chate.html">🍵茶叶圈变天了：茶特调&amp;quot;上位&amp;quot;，中国茶&amp;<span class="pp-date">2026-08-19</span></a></li><li><a href="articles/yehua-gpt5.html">🌙阿凤姐夜话｜GPT-5来了，美股跌了，我还是泡我的凤凰单丛<span class="pp-date">2026-08-22</span></a></li></ul>
-                        <a class="pp-more" href="products/lvcha.html">查看全部 8 篇 →</a>
+                        <ul class="pp-list">
+                    <li><a href="articles/liqiu3.html"><img class="pp-thumb" src="images/thumb/liqiu3-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍂 立秋后第一杯茶，阿凤姐劝你别乱喝！——下午3点，<span class="pp-date">2026-08-15</span></span></a></li>
+                    <li><a href="articles/xinshou.html"><img class="pp-thumb" src="images/thumb/xinshou-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵 【如何泡出一杯好茶？| 新手入门指南】<span class="pp-date">2026-09-28</span></span></a></li>
+                    <li><a href="articles/中秋前茶桌上的选择从送领导到留自己.html"><img class="pp-thumb" src="images/thumb/2026-09-28-zhongqiu-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">中秋前，茶桌上的选择——从送领导到留自己喝<span class="pp-date"></span></span></a></li>
+                    <li><a href="articles/xiawu3.html"><img class="pp-thumb" src="images/thumb/xiawu3-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵下午三点的茶，喝的是秋天的第一口消息<span class="pp-date">2026-08-18</span></span></a></li>
+                    <li><a href="articles/chate.html"><img class="pp-thumb" src="images/thumb/chate-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵茶叶圈变天了：茶特调&amp;quot;上位&amp;quot;，<span class="pp-date">2026-08-19</span></span></a></li>
+                    <li><a href="articles/yehua-gpt5.html"><img class="pp-thumb" src="images/thumb/yehua-gpt5-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🌙阿凤姐夜话｜GPT-5来了，美股跌了，我还是泡我的<span class="pp-date">2026-08-22</span></span></a></li>
+                        </ul>
+                        <a class="pp-more" href="products/lvcha.html">🛍️ 进入商品页 · 查看全部 8 篇 →</a>
                     </div>
-
                 </div>
-
             </article>
 
 
 
-            <article class="product-card">
-
-                <div class="product-media"><a class="product-link" href="products/chenpi-puer.html"><img src="chenpi_puer.jpg" alt="陈皮普洱" loading="lazy" style="width:100%;height:220px;object-fit:cover;"></a><button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 56 篇相关文章</button></div>
-
+            <article class="product-card" data-slug="chenpi-puer">
+                <div class="product-media">
+                    <img src="chenpi_puer.jpg" alt="陈皮普洱" loading="lazy" style="width:100%;height:220px;object-fit:cover;">
+                    <button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 56 篇相关文章</button>
+                </div>
                 <div class="product-info">
-
-                    <h3><a href="products/chenpi-puer.html">陈皮普洱</a></h3>
-
+                    <h3>陈皮普洱</h3>
                     <p>岁月陈化，橘香与茶韵交融。温润入心，越陈越香。</p>
                     <div class="product-panel" hidden>
                         <p class="pp-title">📖 相关文章（56 篇）</p>
-                        <ul class="pp-list"><li><a href="articles/duanwu.html">🐲 【端午节】客户带着粽子来我店里，说要送我——我反而卖给他<span class="pp-date">2026-09-28</span></a></li><li><a href="articles/puer.html">🍵 【普洱茶 vs 凤凰单丛：一场老灵魂与香美人的邂逅】<span class="pp-date">2026-09-28</span></a></li><li><a href="articles/阿鳳姐講茶第140屆廣交會來了外單復.html">阿鳳姐講茶｜第140屆廣交會來了，外單復甦？師傅們點算<span class="pp-date"></span></a></li><li><a href="articles/geo-faq.html">📍惠州哪里买正宗凤凰单丛？阿凤姐茶叶店常见问题全解答<span class="pp-date"></span></a></li><li><a href="articles/中秋倒數六天那年輕嘅茶味從3200億.html">中秋倒數六天：那年輕嘅茶味，從3200億市場到鳳凰山嘅阿鳳姐<span class="pp-date"></span></a></li><li><a href="articles/liqiu3.html">🍂 立秋后第一杯茶，阿凤姐劝你别乱喝！——下午3点，正是喝茶<span class="pp-date">2026-08-15</span></a></li></ul>
-                        <a class="pp-more" href="products/chenpi-puer.html">查看全部 56 篇 →</a>
+                        <ul class="pp-list">
+                    <li><a href="articles/duanwu.html"><img class="pp-thumb" src="images/thumb/duanwu-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🐲 【端午节】客户带着粽子来我店里，说要送我——我反<span class="pp-date">2026-09-28</span></span></a></li>
+                    <li><a href="articles/puer.html"><img class="pp-thumb" src="images/thumb/puer-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵 【普洱茶 vs 凤凰单丛：一场老灵魂与香美人的邂<span class="pp-date">2026-09-28</span></span></a></li>
+                    <li><a href="articles/阿鳳姐講茶第140屆廣交會來了外單復.html"><img class="pp-thumb" src="images/thumb/阿鳳姐講茶第140屆廣交會來了外單復-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">阿鳳姐講茶｜第140屆廣交會來了，外單復甦？師傅們點<span class="pp-date"></span></span></a></li>
+                    <li><a href="articles/geo-faq.html"><img class="pp-thumb" src="images/thumb/geo-faq-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">📍惠州哪里买正宗凤凰单丛？阿凤姐茶叶店常见问题全解答<span class="pp-date"></span></span></a></li>
+                    <li><a href="articles/中秋倒數六天那年輕嘅茶味從3200億.html"><img class="pp-thumb" src="images/thumb/2026-09-19-zq-scene1.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">中秋倒數六天：那年輕嘅茶味，從3200億市場到鳳凰山<span class="pp-date"></span></span></a></li>
+                    <li><a href="articles/liqiu3.html"><img class="pp-thumb" src="images/thumb/liqiu3-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍂 立秋后第一杯茶，阿凤姐劝你别乱喝！——下午3点，<span class="pp-date">2026-08-15</span></span></a></li>
+                        </ul>
+                        <a class="pp-more" href="products/chenpi-puer.html">🛍️ 进入商品页 · 查看全部 56 篇 →</a>
                     </div>
-
                 </div>
-
             </article>
 
 
 
-            <article class="product-card">
-
-                <div class="product-media"><a class="product-link" href="products/zisha.html"><img src="yixing_teapot.jpg" alt="潮州紫砂壶" loading="lazy" style="width:100%;height:220px;object-fit:cover;"></a><button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 58 篇相关文章 · 🎥 2</button></div>
-
+            <article class="product-card" data-slug="zisha">
+                <div class="product-media">
+                    <img src="yixing_teapot.jpg" alt="潮州紫砂壶" loading="lazy" style="width:100%;height:220px;object-fit:cover;">
+                    <button class="product-badge" type="button" aria-expanded="false" onclick="toggleProductPanel(this)">▼ 59 篇相关文章 · 🎥 2</button>
+                </div>
                 <div class="product-info">
-
-                    <h3><a href="products/zisha.html">潮州紫砂壶</a></h3>
-
+                    <h3>潮州紫砂壶</h3>
                     <p>匠心手作，透气养茶。一壶好茶，从器开始。</p>
                     <div class="product-panel" hidden>
-                        <p class="pp-title">📖 相关文章（58 篇）</p>
-                        <ul class="pp-list"><li><a href="articles/qiju-meixue.html">🏺 器物之美，茶器有灵<span class="pp-date">2026-08-22</span></a></li><li><a href="articles/zisha.html">🆕 【紫砂壶：壶中乾坤，选对才能泡好茶】<span class="pp-date">2026-09-28</span></a></li><li><a href="articles/202609141000阿凤姐叹茶具设计大赛凤凰单丛新路向.html">阿凤姐叹茶具设计大赛：凤凰单丛新路向<span class="pp-date">2026-09-14</span></a></li><li><a href="articles/zishayiyun.html">🫖 紫砂疑雲：一把「時大彬」壺，揭開三代壺匠嘅生死恩怨<span class="pp-date">2026-08-14</span></a></li><li><a href="articles/milanxiang.html">🍵 凤凰山800米蜜兰香：潮州老茶客的&amp;quot;心头好&amp;q<span class="pp-date">2026-07-24</span></a></li><li><a href="articles/baidolphin.html">🐬 白海豚浇透小半个中国，阿凤姐煮了这壶&amp;quot;雨后茶&amp;<span class="pp-date">2026-08-13</span></a></li></ul>
-                        <a class="pp-more" href="products/zisha.html">查看全部 58 篇与实拍视频 →</a>
+                        <p class="pp-title">📖 相关文章（59 篇）</p>
+                        <ul class="pp-list">
+                    <li><a href="articles/qiju-meixue.html"><img class="pp-thumb" src="images/thumb/qiju-meixue-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🏺 器物之美，茶器有灵<span class="pp-date">2026-08-22</span></span></a></li>
+                    <li><a href="articles/zisha.html"><img class="pp-thumb" src="images/thumb/zisha-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🆕 【紫砂壶：壶中乾坤，选对才能泡好茶】<span class="pp-date">2026-09-28</span></span></a></li>
+                    <li><a href="articles/202609141000阿凤姐叹茶具设计大赛凤凰单丛新路向.html"><img class="pp-thumb" src="images/thumb/202609141000阿凤姐叹茶具设计大赛凤凰单丛新路向-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">阿凤姐叹茶具设计大赛：凤凰单丛新路向<span class="pp-date">2026-09-14</span></span></a></li>
+                    <li><a href="articles/zishayiyun.html"><img class="pp-thumb" src="images/thumb/zishayiyun-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🫖 紫砂疑雲：一把「時大彬」壺，揭開三代壺匠嘅生死恩<span class="pp-date">2026-08-14</span></span></a></li>
+                    <li><a href="articles/milanxiang.html"><img class="pp-thumb" src="images/thumb/milanxiang-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🍵 凤凰山800米蜜兰香：潮州老茶客的&amp;quot;心<span class="pp-date">2026-07-24</span></span></a></li>
+                    <li><a href="articles/baidolphin.html"><img class="pp-thumb" src="images/thumb/baidolphin-hero.webp" alt="" width="48" height="36" loading="lazy" decoding="async"><span class="pp-txt">🐬 白海豚浇透小半个中国，阿凤姐煮了这壶&amp;quot;<span class="pp-date">2026-08-13</span></span></a></li>
+                        </ul>
+                        <a class="pp-more" href="products/zisha.html">🛍️ 进入商品页 · 查看全部 59 篇 →</a>
                     </div>
-
                 </div>
-
             </article>
 
         </div>
@@ -1972,6 +2021,60 @@
     // 4. 移动端侧边栏开关
 
     
+
+
+    // 商品卡：整卡點擊=展開、狀態記憶、全部按鈕文案同步
+    (function () {
+        var KEY = 'afengOpenProductPanels';
+        function cards() { return Array.prototype.slice.call(document.querySelectorAll('.product-card')); }
+        function slugOf(card) { return card.getAttribute('data-slug') || ''; }
+        function save() {
+            var open = cards().filter(function (c) {
+                var p = c.querySelector('.product-panel');
+                return p && !p.hasAttribute('hidden');
+            }).map(slugOf);
+            try { sessionStorage.setItem(KEY, JSON.stringify(open)); } catch (e) { }
+            syncAll();
+        }
+        function syncAll() {
+            var btn = document.querySelector('.expand-all-btn');
+            if (!btn) return;
+            var anyHidden = cards().some(function (c) {
+                var p = c.querySelector('.product-panel');
+                return p && p.hasAttribute('hidden');
+            });
+            btn.textContent = anyHidden ? '展开全部相关文章' : '收起全部';
+        }
+        function open(card) {
+            var p = card.querySelector('.product-panel'), b = card.querySelector('.product-badge');
+            if (!p) return;
+            p.removeAttribute('hidden');
+            if (b) { b.classList.add('active'); b.setAttribute('aria-expanded', 'true'); }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // 整卡點擊（點到連結或按鈕則交給它們自己處理）
+            cards().forEach(function (card) {
+                card.addEventListener('click', function (e) {
+                    if (e.target.closest('a, button')) return;
+                    var b = card.querySelector('.product-badge');
+                    if (b) b.click();
+                });
+                var b = card.querySelector('.product-badge');
+                if (b) b.addEventListener('click', function () { setTimeout(save, 40); });
+            });
+            var ab = document.querySelector('.expand-all-btn');
+            if (ab) ab.addEventListener('click', function () { setTimeout(save, 40); });
+            // 還原上次展開狀態
+            var openList = [];
+            try { openList = JSON.parse(sessionStorage.getItem(KEY) || '[]'); } catch (e) { }
+            if (openList.length) {
+                cards().forEach(function (c) {
+                    if (openList.indexOf(slugOf(c)) >= 0) open(c);
+                });
+            }
+            syncAll();
+        });
+    })();
 
     // 產品展示：全部展開 / 收起
     function toggleAllProductPanels(btn) {
