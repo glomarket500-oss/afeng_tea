@@ -267,6 +267,18 @@
   .sidebar-right{max-width:none;padding:16px}
   .author-avatar{width:88px;height:88px}
 }
+
+/* 阿鳳姐名片：專營標籤 + 簡介 */
+.author-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:0 0 14px}
+.author-tags span{font-size:.72em;color:#4a7023;background:#eef4e6;border:1px solid #d9e7c8;
+  padding:3px 10px;border-radius:20px;line-height:1.4;white-space:nowrap}
+.author-bio{border-top:1px dashed #e2d9cb;padding:13px 0 0;margin:0 0 14px;text-align:left}
+.author-bio p{font-size:.85em;line-height:1.78;color:#6b6459;margin:0 0 9px}
+.author-bio p:last-child{margin-bottom:0;color:#4a7023;font-weight:600}
+.author-count{display:block;text-align:center;margin:11px 0 0;font-size:.78em;color:#9a948a;
+  text-decoration:none;letter-spacing:.3px}
+.author-count:hover{color:#4a7023}
+.author-count span{color:#4a7023;font-weight:700}
 </style>
 
 </head>
@@ -1483,12 +1495,26 @@
                         <h4>👩‍🌾 关于阿凤姐</h4>
                         <p class="author-name">阿凤姐</p>
                         <p class="author-role">惠州茶叶店主理人</p>
+
+                        <div class="author-tags">
+                            <span>凤凰单丛</span><span>新会陈皮</span><span>潮州工夫茶</span>
+                        </div>
+
+                        <div class="author-bio">
+                            <p>在惠州东湖花园沿江开店，专营潮州凤凰单丛与新会陈皮。</p>
+                            <p>常年往凤凰山乌岽村跑，跟着老师傅看天做茶——晒青、摇青、炭焙，一道一道盯着来。山场好不好、火候到不到，都要自己喝过才算数。</p>
+                            <p>闲时写茶、讲茶，也听街坊讲茶。茶要有人讲，才喝得出味道。</p>
+                            <p>店里常年备着热茶，路过就进来饮一杯。</p>
+                        </div>
+
                         <ul class="author-info">
                             <li><span class="ai">📍</span><span>惠城区东湖花园一区沿江商铺89-136</span></li>
                             <li><span class="ai">📱</span><span><a href="tel:13435567385">13435567385</a></span></li>
                             <li><span class="ai">⏰</span><span>周一至周日 9:00-21:00</span></li>
                         </ul>
+
                         <a class="author-btn" href="https://maps.google.com/?q=23.0897,114.4155" target="_blank" rel="noopener">🗺️ 导航到店</a>
+                        <a class="author-count" href="#knowledge">📖 已写 <span id="authorPostCount">80</span> 篇茶韵讲古 →</a>
                     </div>
                 </aside>
 
@@ -1646,6 +1672,10 @@
     const articleCount = document.querySelectorAll('.article-card').length;
 
     document.getElementById('article-count').textContent = articleCount;
+
+    // 阿鳳姐名片的篇數（跟文章總數同步）
+    const apc = document.getElementById('authorPostCount');
+    if (apc) apc.textContent = articleCount;
 
 
 
