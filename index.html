@@ -372,6 +372,54 @@
 @media(min-width:1400px){
   .sidebar-left .sidebar-author{display:none}
 }
+
+/* ===== 阿鳳姐名片美化 ===== */
+.sidebar-right, .sidebar-left .sidebar-author{
+  position:relative;overflow:hidden;border-radius:16px;
+  background:linear-gradient(180deg,#fffdfa 0%,#f8f5ee 100%);
+  border:1px solid #e8dfd0;box-shadow:0 6px 24px rgba(45,80,22,.08);
+}
+.sidebar-right::before, .sidebar-left .sidebar-author::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:4px;
+  background:linear-gradient(90deg,#2d5016,#4a7023 35%,#8fae63 65%,#c9a86a);
+}
+.author-avatar{width:106px;height:106px;margin:6px auto 12px;border-radius:50%;padding:3px;
+  background:linear-gradient(135deg,#4a7023,#c9a86a);box-shadow:0 8px 20px rgba(45,80,22,.22)}
+.author-avatar img{border-radius:50%;border:3px solid #fff;width:100%;height:100%;object-fit:cover}
+.sidebar-right h4, .sidebar-author h4{margin:0 0 5px;color:#4a7023;font-size:.82em;
+  letter-spacing:2px;font-weight:600;text-align:center}
+.author-name{font-family:Georgia,'Songti SC','Times New Roman',serif;font-size:1.34em;
+  font-weight:700;letter-spacing:5px;color:#2d5016;margin:0 0 3px;text-align:center;
+  text-indent:5px}
+.author-role{font-size:.82em;color:#a89f92;letter-spacing:1px;margin:0 0 13px;text-align:center}
+.author-tags{justify-content:center;margin-bottom:14px}
+.author-tags span{background:linear-gradient(135deg,#f2f7ec,#eef4e6);border-color:#d5e4c3;
+  color:#4a7023;font-weight:500}
+.author-bio{border-top:1px dashed #e5dccc;margin-top:4px}
+.author-info{border-top:1px dashed #e5dccc;padding-top:13px}
+.author-info li{align-items:center}
+.author-info .ai{width:22px;height:22px;flex:0 0 22px;display:flex;align-items:center;
+  justify-content:center;background:#f1f6ea;border-radius:6px;font-size:.8em}
+/* 電話：藝術阿拉伯數字 */
+.author-card .author-tel, .sidebar-author .author-tel{display:flex!important;flex-direction:column!important;align-items:center!important;gap:2px;margin:0 0 14px!important;color:inherit!important;
+  padding:11px 12px 9px;border-radius:13px;text-decoration:none;
+  background:linear-gradient(135deg,#f0f6e8 0%,#faf6ec 100%)!important;
+  border:1px solid #dde8cd!important;transition:transform .22s,box-shadow .22s;text-decoration:none!important}
+.author-tel:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(45,80,22,.16)}
+.author-tel .tel-ico{font-size:.8em;opacity:.75;line-height:1}
+.author-tel .tel-digits{
+  font-family:Georgia,'Didot','Times New Roman',serif;
+  font-size:1.42em;font-weight:700;letter-spacing:3.5px;line-height:1.25;
+  font-variant-numeric:tabular-nums;
+  background:linear-gradient(135deg,#1b3f06 0%,#356112 38%,#5c842f 68%,#9c7f36 100%);text-shadow:none;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  color:#2d5016;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+.author-tel .tel-hint{font-size:.68em;color:#b0a89b;letter-spacing:2px;margin-top:1px}
+.author-btn{background:linear-gradient(135deg,#4a7023,#6b8f3d);border-radius:11px;
+  box-shadow:0 4px 14px rgba(45,80,22,.22);letter-spacing:2px}
+.author-btn:hover{background:linear-gradient(135deg,#2d5016,#4a7023);transform:translateY(-2px);
+  box-shadow:0 7px 18px rgba(45,80,22,.3)}
+.author-count{margin-top:12px}
 </style>
 
 </head>
@@ -647,9 +695,13 @@
 
                         <ul class="author-info">
                             <li><span class="ai">📍</span><span>惠城区东湖花园一区沿江商铺89-136</span></li>
-                            <li><span class="ai">📱</span><span><a href="tel:13435567385">13435567385</a></span></li>
                             <li><span class="ai">⏰</span><span>周一至周日 9:00-21:00</span></li>
                         </ul>
+                        <a class="author-tel" href="tel:13435567385" aria-label="拨打电话 13435567385">
+                            <span class="tel-ico">📞</span>
+                            <span class="tel-digits">13435567385</span>
+                            <span class="tel-hint">点击拨号</span>
+                        </a>
 
                         <a class="author-btn" href="https://maps.google.com/?q=23.0897,114.4155" target="_blank" rel="noopener">🗺️ 导航到店</a>
                         <a class="author-count" href="#knowledge">📖 已写 <span class="authorPostCount">80</span> 篇茶韵讲古 →</a>
@@ -1681,9 +1733,13 @@
 
                         <ul class="author-info">
                             <li><span class="ai">📍</span><span>惠城区东湖花园一区沿江商铺89-136</span></li>
-                            <li><span class="ai">📱</span><span><a href="tel:13435567385">13435567385</a></span></li>
                             <li><span class="ai">⏰</span><span>周一至周日 9:00-21:00</span></li>
                         </ul>
+                        <a class="author-tel" href="tel:13435567385" aria-label="拨打电话 13435567385">
+                            <span class="tel-ico">📞</span>
+                            <span class="tel-digits">13435567385</span>
+                            <span class="tel-hint">点击拨号</span>
+                        </a>
 
                         <a class="author-btn" href="https://maps.google.com/?q=23.0897,114.4155" target="_blank" rel="noopener">🗺️ 导航到店</a>
                         <a class="author-count" href="#knowledge">📖 已写 <span class="authorPostCount">80</span> 篇茶韵讲古 →</a>
