@@ -148,6 +148,14 @@ footer a{color:#a8d5a2}
 @media(max-width:768px){
   .video-card.portrait .video-thumb{max-height:460px!important}
   .video-card.portrait .video-thumb img,.video-card.portrait .video-thumb video{max-height:460px!important}}
+
+/* 豎版卡片：只顯示 video（poster 已是同一張封面），隱藏多餘的 img，避免並排出現兩張 */
+.video-card.portrait .video-thumb img{display:none!important}
+.video-card.portrait .video-thumb{height:auto!important;max-height:560px!important;overflow:hidden}
+.video-card.portrait .video-thumb video{position:static!important;width:auto!important;height:auto!important;
+  max-width:100%!important;max-height:560px!important;object-fit:contain!important;margin:0 auto!important;z-index:auto!important}
+@media(max-width:768px){.video-card.portrait .video-thumb{max-height:460px!important}
+  .video-card.portrait .video-thumb video{max-height:460px!important}}
 </style>
 </head>
 <body>
