@@ -252,7 +252,7 @@ SCENE_MAP = [
     (("晾青", "晒青", "萎凋", "呼吸"), "竹筛上摊晾的鲜茶叶，自然光萎凋"),
     (("焙", "火", "炭", "红泥炉", "木炭", "烘焙"), "木炭焙茶，红泥炉微火与竹焙笼"),
     (("泡", "盖碗", "汤", "冲", "出汤", "品"), "两只白瓷盖碗与公道杯，茶汤琥珀清透"),
-    (("礼盒", "批发", "分货", "茶楼", "奶茶", "订单", "生意"), "茶店内整齐码放的素面锡罐与纸箱"),
+    (("礼盒", "批发", "分货", "茶楼", "奶茶", "订单", "生意"), "干茶叶装满竹匾，木桌上整齐摊开，浅景深"),
     (("办公室", "下午茶", "十分钟"), "办公桌上简洁的玻璃杯与茶叶，暖光"),
     (("晨光", "早", "天亮", "清晨"), "清晨斜光下的茶桌与一杯热茶，木质纹理"),
     (("夜", "灯", "傍晚", "北风", "冬天", "立冬"), "夜晚暖黄灯光下的茶席与半杯茶"),
@@ -308,13 +308,26 @@ def pick_domain(title, sections):
     return "mountain" if sum(txt.count(k) for k in mountain_keys) >= 6 else "shop"
 
 
+_PROMPT_NOISE = ("构图舒展留白", "自然光", "暖光", "暖黄光", "微距特写", "浅景深",
+                 "主体充满画面", "画面简洁", "午后光", "木质纹理")
+
+
+def scene_caption(desc):
+    """图说 = 这张图实际画的是什么（案例7：绝不能只写「第一幕｜引茶」这种幕名）"""
+    s = desc
+    for n in _PROMPT_NOISE:
+        s = s.replace(n, "")
+    s = re.sub(r"[，,、\s]+", "，", s).strip("，。 ")
+    return s if len(s) <= 42 else s[:40] + "……"
+
+
 def build_prompts(title, sections):
     """封面 + 每幕 1 张；同池内去重轮换，避免配图雷同"""
     domain = pick_domain(title, sections)
     pool = MOUNTAIN_POOL if domain == "mountain" else SHOP_POOL
     cover_desc = COVER_MOUNTAIN if domain == "mountain" else COVER_SHOP
 
-    prompts = [{"key": "cover", "cap": f"{title}｜凤凰单丛", "desc": cover_desc}]
+    prompts = [{"key": "cover", "cap": scene_caption(cover_desc), "desc": cover_desc}]
     used = {cover_desc}          # 封面用过的构图，场景图不再重复
 
     def too_similar(cand):
@@ -342,13 +355,13 @@ def build_prompts(title, sections):
         if not desc:
             desc = pool[i % len(pool)]
         used.add(desc)
-        prompts.append({"key": f"s{i+1}", "cap": head.strip("【】").replace("：", "｜"), "desc": desc})
+        prompts.append({"key": f"s{i+1}", "cap": scene_caption(desc), "desc": desc})
 
     while len(prompts) < 7:
         k = len(prompts)
         cand = next((c for c in pool if c not in used), pool[k % len(pool)])
         used.add(cand)
-        prompts.append({"key": f"s{k}", "cap": "凤凰单丛茶席", "desc": cand})
+        prompts.append({"key": f"s{k}", "cap": scene_caption(cand), "desc": cand})
     return prompts[:7]
 
 
@@ -399,10 +412,13 @@ def gen_image(api_key, prompt, retries=3):
 
 
 def to_webp(raw_bytes, out_path, width=None, height=None, quality=82):
-    """等比缩放 + 居中裁切 → WebP ≤200KB"""
+    """裁水印 → 等比缩放 + 居中裁切 → WebP ≤200KB"""
     from PIL import Image
     import io
     im = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
+    # 案例4：必须先裁掉底部 15%（「AI生成」水印在右下角）。
+    # 注意 1024×576 本身就是 16:9，只做居中裁切等于没裁，水印会原样上线。
+    im = im.crop((0, 0, im.width, int(im.height * 0.85)))
     if width and height:
         r = max(width / im.width, height / im.height)
         nw, nh = max(width, round(im.width * r)), max(height, round(im.height * r))
@@ -801,9 +817,15 @@ def update_index(meta, tags):
     marker = '<div class="article-list">\n'
     if marker not in idx:
         raise SystemExit("❌ 首页找不到 article-list 标记")
+    n_before = idx.count('class="article-card')
     idx = idx.replace(marker, marker + card, 1)
+    n_after = idx.count('class="article-card')
+    # 守则·第五节 推送保护：卡片数必须恰好 +1，且新卡在第 1 位
+    assert n_after == n_before + 1, f"❌ 首页卡片数异常：{n_before} → {n_after}（应 +1）"
+    assert re.search(r'<div class="article-list">\s*<article class="article-card[^>]*id="article-'
+                     + re.escape(slug), idx), "❌ 新卡片不在首页第 1 位"
     idx_p.write_text(idx, encoding="utf-8")
-    print(f"  ✓ 首页首卡已插入（现共 {idx.count('class=\"article-card')} 张）")
+    print(f"  ✓ 首页首卡已插入（{n_before} → {n_after} 张，首卡正确）")
 
 
 def update_sitemap(meta):
@@ -813,12 +835,16 @@ def update_sitemap(meta):
     if f"{slug}.html" in sm:
         print("  ↺ sitemap 已存在，跳过")
         return
+    n_before = sm.count("<loc>")
     entry = (f'  <url><loc>{SITE}/articles/{slug}.html</loc>'
              f'<lastmod>{meta["date"]}</lastmod><changefreq>monthly</changefreq>'
              f'<priority>0.8</priority></url>\n')
     sm = sm.replace("</urlset>", entry + "</urlset>")
+    n_after = sm.count("<loc>")
+    # 守则·第五节：sitemap 必须恰好 +1 条
+    assert n_after == n_before + 1, f"❌ sitemap 条数异常：{n_before} → {n_after}（应 +1）"
     sm_p.write_text(sm, encoding="utf-8")
-    print(f"  ✓ sitemap 已追加（共 {sm.count('<loc>')} 条）")
+    print(f"  ✓ sitemap 已追加（{n_before} → {n_after} 条）")
 
 
 def update_footer(meta):
