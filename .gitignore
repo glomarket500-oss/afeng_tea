@@ -1,0 +1,9 @@
+# 临时脚本与状态文件（不进仓库）
+_.*.py
+_preview_*.html
+_dump.txt
+_pub_run*.log
+.png
+__pycache__/
+.published_drafts.json
+_png/
