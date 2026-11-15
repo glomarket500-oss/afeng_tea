@@ -421,11 +421,18 @@
   box-shadow:0 7px 18px rgba(45,80,22,.3)}
 .author-count{margin-top:12px}
 
-/* ===== 修正：阿鳳姐名片只屬於右側欄，不再出現在左側欄 ===== */
+/* ===== 阿鳳姐名片：永遠在右側欄（>=1100px 三欄；<1100px 才落到內容下方） ===== */
 .sidebar-left .sidebar-author{display:none!important}
-@media(max-width:1399px){
-  .sidebar-right{display:block!important;grid-column:1 / -1!important;
-    max-width:520px!important;margin:20px auto 0!important;position:static!important}
+
+@media(min-width:1100px) and (max-width:1399px){
+  .container{max-width:1260px!important;padding-left:16px!important;padding-right:16px!important}
+  .site-wrapper{grid-template-columns:240px minmax(0,1fr) 280px!important;max-width:1220px!important;gap:20px!important}
+  .sidebar-right{display:block!important;grid-column:auto!important;max-width:none!important;
+    margin:0!important;position:sticky!important;top:20px!important;align-self:start!important}
+}
+@media(max-width:1099px){
+  .sidebar-right{display:block!important;grid-column:1 / -1!important;max-width:520px!important;
+    margin:20px auto 0!important;position:static!important}
 }
 </style>
 
