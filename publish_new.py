@@ -136,6 +136,40 @@ def autosplit(paras):
 HEAD_RE = re.compile(r"^[【\[]\s*(场景开头|第[一二三四五六七八九十]+幕|尾声)\s*[：:·\-]?\s*(.*?)\s*[】\]]$")
 
 
+def normalize_draft_text(txt):
+    """容错标准化（2026-11-17 新增）：生成任务可能把格式写歪，发布前统一纠正
+    处理：真名残留 / **第X幕·xxx** → ## 【第X幕：xxx】 / 缺【场景开头】 / 🏷️标签行 → ## 标签"""
+    txt = txt.replace("林玉凤（阿凤姐）", "阿凤姐").replace("林玉鳳（阿鳳姐）", "阿鳳姐")
+    txt = txt.replace("林玉凤", "阿凤姐").replace("林玉鳳", "阿鳳姐")
+
+    def _fix_act(m):
+        label = m.group(1).strip()
+        rest = m.group(2).strip(" ·:：—-")
+        return f"## 【{label}：{rest}】" if rest else f"## 【{label}】"
+
+    txt = re.sub(r"^\*\*\s*(第[一二三四五六七八九十]+幕|场景开头|尾声)\s*[·:：—\-]?\s*([^*]*?)\s*\*\*\s*$",
+                 _fix_act, txt, flags=re.M)
+
+    if "【场景开头】" not in txt:
+        lines = txt.split("\n")
+        idx = None
+        for i, line in enumerate(lines):
+            s = line.strip()
+            if i == 0 or not s or s.startswith("#") or s.startswith("**"):
+                continue
+            idx = i
+            break
+        if idx is not None:
+            lines.insert(idx, "## 【场景开头】")
+            txt = "\n".join(lines)
+
+    if "## 标签" not in txt:
+        m = re.search(r"^.*?🏷️?\s*((?:#[^\s#]+[ \t]*)+)$", txt, flags=re.M)
+        if m:
+            txt = txt[:m.start()] + f"## 标签\n{m.group(1).strip()}" + txt[m.end():]
+    return txt
+
+
 def parse_draft(raw):
     lines = raw.split("\n")
     title, lead = "", ""
@@ -250,8 +284,8 @@ SCENE_MAP = [
     (("杀青", "炒", "高温", "锁香"), "铁锅高温杀青，茶叶在锅中翻炒冒热气"),
     (("揉捻", "汁", "成形"), "竹匾上手工揉捻茶叶，茶汁渗出"),
     (("晾青", "晒青", "萎凋", "呼吸"), "竹筛上摊晾的鲜茶叶，自然光萎凋"),
-    (("焙", "火", "炭", "红泥炉", "木炭", "烘焙"), "木炭焙茶，红泥炉微火与竹焙笼"),
-    (("泡", "盖碗", "汤", "冲", "出汤", "品"), "两只白瓷盖碗与公道杯，茶汤琥珀清透"),
+    (("焙", "火", "炭", "红泥炉", "木炭", "烘焙"), "木炭焙茶，红泥炉微火，茶叶在焙笼上翻动"),
+    (("泡", "盖碗", "汤", "冲", "出汤", "品"), "玻璃公道杯里的茶汤特写，琥珀清透"),
     (("礼盒", "批发", "分货", "茶楼", "奶茶", "订单", "生意"), "干茶叶装满竹匾，木桌上整齐摊开，浅景深"),
     (("办公室", "下午茶", "十分钟"), "办公桌上简洁的玻璃杯与茶叶，暖光"),
     (("晨光", "早", "天亮", "清晨"), "清晨斜光下的茶桌与一杯热茶，木质纹理"),
@@ -259,12 +293,12 @@ SCENE_MAP = [
 ]
 
 SCENE_FALLBACK = [
-    "清晨木桌上一杯凤凰单丛茶，白瓷杯与干茶叶",
-    "茶店内景，木质货架上的素面茶罐",
+    "清晨木桌上一小堆干茶叶，木纹清晰",
+    "茶店内景，木质货架上的干茶叶竹匾",
     "干茶叶在白纸上摊开特写，条索清晰",
-    "白瓷盖碗注水冲泡茶叶，热气升腾",
+    "一双正在注水冲泡的手，只拍手部与衣袖",
     "三只小茶杯并排，琥珀色茶汤透亮",
-    "茶罐与竹制茶具在木桌上，自然光",
+    "木桌上散落的干茶叶与竹制茶具",
 ]
 
 
@@ -281,25 +315,25 @@ MOUNTAIN_POOL = [
     "竹筛上摊晾的鲜茶叶，自然光萎凋",
     "铁锅高温杀青，茶叶在锅中翻炒冒热气",
     "竹匾上手工揉捻茶叶，茶汁渗出",
-    "木炭焙茶，红泥炉微火与竹焙笼",
+    "木炭焙茶，红泥炉微火，茶叶在焙笼上翻动",
     "山间石阶旁的老茶树，树干粗壮布满苔藓",
     "夕阳下的茶园，茶垄一路延伸到远山",
-    "茶仓内素面锡罐整齐码放于木架，暖光",
+    "竹匾里堆着的干茶叶，暖光",
 ]
 SHOP_POOL = [
-    "木质茶桌上一只白瓷盖碗与公道杯，琥珀色茶汤",
+    "玻璃公道杯里的茶汤，琥珀清透挂壁",
     "干茶叶在白纸上摊开特写，条索紧结乌褐",
-    "两只白瓷盖碗并排，注水冲泡热气升腾",
-    "三只小茶杯并排，茶汤透亮挂壁",
-    "茶店内景，木质货架上素面茶罐整齐",
+    "一双正在注水冲泡的手，只拍手部与衣袖",
+    "三只小玻璃杯并排，茶汤透亮",
+    "干茶叶在白纸上摊开的特写，条索紧结整齐",
     "竹制茶具与茶巾在木桌上，自然光",
-    "玻璃公道杯里的茶汤特写，清透如琥珀",
-    "素面锡罐开盖，干茶特写，光泽乌褐",
+    "玻璃公道杯里的茶汤俯拍，清透如琥珀",
+    "茶则里的干茶叶特写，条索乌褐",
     "窗边茶席，竹筛与茶荷，午后光",
 ]
 
 COVER_MOUNTAIN = "凤凰山脉高山茶园晨雾全景，远山层叠，构图舒展留白"
-COVER_SHOP = "木质茶席上凤凰单丛干茶与白瓷盖碗，晨光斜射，构图舒展留白"
+COVER_SHOP = "木质茶席上凤凰单丛干茶叶，晨光斜射，构图舒展留白"
 
 
 def pick_domain(title, sections):
@@ -714,6 +748,8 @@ def build_page(meta, lead, qa, sections, faq, tags, preview, prompts, dims):
     title, slug, desc, prefix = meta["title"], meta["slug"], meta["desc"], meta["prefix"]
     url = f"{SITE}/articles/{slug}.html"
     date, zh_date = meta["date"], meta["zh_date"]
+    iso_time = meta.get("iso_time", date)      # 精确到秒的 ISO 时间（JSON-LD 用）
+    zh_dt = meta.get("zh_dt", zh_date)         # 精确到秒的中文时间（页面展示用）
 
     t = TEMPLATE.read_text(encoding="utf-8")
     # 属性值必须转义引号：标题/摘要里带 " 会截断 HTML 属性（分享卡片也会坏）
@@ -743,13 +779,13 @@ def build_page(meta, lead, qa, sections, faq, tags, preview, prompts, dims):
         t = t.replace('<meta name="description"', f'<meta name="keywords" content="{kw}">\n<meta name="description"', 1)
     # JSON-LD：只用 JSON 解析重建。绝不能用正则往里塞字符串——
     # 标题/摘要含引号或换行会把 JSON 写坏（线上 9 篇坏 JSON 全是这么来的）
-    t = rebuild_jsonld(t, title, desc, url, date, cover_url, kw)
+    t = rebuild_jsonld(t, title, desc, url, iso_time, cover_url, kw)
     # 面包屑 / h1 / 时间
     t = re.sub(r'(<span>)[^<]*(</span>\s*</div>\s*<article>)',
                lambda m: m.group(1) + f"🍵 {_html.escape(title[:18])}" + m.group(2), t, count=1)
     t = re.sub(r"<h1>.*?</h1>", f"<h1>🍵 {_html.escape(title)}</h1>", t, count=1, flags=re.S)
     t = re.sub(r'<p class="article-meta-time">.*?</p>',
-               f'<p class="article-meta-time">📅 发布于 <time datetime="{date}">{meta["zh_date_only"]}</time>　✍️ 阿凤姐</p>',
+               f'<p class="article-meta-time">📅 发布于 <time datetime="{iso_time}">{zh_dt}</time>　✍️ 阿凤姐</p>',
                t, count=1, flags=re.S)
     # 标签（三处统一：头部 chips / article-tags / xhs-tags 同一套、顺序一致）
     chips = "".join(f'<a class="tag" href="../index.html#knowledge">{x}</a>' for x in tags)
@@ -807,8 +843,8 @@ def update_index(meta, tags):
         f'loading="lazy" decoding="async"></a>\n'
         f'<div class="card-body">\n'
         f'<h3 itemprop="headline"><a href="articles/{slug}.html">{t_esc}</a></h3>\n'
-        f'<p class="article-meta-time">📅 发布于 <time itemprop="datePublished" datetime="{date}">'
-        f'{meta["zh_date_only"]}</time></p>\n'
+        f'<p class="article-meta-time">📅 发布于 <time itemprop="datePublished" datetime="{meta.get("iso_time", date)}">'
+        f'{meta.get("zh_dt", meta["zh_date_only"])}</time></p>\n'
         f'<meta itemprop="description" content="{d_esc}">\n'
         f'<p class="article-excerpt" itemprop="abstract">{d_esc}</p>\n'
         f'<a class="read-more" href="articles/{slug}.html">阅读全文 →</a>\n'
@@ -902,15 +938,31 @@ def commit_push(meta, pushed=True):
     if not pushed:
         print("  ⏸ 未推送（--no-push）")
         return head
-    for attempt in range(8):
-        p = subprocess.run(["git", "push", "origin", "main"], cwd=str(REPO),
-                           capture_output=True, text=True, encoding="utf-8", errors="replace")
-        ok = p.returncode == 0 or "up-to-date" in (p.stdout + p.stderr)
-        print(f"  {'✓' if ok else '✗'} push 第{attempt+1}次: {(p.stdout + p.stderr).strip()[:160]}")
+    for attempt in range(2):
+        try:
+            p = subprocess.run(["git", "push", "origin", "main"], cwd=str(REPO),
+                               capture_output=True, text=True, encoding="utf-8",
+                               errors="replace", timeout=90)
+            ok = p.returncode == 0 or "up-to-date" in (p.stdout + p.stderr)
+            print(f"  {'✓' if ok else '✗'} push 第{attempt+1}次: {(p.stdout + p.stderr).strip()[:160]}")
+        except subprocess.TimeoutExpired:
+            ok = False
+            print(f"  ✗ push 第{attempt+1}次: 超时 90 秒（github.com 连接被挂住）")
         if ok:
             return head
-        time.sleep(25)
-    raise RuntimeError("push 失败（GitHub 网络不可达，本地 commit 已保留，可稍后重试 push）")
+        if attempt == 0:
+            time.sleep(10)
+
+    # 兜底：github.com 被干扰时改走 GitHub API（api.github.com 常可达，2026-11-17 实测）
+    print("  ↳ github.com 不可达，改用 GitHub API 推送…")
+    try:
+        from git_push_api import push_via_api
+        sha = push_via_api(REPO)
+        if sha:
+            return head
+    except Exception as e:
+        print(f"  ✗ API 推送也失败: {type(e).__name__}: {str(e)[:200]}")
+    raise RuntimeError("push 失败（github.com 与 API 均不可达，本地 commit 已保留，可稍后重试）")
 
 
 def verify_online(meta, wait=45):
@@ -966,6 +1018,9 @@ def main():
     date = now.strftime("%Y-%m-%d")
     date_compact = now.strftime("%Y%m%d")
     hm = now.strftime("%H:%M")
+    # 发布时间精确到秒（2026-11-17 站方要求）：JSON-LD 用带时区的 ISO，页面展示带秒
+    dt_iso = now.strftime("%Y-%m-%dT%H:%M:%S+08:00")
+    zh_dt = now.strftime("%Y年%m月%d日 %H:%M:%S")
 
     print(f"\n{'='*66}\n发布: {draft.name}\n{'='*66}")
 
@@ -973,11 +1028,17 @@ def main():
     raw = scrub(draft.read_text(encoding="utf-8"))
     assert_clean(raw, "草稿")
     print("✓ [1/9] scrub 隐私清洗通过（真名/QQ/旧域名）")
+    raw = normalize_draft_text(raw)      # 容错：把写歪的格式（**第一幕·xxx**、缺场景开头等）标准化
 
     # 2 parse
     title, lead, sections, faq, tags, preview = parse_draft(raw)
     if not title:
         raise SystemExit("❌ 未找到标题")
+    # 站方规定（2026-11-17）：本站是茶叶站，陈皮题材一律不上线（双保险，选稿器已过滤）
+    _BAN = ("陈皮", "新会", "柑普", "小青柑", "柑皮")
+    _hit = [k for k in _BAN if k in title]
+    if _hit:
+        raise SystemExit(f"❌ 站方规定：本站只发茶叶题材，陈皮一律不上线（标题命中：{'/'.join(_hit)}）")
     if not lead:
         lead = synth_lead(title, sections, faq)
         print(f"      ⓘ 草稿无「📌 开篇回答」，已自动合成导语（{len(lead)}字）")
@@ -1015,9 +1076,10 @@ def main():
 
     meta = {
         "title": title, "slug": slug, "prefix": prefix, "desc": desc,
-        "date": date, "zh_date": f"{now.strftime('%Y年%m月%d日')} {hm}:00",
+        "date": date, "zh_date": zh_dt,
         "zh_date_only": now.strftime("%Y年%m月%d日"),
-        "new_dt": f"{date}T{hm}:00",
+        "iso_time": dt_iso, "zh_dt": zh_dt,
+        "new_dt": dt_iso,
         "prev_slug": prev_slug, "prev_title": prev_title,
     }
     print(f"      slug   = {slug}")
@@ -1099,6 +1161,9 @@ def main():
     print(f"✅ 完成: {SITE}/articles/{slug}.html")
     print(f"✅ 标签（三处一致）{len(tagged)} 个: {' '.join(tagged)}")
     print(f"⚠ 图片合规: {warn_txt}")
+    print("🖼 配图地址（供目视抽查有无汉字/水印）:")
+    for p in prompts:
+        print(f"   {SITE}/images/full/{prefix}-{p['key']}.webp")
     print(f"{'='*66}\n")
 
 
