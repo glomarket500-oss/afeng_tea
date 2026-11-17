@@ -23,6 +23,8 @@ import time
 import glob
 import hashlib
 import math
+import threading
+import concurrent.futures
 import html as _html
 import subprocess
 import urllib.request
@@ -413,7 +415,7 @@ def load_env():
     return env
 
 
-def gen_image(api_key, prompt, retries=3):
+def gen_image(api_key, prompt, retries=4):
     url = "https://api.siliconflow.cn/v1/images/generations"
     payload = {
         "model": "Kwai-Kolors/Kolors",           # ★ 唯一允许：免费
@@ -439,6 +441,11 @@ def gen_image(api_key, prompt, retries=3):
             last = f"空响应 {str(js)[:200]}"
         except urllib.error.HTTPError as e:
             last = f"HTTP {e.code} {e.read(300).decode('utf-8', 'ignore')}"
+            if e.code == 429:          # 免费模型按分钟限流：等一个窗口再试，别把重试次数白烧掉
+                wait = 20 + 10 * att
+                print(f"        ⏳ 429 限流，等 {wait}s 后重试（{att+1}/{retries}）", flush=True)
+                time.sleep(wait)
+                continue
         except Exception as e:
             last = f"{type(e).__name__}: {e}"
         time.sleep(3 * (att + 1))
@@ -558,6 +565,9 @@ def audit_image(path):
 SAFER_SUFFIX = "，纯木质桌面或纯色墙面背景，画面极简，只有茶叶与素面器物，没有任何印刷与标识"
 
 
+IMG_WORKERS = 3   # 并行生图并发数（免费 Kolors 按分钟限流，3 最稳；4 会撞 429）
+
+
 def make_images(prefix, title, sections, slug):
     env = load_env()
     key = env.get("SILICONFLOW_API_KEY")
@@ -568,8 +578,14 @@ def make_images(prefix, title, sections, slug):
     audit_log = []
     full_dir = REPO / "images" / "full"
     thumb_dir = REPO / "images" / "thumb"
-    for i, p in enumerate(prompts, 1):
-        print(f"  [{i}/{len(prompts)}] {p['key']}  {p['desc'][:38]}")
+    lock = threading.Lock()
+
+    def _log(msg):
+        with lock:
+            print(msg, flush=True)
+
+    def _one(p):
+        """单张图：最多 2 次（第 2 次换更保守构图），线程安全，返回 (key, dims, warns)"""
         warns = []
         for attempt in range(2):          # 合规不过 → 换更保守构图重生一次（仍只用免费模型）
             desc = p["desc"] if attempt == 0 else p["desc"] + SAFER_SUFFIX
@@ -577,23 +593,31 @@ def make_images(prefix, title, sections, slug):
                 u = gen_image(key, desc)
                 raw = urllib.request.urlopen(u, timeout=120).read()
                 w, h, sz = to_webp(raw, full_dir / f"{prefix}-{p['key']}.webp", 869, 489)
-                dims[p["key"]] = (w, h)
                 warns = audit_image(full_dir / f"{prefix}-{p['key']}.webp")
-                print(f"        → {w}×{h}  {sz//1024}KB  "
-                      + ("⚠ " + ";".join(warns) if warns else "✓ 合规"))
+                _log(f"  [{p['key']:5s}] {w}×{h} {sz//1024:3d}KB  "
+                     + ("⚠ " + ";".join(warns) if warns else "✓ 合规"))
                 if p["key"] == "cover" and not warns:
                     to_webp(raw, thumb_dir / f"{slug}-hero.webp", 400)
                 if not warns:
-                    break
+                    return p["key"], (w, h), []
                 if attempt == 0:
-                    print("        ↻ 触发重生（换保守构图）")
+                    _log(f"  [{p['key']:5s}] ↻ 触发重生（换保守构图）")
             except Exception as e:
-                print(f"        ⚠ 失败: {e}")
-                dims[p["key"]] = None
+                _log(f"  [{p['key']:5s}] ⚠ 失败: {e}")
                 warns = [f"生成失败:{e}"]
-        if warns:
-            audit_log.append((p["key"], warns))
-    # 兜底：缺图时复用封面
+        return p["key"], None, warns
+
+    # 并行生图（原本串行 7 张约 435 秒，并发 4 后约 2 分钟）
+    t0 = time.time()
+    print(f"  [并行生图] {len(prompts)} 张，并发 {IMG_WORKERS}")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=IMG_WORKERS) as ex:
+        for k, d, warns in ex.map(_one, prompts):
+            dims[k] = d
+            if warns:
+                audit_log.append((k, warns))
+    print(f"  [并行生图] 用时 {time.time() - t0:.0f} 秒")
+
+    # 兜底：缺图时复用封面（避免页面出现破图）
     cov = full_dir / f"{prefix}-cover.webp"
     for p in prompts:
         fp = full_dir / f"{prefix}-{p['key']}.webp"
@@ -604,7 +628,7 @@ def make_images(prefix, title, sections, slug):
     if audit_log:
         print("  ⚠ 仍有合规警告（已重生一次）: " + "; ".join(f"{k}:{'/'.join(v)}" for k, v in audit_log))
     else:
-        print("  ✓ 7 张图全部通过像素合规检测（无正脸 / 无汉字）")
+        print(f"  ✓ {len(prompts)} 张图全部通过像素合规检测（无正脸 / 无汉字）")
     return prompts, dims, audit_log
 
 
@@ -938,31 +962,32 @@ def commit_push(meta, pushed=True):
     if not pushed:
         print("  ⏸ 未推送（--no-push）")
         return head
-    for attempt in range(2):
-        try:
-            p = subprocess.run(["git", "push", "origin", "main"], cwd=str(REPO),
-                               capture_output=True, text=True, encoding="utf-8",
-                               errors="replace", timeout=90)
-            ok = p.returncode == 0 or "up-to-date" in (p.stdout + p.stderr)
-            print(f"  {'✓' if ok else '✗'} push 第{attempt+1}次: {(p.stdout + p.stderr).strip()[:160]}")
-        except subprocess.TimeoutExpired:
-            ok = False
-            print(f"  ✗ push 第{attempt+1}次: 超时 90 秒（github.com 连接被挂住）")
-        if ok:
-            return head
-        if attempt == 0:
-            time.sleep(10)
 
-    # 兜底：github.com 被干扰时改走 GitHub API（api.github.com 常可达，2026-11-17 实测）
-    print("  ↳ github.com 不可达，改用 GitHub API 推送…")
+    # ① API 优先：本机 github.com:443 长期被重置，git push 每次要干等 90 秒（2026-11-17 实测）
+    #    api.github.com 稳定可达，且已在 git_push_api 里做 tree 复核，成功后无需再试 git
     try:
         from git_push_api import push_via_api
+        print("  ↳ 使用 GitHub API 推送（首选路径）…")
         sha = push_via_api(REPO)
         if sha:
             return head
     except Exception as e:
-        print(f"  ✗ API 推送也失败: {type(e).__name__}: {str(e)[:200]}")
-    raise RuntimeError("push 失败（github.com 与 API 均不可达，本地 commit 已保留，可稍后重试）")
+        print(f"  ⚠ API 推送不可用: {type(e).__name__}: {str(e)[:160]}")
+        print("  ↳ 回退到 git push…")
+
+    # ② 回退：git push（必须带超时，否则连不上会永久挂起——今天卡 2 小时的根因）
+    try:
+        p = subprocess.run(["git", "push", "origin", "main"], cwd=str(REPO),
+                           capture_output=True, text=True, encoding="utf-8",
+                           errors="replace", timeout=90)
+        ok = p.returncode == 0 or "up-to-date" in (p.stdout + p.stderr)
+        print(f"  {'✓' if ok else '✗'} git push: {(p.stdout + p.stderr).strip()[:160]}")
+    except subprocess.TimeoutExpired:
+        ok = False
+        print("  ✗ git push: 超时 90 秒（github.com 连接被挂住）")
+    if ok:
+        return head
+    raise RuntimeError("push 失败（API 与 git push 均不可用，本地 commit 已保留，可稍后重试）")
 
 
 def verify_online(meta, wait=45):
