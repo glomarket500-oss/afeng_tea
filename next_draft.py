@@ -18,9 +18,12 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-DRAFTS = Path(r"C:\Users\a\Desktop\MianAI知识库\MianAI知识库\vault\资料库\素材材料\茶叶素材")
+DRAFTS = Path(r"C:\Users\Administrator\Desktop\MianAI知识库\MianAI知识库\vault\资料库\素材材料\茶叶素材")
 REPO = Path(r"C:\afeng_tea")
 STATE = REPO / ".published_drafts.json"
+
+# 硬性红线：茶叶站永不发布陈皮题材（2026-11-17 站方要求）
+BAN_WORDS = ("陈皮", "新会", "柑普", "小青柑", "柑皮")
 
 
 def load_state():
@@ -85,6 +88,10 @@ def candidates(today_only=False):
         raw = p.read_text(encoding="utf-8", errors="replace")
         if len(raw) < 600:
             continue
+        # 陈皮题材一律跳过（标题或开头出现即踢掉，双保险）
+        _t = draft_title(p)
+        if any(w in _t for w in BAN_WORDS) or any(w in raw[:1500] for w in BAN_WORDS):
+            continue
         out.append({
             "path": str(p),
             "name": p.name,
@@ -92,9 +99,12 @@ def candidates(today_only=False):
             "size": len(raw),
             "title": draft_title(p),
         })
-    # 当天优先，其次日期倒序
-    out.sort(key=lambda x: (x["date"] != today, x["date"]), reverse=False)
-    out.sort(key=lambda x: (0 if x["date"] == today else 1, x["date"]), reverse=False)
+    # 当天优先；积压按日期倒序（最新优先，避免把几个月前的老稿捞出来发）
+    today_items = [x for x in out if x["date"] == today]
+    backlog = [x for x in out if x["date"] != today]
+    today_items.sort(key=lambda x: x["date"], reverse=True)
+    backlog.sort(key=lambda x: x["date"], reverse=True)
+    out = today_items + backlog
     return out
 
 

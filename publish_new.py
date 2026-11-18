@@ -942,6 +942,10 @@ def run_git(args, check=True):
 
 def commit_push(meta, pushed=True):
     slug = meta["slug"]
+    # --no-push = 纯校验模式：不 add、不 commit、不 push（自检用，跑完删文件即可，不留任何历史）
+    if not pushed:
+        print("  ⏸ --no-push：跳过 git add / commit / push（纯校验模式）")
+        return "no-commit"
     files = [f"articles/{slug}.html", "index.html", "sitemap.xml"]
     files += [x for x in glob.glob(str(REPO / "images" / "full" / f"{meta['prefix']}-*.webp"))]
     files += [x for x in glob.glob(str(REPO / "images" / "thumb" / f"{slug}-hero.webp"))]
