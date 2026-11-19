@@ -398,7 +398,7 @@ def build_prompts(title, sections):
         cand = next((c for c in pool if c not in used), pool[k % len(pool)])
         used.add(cand)
         prompts.append({"key": f"s{k}", "cap": scene_caption(cand), "desc": cand})
-    return prompts[:7]
+    return prompts[:8]
 
 
 def load_env():
@@ -562,6 +562,17 @@ def audit_image(path):
     return warns
 
 
+# 真实照片优先（站方 2026-11-19 规则）：先用 C:\茶叶素材\图片文件夹 的实拍图，AI 生图只兜底
+try:
+    import real_photos as RP
+except Exception:            # 模块缺失不该拖垮发文，退化为纯 AI
+    RP = None
+
+USE_REAL_PHOTOS = os.environ.get("AFENG_NO_REAL") != "1"
+
+# 「今日一壶」专属图位（稿子幕数多、图位不够时必须显式对齐，否则会被前一幕抢走）
+TEAPOT_LAST_KEY = None
+
 SAFER_SUFFIX = "，纯木质桌面或纯色墙面背景，画面极简，只有茶叶与素面器物，没有任何印刷与标识"
 
 
@@ -574,6 +585,47 @@ def make_images(prefix, title, sections, slug):
     if not key:
         raise SystemExit("❌ 缺少 SILICONFLOW_API_KEY")
     prompts = build_prompts(title, sections)
+
+    # 紫砂壶图位：正文最后一幕若是「今日一壶」，固定占用最后一个图位
+    global TEAPOT_LAST_KEY
+    teapot_key = None
+    if sections and isinstance(sections[-1][0], str) and sections[-1][0].startswith("今日一壶"):
+        teapot_key = prompts[-1]["key"]
+    TEAPOT_LAST_KEY = teapot_key
+
+    # ── 真实照片优先：按文章主题从实拍图库挑，剩下的才用 AI 生图
+    real_map = {}
+    if USE_REAL_PHOTOS and RP is not None:
+        try:
+            body_text = title + " " + " ".join(str(s.get("body") or s.get("text") or "") if isinstance(s, dict) else str(s)
+                                               for s in sections)
+            slots = [p for p in prompts if p["key"] != teapot_key]
+            picked = RP.pick(title, body_text, need=len(slots), want_person=True)
+            for p, meta in zip(slots, picked):
+                real_map[p["key"]] = meta
+            if picked:
+                print(f"  [真实照片] 选用 {len(picked)} 张：" + "、".join(RP.describe(m) for m in picked))
+                print(f"  [AI 生图] 剩余的 {len(slots) - len(picked)} 张走免费 Kolors")
+            else:
+                print("  [真实照片] 图库里没有合适的，全部用 AI 生图")
+            # 紫砂壶图位
+            if teapot_key:
+                tp = RP.pick_teapot(1)
+                if tp:
+                    real_map[teapot_key] = tp[0]
+                    print(f"  [紫砂壶] 用实拍：{tp[0]['file'][:24]}")
+                else:
+                    print("  [紫砂壶] 目录里还没有实拍壶图，改用 AI 生成")
+                    try:
+                        import teapot_daily as TP
+                        for p in prompts:
+                            if p["key"] == teapot_key:
+                                p["desc"] = TP.image_prompt()
+                    except Exception:
+                        pass
+        except Exception as e:
+            print(f"  [真实照片] 取材失败，全部用 AI：{type(e).__name__}: {e}")
+
     dims = {}
     audit_log = []
     full_dir = REPO / "images" / "full"
@@ -585,7 +637,17 @@ def make_images(prefix, title, sections, slug):
             print(msg, flush=True)
 
     def _one(p):
-        """单张图：最多 2 次（第 2 次换更保守构图），线程安全，返回 (key, dims, warns)"""
+        """单张图：优先用真实照片；否则 AI 生图（最多 2 次）。线程安全，返回 (key, dims, warns)"""
+        meta = real_map.get(p["key"])
+        if meta is not None and RP is not None:
+            try:
+                w, h, sz = RP.prepare(meta, full_dir / f"{prefix}-{p['key']}.webp")
+                if p["key"] == "cover":
+                    RP.prepare_thumb(meta, thumb_dir / f"{slug}-hero.webp")
+                _log(f"  [{p['key']:5s}] {w}×{h} {sz//1024:3d}KB  真实照片 ✓（免检）")
+                return p["key"], (w, h), []
+            except Exception as e:
+                _log(f"  [{p['key']:5s}] 真实照片不可用（{e}），改用 AI 生图")
         warns = []
         for attempt in range(2):          # 合规不过 → 换更保守构图重生一次（仍只用免费模型）
             desc = p["desc"] if attempt == 0 else p["desc"] + SAFER_SUFFIX
@@ -615,7 +677,12 @@ def make_images(prefix, title, sections, slug):
             dims[k] = d
             if warns:
                 audit_log.append((k, warns))
-    print(f"  [并行生图] 用时 {time.time() - t0:.0f} 秒")
+    print(f"  [配图完成] 用时 {time.time() - t0:.0f} 秒")
+    if real_map and RP is not None:
+        try:
+            RP.mark_used(list(real_map.values()), slug)   # 记录用过，避免下篇重复
+        except Exception:
+            pass
 
     # 兜底：缺图时复用封面（避免页面出现破图）
     cov = full_dir / f"{prefix}-cover.webp"
@@ -628,7 +695,8 @@ def make_images(prefix, title, sections, slug):
     if audit_log:
         print("  ⚠ 仍有合规警告（已重生一次）: " + "; ".join(f"{k}:{'/'.join(v)}" for k, v in audit_log))
     else:
-        print(f"  ✓ {len(prompts)} 张图全部通过像素合规检测（无正脸 / 无汉字）")
+        print(f"  ✓ {len(prompts)} 张图全部通过像素合规检测"
+              f"（真实照片 {len(real_map)} 张免检 / AI 生图 {len(prompts) - len(real_map)} 张无正脸无汉字）")
     return prompts, dims, audit_log
 
 
@@ -710,7 +778,10 @@ def build_body(lead, qa, sections, faq, tags, preview, prompts, dims, prefix):
         out.append(f"<h2>{head}</h2>")
         for p in paras:
             out.append(f"<p>{p.replace('**', '')}</p>")
-        p_meta = prompts[i + 1] if i + 1 < len(prompts) else None
+        _free = [x for x in prompts[1:] if x["key"] != TEAPOT_LAST_KEY]
+        p_meta = _free[i] if i < len(_free) else None
+        if TEAPOT_LAST_KEY and i == len(sections) - 1:
+            p_meta = next((x for x in prompts if x["key"] == TEAPOT_LAST_KEY), None)
         if p_meta:
             d = dims.get(p_meta["key"]) or (869, 489)
             out.append(
@@ -1081,6 +1152,17 @@ def main():
     print(f"✓ [2/9] 解析: {len(sections)} 幕 / {len(faq)} FAQ / {len(tagged)} 标签")
     for h, ps in sections:
         print(f"      {h}  ({len(ps)}段)")
+
+    # 每日固定栏目「今日一壶」：紫砂壶知识 + 当日真实新闻点评（出错不影响发文）
+    if "--no-teapot" not in flags:
+        try:
+            import teapot_daily as TP
+            tp_head, tp_paras = TP.get_section()
+            if tp_paras:
+                sections.append((tp_head, tp_paras))
+                print(f"✓ [2.5/9] 今日一壶栏目已加入：{tp_head}")
+        except Exception as e:
+            print(f"⚠ 今日一壶栏目跳过（不影响发文）：{type(e).__name__}: {e}")
 
     slug = make_slug(title, date_compact)
     prefix = f"a{date_compact}{hashlib.md5(title.encode()).hexdigest()[:6]}"

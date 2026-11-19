@@ -1,0 +1,255 @@
+{
+  "source": "C:\\茶叶素材\\图片文件夹",
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "items": [
+    {
+      "subject": "other",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "女性在粉色圣诞树前自拍",
+      "shop_shelves": false,
+      "quality": "good",
+      "width_ok": true,
+      "useful_tags": [
+        "人物",
+        "街景"
+      ],
+      "suitable_for_article": false,
+      "reason": "画面主体为商场圣诞装饰，与茶叶主题无关",
+      "file": "00312F3A@0DE8BF21.81F6FE6A00000000.jpg",
+      "w": 2419,
+      "h": 3225,
+      "size_kb": 1912
+    },
+    {
+      "subject": "person",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "女性在阳台自拍，背景是城市高楼",
+      "shop_shelves": false,
+      "quality": "ok",
+      "width_ok": true,
+      "useful_tags": [
+        "人物",
+        "生活"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物形象自然，可作为生活化茶叶文章配图",
+      "file": "0FA191D5@999C4474.81F6FE6A00000000.jpg",
+      "w": 864,
+      "h": 1152,
+      "size_kb": 244
+    },
+    {
+      "subject": "person",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "餐厅内女性自拍",
+      "shop_shelves": false,
+      "quality": "good",
+      "width_ok": true,
+      "useful_tags": [
+        "人物",
+        "店内"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物在店内，可作为茶叶店生活场景配图",
+      "file": "38043833@55400F6A.81F6FE6A00000000.jpg",
+      "w": 1027,
+      "h": 2222,
+      "size_kb": 300
+    },
+    {
+      "subject": "person|tea|teaware|shop",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "女子穿旗袍在茶店自拍",
+      "shop_shelves": true,
+      "quality": "ok",
+      "width_ok": false,
+      "useful_tags": [
+        "人物",
+        "店内",
+        "茶架",
+        "茶具",
+        "干茶",
+        "生活"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物与茶店环境结合，符合茶叶文章主题",
+      "file": "3AD157D8@2E6F755F.81F6FE6A00000000.jpg",
+      "w": 576,
+      "h": 1024,
+      "size_kb": 189
+    },
+    {
+      "subject": "person",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "餐厅内女性自拍",
+      "shop_shelves": false,
+      "quality": "good",
+      "width_ok": true,
+      "useful_tags": [
+        "人物",
+        "店内"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物在店内，可作为茶叶店生活场景配图",
+      "file": "4A02992D@D21AA426.81F6FE6A00000000.jpg",
+      "w": 1016,
+      "h": 1378,
+      "size_kb": 259
+    },
+    {
+      "subject": "person",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "女子在茶店自拍，背景有茶架和茶具",
+      "shop_shelves": true,
+      "quality": "ok",
+      "width_ok": true,
+      "useful_tags": [
+        "人物",
+        "店内",
+        "茶架",
+        "茶具",
+        "生活"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物在店内茶架前，符合茶叶店主题，可作文章配图",
+      "file": "562E9B07@F0FFBD59.81F6FE6A00000000.jpg",
+      "w": 864,
+      "h": 1152,
+      "size_kb": 269
+    },
+    {
+      "subject": "person|tea|teaware|shop",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "女子穿旗袍在茶店自拍",
+      "shop_shelves": true,
+      "quality": "ok",
+      "width_ok": false,
+      "useful_tags": [
+        "人物",
+        "店内",
+        "茶架",
+        "茶具",
+        "生活"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物与茶店环境结合，符合茶叶文章主题",
+      "file": "576381CC@8ECDEB14.81F6FE6A00000000.jpg",
+      "w": 576,
+      "h": 1024,
+      "size_kb": 188
+    },
+    {
+      "subject": "person",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "海边沙滩上一位女士站立",
+      "shop_shelves": false,
+      "quality": "good",
+      "width_ok": true,
+      "useful_tags": [
+        "人物",
+        "山景"
+      ],
+      "suitable_for_article": true,
+      "reason": "海边人物照可关联茶旅生活主题",
+      "file": "5862FFCA@D7281E00.81F6FE6A00000000.jpg",
+      "w": 3225,
+      "h": 2419,
+      "size_kb": 1162
+    },
+    {
+      "subject": "person|tea|teaware|shop",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "女子在茶店背景前自拍",
+      "shop_shelves": true,
+      "quality": "ok",
+      "width_ok": true,
+      "useful_tags": [
+        "人物",
+        "店内",
+        "茶架",
+        "茶具",
+        "干茶"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物在茶店场景中，有茶架和茶具，适合茶叶文章配图",
+      "file": "8D2B8E32@B6202730.81F6FE6A00000000.jpg",
+      "w": 512,
+      "h": 512,
+      "size_kb": 54
+    },
+    {
+      "subject": "person|tea|teaware|shop",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "茶店女主人微笑面对镜头",
+      "shop_shelves": true,
+      "quality": "ok",
+      "width_ok": false,
+      "useful_tags": [
+        "人物",
+        "店内",
+        "茶架",
+        "茶具",
+        "干茶",
+        "生活"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物在茶店场景中，符合茶叶文章配图需求",
+      "file": "9497756C@EB657457.81F6FE6A00000000.jpg",
+      "w": 512,
+      "h": 512,
+      "size_kb": 54
+    },
+    {
+      "subject": "person",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "女子手持茶宠自拍于店内",
+      "shop_shelves": true,
+      "quality": "ok",
+      "width_ok": false,
+      "useful_tags": [
+        "人物",
+        "店内",
+        "茶具",
+        "生活"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物手持茶具，场景为店内，符合茶叶文章配图需求",
+      "file": "996B0B67@F9D65D45.81F6FE6A00000000.jpg",
+      "w": 576,
+      "h": 1024,
+      "size_kb": 163
+    },
+    {
+      "subject": "person",
+      "has_person": true,
+      "person": "女性单人正面",
+      "scene": "女子自拍于茶叶店货架前",
+      "shop_shelves": true,
+      "quality": "ok",
+      "width_ok": true,
+      "useful_tags": [
+        "人物",
+        "店内",
+        "茶架",
+        "礼盒"
+      ],
+      "suitable_for_article": true,
+      "reason": "人物在店内茶架前，可作茶叶店日常或人物介绍配图",
+      "file": "D863630C@38442709.81F6FE6A00000000.jpg",
+      "w": 864,
+      "h": 1152,
+      "size_kb": 221
+    }
+  ]
+}
