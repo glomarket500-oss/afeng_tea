@@ -146,12 +146,15 @@ def pick(title, sections_text, need, want_person=True, min_count=0):
 
 
 def pick_teapot(need=1):
-    """紫砂壶实拍：直接扫目录（不依赖标签清单），按像素面积优先。
-    目录为空 → 返回 []，调用方自动退回 AI 生图。"""
+    """紫砂壶实拍：直接扫目录（不依赖标签清单），按像素面积 + 使用次数挑。
+    目录为空 → 返回 []，调用方自动退回 AI 生图。
+    去重：按内容哈希，且优先用不带 "(1)" 的原图（目录里常有大量副本）。"""
     if not TEAPOT_SRC.exists():
         return []
-    out = []
-    for p in TEAPOT_SRC.iterdir():
+    import hashlib
+
+    out, seen = [], set()
+    for p in sorted(TEAPOT_SRC.iterdir(), key=lambda x: ("(1)" in x.stem, x.name)):
         if p.suffix.lower() not in (".jpg", ".jpeg", ".png", ".webp"):
             continue
         try:
@@ -161,6 +164,13 @@ def pick_teapot(need=1):
             continue
         if w < 480 or h < 320:
             continue
+        try:
+            digest = hashlib.md5(p.read_bytes()).hexdigest()
+        except Exception:
+            continue
+        if digest in seen:          # 同一张图的副本，跳过
+            continue
+        seen.add(digest)
         out.append({"file": p.name, "w": w, "h": h, "scene": "紫砂壶",
                     "quality": "good", "useful_tags": ["茶具", "紫砂"], "_dir": str(TEAPOT_SRC)})
     out.sort(key=lambda m: m["w"] * m["h"], reverse=True)
