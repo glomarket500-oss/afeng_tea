@@ -10,6 +10,7 @@ import base64
 import json
 import re
 import subprocess
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -74,21 +75,36 @@ def _repo_slug(repo):
 
 
 def _api(path, method="GET", payload=None, tok=None):
+    """每次独立连接（本机到 api.github.com 中间链路会掐长连接，keep-alive 复用会 400）"""
     url = path if path.startswith("http") else API + path
-    data = None
+    data = json.dumps(payload).encode("utf-8") if payload is not None else None
     headers = {"Accept": "application/vnd.github+json", "User-Agent": "afeng-publish"}
     if tok:
         headers["Authorization"] = f"Bearer {tok}"
-    if payload is not None:
-        data = json.dumps(payload).encode("utf-8")
+    if data is not None:
         headers["Content-Type"] = "application/json"
-    req = urllib.request.Request(url, data=data, headers=headers, method=method)
-    try:
-        with urllib.request.urlopen(req, timeout=90) as r:
-            body = r.read()
-            return json.loads(body.decode("utf-8")) if body else {}
-    except urllib.error.HTTPError as e:
-        raise RuntimeError(f"{method} {path} → HTTP {e.code}: {e.read().decode('utf-8', 'ignore')[:300]}")
+
+    last = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, data=data, headers=headers, method=method)
+            with urllib.request.urlopen(req, timeout=75) as r:
+                body = r.read()
+                return json.loads(body.decode("utf-8")) if body else {}
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode("utf-8", "ignore")[:300]
+            if e.code in (429, 500, 502, 503, 504) and attempt < 2:
+                time.sleep(3 * (attempt + 1))
+                last = f"HTTP {e.code} {detail}"
+                continue
+            raise RuntimeError(f"{method} {path} → HTTP {e.code}: {detail}")
+        except Exception as e:
+            last = f"{type(e).__name__}: {e}"
+            if attempt < 2:
+                time.sleep(3 * (attempt + 1))
+                continue
+            raise RuntimeError(f"{method} {path} 网络失败: {last}") from e
+    raise RuntimeError(f"{method} {path} 重试耗尽: {last}")
 
 
 def push_via_api(repo, branch="main", log=print):
@@ -132,20 +148,30 @@ def push_via_api(repo, branch="main", log=print):
         log("  ↳ 无内容差异，已更新镜像记录")
         return "up-to-date"
 
-    entries = []
-    deleted = 0
+    # 6 个线程并行上传（每个请求独立连接）：110 个文件从"逐个 10 秒"降到 2~3 分钟
+    import concurrent.futures
+
+    def _upload(p):
+        content = _git(repo, "show", f"{local}:{p}", binary=True)
+        blob = _api(f"/repos/{owner}/{name}/git/blobs", method="POST",
+                    payload={"content": base64.b64encode(content).decode("ascii"),
+                             "encoding": "base64"}, tok=tok)
+        return p, blob["sha"]
+
+    entries, deleted, to_upload = [], 0, []
     for line in diff:
         parts = line.split("\t")
         status, path = parts[0], parts[-1]
         if status.startswith("D"):
             entries.append({"path": path, "mode": "100644", "type": "blob", "sha": None})
             deleted += 1
-            continue
-        content = _git(repo, "show", f"{local}:{path}", binary=True)
-        blob = _api(f"/repos/{owner}/{name}/git/blobs", method="POST",
-                    payload={"content": base64.b64encode(content).decode("ascii"),
-                             "encoding": "base64"}, tok=tok)
-        entries.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
+        else:
+            to_upload.append(path)
+
+    print(f"  ↳ 上传 {len(to_upload)} 个文件（6 线程并行）…")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        for path, sha in ex.map(_upload, to_upload):
+            entries.append({"path": path, "mode": "100644", "type": "blob", "sha": sha})
 
     log(f"  ↳ API 推送：{len(entries)} 个文件（删除 {deleted}）→ {owner}/{name}")
 
