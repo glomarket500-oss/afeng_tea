@@ -109,6 +109,9 @@ def build_draft(dry=False):
         raw = news["title"] or news["snippet"]
         # 只取第一句做钩子，避免"…一篇讲清原产地、泥料产"这种断句
         hook = re.split(r"[？?！!。，,：:；;、\s]", raw.strip())[0][:18]
+        # 钩子不合格（空/太短/纯日期）就退回知识点，别出现"阿凤姐说紫砂：2026-11-20"
+        if len(hook) < 4 or re.fullmatch(r"[\d\-—/年月日\.]+", hook):
+            hook = t1[0]
         title = f"阿凤姐说紫砂：{hook}"
     else:
         title = f"阿凤姐说紫砂：{t1[0]}"
@@ -204,7 +207,8 @@ def publish(fp, mode=""):
     args = [str(REPO / ".venv" / "Scripts" / "python.exe"), "publish_new.py", str(fp), "--no-teapot"]
     if mode:
         args.append(mode)
-    env = dict(**__import__("os").environ, AFENG_PHOTO_SRC="teapot")
+    env = dict(**__import__("os").environ, AFENG_NO_REAL="1",
+               AFENG_PHOTO_SRC="teapot_scene")   # 紫砂专栏：全场景、无人物、无文字、全 AI 生图
     print(f"\n=== 发布：{' '.join(args[1:])} ===")
     p = subprocess.run(args, cwd=str(REPO), env=env)
     return p.returncode

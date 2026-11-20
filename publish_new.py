@@ -602,6 +602,16 @@ def make_images(prefix, title, sections, slug):
         teapot_key = prompts[-1]["key"]
     TEAPOT_LAST_KEY = teapot_key
 
+    # 紫砂专栏：整篇换成场景提示词（以壶为主体、无人物、无文字）
+    if os.environ.get("AFENG_PHOTO_SRC") == "teapot_scene":
+        try:
+            import teapot_daily as TP
+            for p, d in zip(prompts, TP.scene_pool(len(prompts))):
+                p["desc"] = d
+            print(f"  [紫砂场景] {len(prompts)} 张场景提示词（壶为主体/无人物/无文字）")
+        except Exception as e:
+            print(f"  ⚠ 场景提示词生成失败：{type(e).__name__}: {e}")
+
     # ── 真实照片优先：按文章主题从实拍图库挑，剩下的才用 AI 生图
     real_map = {}
     if USE_REAL_PHOTOS and RP is not None:
@@ -617,21 +627,16 @@ def make_images(prefix, title, sections, slug):
                 print(f"  [AI 生图] 剩余的 {len(slots) - len(picked)} 张走免费 Kolors")
             else:
                 print("  [真实照片] 图库里没有合适的，全部用 AI 生图")
-            # 紫砂壶图位
+            # 紫砂壶图位：一律 AI 生图（2026-11-20 站方要求：紫砂内容不用实拍照）
             if teapot_key:
-                tp = RP.pick_teapot(1)
-                if tp:
-                    real_map[teapot_key] = tp[0]
-                    print(f"  [紫砂壶] 用实拍：{tp[0]['file'][:24]}")
-                else:
-                    print("  [紫砂壶] 目录里还没有实拍壶图，改用 AI 生成")
-                    try:
-                        import teapot_daily as TP
-                        for p in prompts:
-                            if p["key"] == teapot_key:
-                                p["desc"] = TP.image_prompt()
-                    except Exception:
-                        pass
+                print("  [紫砂壶] 按规范用 AI 生图（不使用实拍照）")
+                try:
+                    import teapot_daily as TP
+                    for p in prompts:
+                        if p["key"] == teapot_key:
+                            p["desc"] = TP.image_prompt()
+                except Exception:
+                    pass
         except Exception as e:
             print(f"  [真实照片] 取材失败，全部用 AI：{type(e).__name__}: {e}")
 
