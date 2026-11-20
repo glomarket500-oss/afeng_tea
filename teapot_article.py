@@ -49,10 +49,16 @@ def _save(s):
 
 
 def pick_topics(n=3):
-    """轮转取 n 个知识点，尽量不重复"""
+    """轮转取 n 个知识点，尽量不重复；也避开当天 04:10「今日一壶」已用过的那几个"""
     s = _state()
     used = s.get("used", [])
-    pool = [t for t in TP.TOPICS if t[0] not in used] or TP.TOPICS
+    try:
+        sec_used = set(TP._state().get("used", [])[-3:])     # 主文章里已经讲过的
+    except Exception:
+        sec_used = set()
+    pool = [t for t in TP.TOPICS if t[0] not in used and t[0] not in sec_used]
+    if not pool:
+        pool = [t for t in TP.TOPICS if t[0] not in used] or TP.TOPICS
     picked = pool[:n]
     used += [t[0] for t in picked]
     s["used"] = used[-len(TP.TOPICS):]
