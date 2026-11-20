@@ -341,7 +341,16 @@ COVER_SHOP = "木质茶席上凤凰单丛干茶叶，晨光斜射，构图舒展
 def pick_domain(title, sections):
     txt = title + "".join(" ".join(ps) for _, ps in sections)
     mountain_keys = ("雾", "山", "茶园", "采", "摘", "杀青", "揉捻", "晾青", "晒青", "焙", "炭", "茶农", "树")
-    return "mountain" if sum(txt.count(k) for k in mountain_keys) >= 6 else "shop"
+    # 店铺/市井场景信号。单丛文章几乎篇篇提到凤凰山、炭焙、老树，
+    # 只按茶山词计数会把「店里清晨待客」这种稿子也判成茶山题材，
+    # 封面就出成茶园云海（2026-11-20 实测）。所以店铺信号足够多时压过茶山。
+    shop_keys = ("阿凤姐", "店里", "店内", "铺子", "柜台", "盖碗", "公道杯", "烧水",
+                 "起水", "客人", "街坊", "茶桌", "档口", "晨练", "老街", "门口")
+    m = sum(txt.count(k) for k in mountain_keys)
+    s = sum(txt.count(k) for k in shop_keys)
+    if s >= 4 and s * 2 >= m:
+        return "shop"
+    return "mountain" if m >= 6 else "shop"
 
 
 _PROMPT_NOISE = ("构图舒展留白", "自然光", "暖光", "暖黄光", "微距特写", "浅景深",
@@ -625,6 +634,29 @@ def make_images(prefix, title, sections, slug):
                         pass
         except Exception as e:
             print(f"  [真实照片] 取材失败，全部用 AI：{type(e).__name__}: {e}")
+
+    # 紫砂壶图位（站方规则 2026-11-20）：
+    # 这一格讲的是「壶」这个物体，不是人物——所以永远用实拍壶图，不用 AI 编壶。
+    # 场景图其他位置可以整体走 AI，但壶必须真实。图库空才退回 AI 专属提示词。
+    if teapot_key and teapot_key not in real_map and RP is not None:
+        try:
+            tp = RP.pick_teapot(1)
+            if tp:
+                real_map[teapot_key] = tp[0]
+                print(f"  [紫砂壶] 用实拍壶图：{tp[0]['file'][:24]}")
+            else:
+                print("  [紫砂壶] 图库里没有壶图，退回 AI 专属提示词")
+        except Exception as e:
+            print(f"  [紫砂壶] 取实拍壶图失败（{type(e).__name__}），退回 AI 专属提示词")
+    if teapot_key and teapot_key not in real_map:
+        try:
+            import teapot_daily as TP
+            for p in prompts:
+                if p["key"] == teapot_key:
+                    p["desc"] = TP.image_prompt()
+            print("  [紫砂壶] 用专属提示词走 AI 生图")
+        except Exception as e:
+            print(f"  [紫砂壶] 专属提示词不可用（{type(e).__name__}），沿用通用提示词")
 
     dims = {}
     audit_log = []
@@ -979,10 +1011,17 @@ def update_sitemap(meta):
 
 
 def update_footer(meta):
+    """页脚同步：只同步首页/产品页/最新 3 篇文章。
+
+    2026-11-20 改：以前每篇都写"上次更新"时间戳 +"共 N 篇"，导致**每次发文重写 101 个存档页**，
+    一次发布要推 117 个文件；走 API 推送时每文件 ~9.5 秒握手，一篇要 3-4 分钟。
+    存档页的时间戳对读者没意义，改只同步"看得见最新"的那几页，推送量降到 ~12 个文件。
+    """
+    arts = sorted(glob.glob(str(REPO / "articles" / "*.html")), reverse=True)[:3]
     n = len(glob.glob(str(REPO / "articles" / "*.html")))
     cnt = str(n)
     changed = 0
-    targets = (glob.glob(str(REPO / "articles" / "*.html"))
+    targets = (arts
                + glob.glob(str(REPO / "products" / "*.html"))
                + [str(REPO / "index.html"), str(REPO / "video.html")])
     for p in targets:
@@ -1038,31 +1077,43 @@ def commit_push(meta, pushed=True):
         print("  ⏸ 未推送（--no-push）")
         return head
 
-    # ① API 优先：本机 github.com:443 长期被重置，git push 每次要干等 90 秒（2026-11-17 实测）
-    #    api.github.com 稳定可达，且已在 git_push_api 里做 tree 复核，成功后无需再试 git
+    # ① 先探路：git ls-remote 与 push 走同一条 TLS/打包通道
+    #    2026-11-20 实测：github.com 首页能开（2.6s），但真推 pack 会无限挂住（实测 >7 分钟）
+    #    所以先用 20 秒探路，探不通就直接走 API，别浪费 2 分钟等死
+    reachable = False
+    try:
+        p0 = subprocess.run(["git", "ls-remote", "origin", "main"], cwd=str(REPO),
+                            capture_output=True, text=True, timeout=20)
+        reachable = p0.returncode == 0 and "refs/heads/main" in p0.stdout
+        print(f"  {'✓' if reachable else '✗'} git 通道探测（ls-remote）{'通' if reachable else '不通'}")
+    except subprocess.TimeoutExpired:
+        print("  ✗ git 通道探测：超时 20 秒（走 API）")
+
+    if reachable:
+        try:
+            t0 = time.time()
+            p = subprocess.run(["git", "push", "origin", "main"], cwd=str(REPO),
+                               capture_output=True, text=True, encoding="utf-8",
+                               errors="replace", timeout=120)
+            ok = p.returncode == 0 or "up-to-date" in (p.stdout + p.stderr)
+            print(f"  {'✓' if ok else '✗'} git push（{time.time() - t0:.0f}s）: "
+                  f"{(p.stdout + p.stderr).strip()[:160]}")
+            if ok:
+                return head
+        except subprocess.TimeoutExpired:
+            print("  ✗ git push: 超时 120 秒（pack 传输被挂住）")
+
+    # ② GitHub API：每请求独立连接（~9.5s 握手），稳但慢，是这台机器的常规路径
     try:
         from git_push_api import push_via_api
-        print("  ↳ 使用 GitHub API 推送（首选路径）…")
+        print("  ↳ 使用 GitHub API 推送…")
         sha = push_via_api(REPO)
         if sha:
             return head
     except Exception as e:
         print(f"  ⚠ API 推送不可用: {type(e).__name__}: {str(e)[:160]}")
-        print("  ↳ 回退到 git push…")
 
-    # ② 回退：git push（必须带超时，否则连不上会永久挂起——今天卡 2 小时的根因）
-    try:
-        p = subprocess.run(["git", "push", "origin", "main"], cwd=str(REPO),
-                           capture_output=True, text=True, encoding="utf-8",
-                           errors="replace", timeout=90)
-        ok = p.returncode == 0 or "up-to-date" in (p.stdout + p.stderr)
-        print(f"  {'✓' if ok else '✗'} git push: {(p.stdout + p.stderr).strip()[:160]}")
-    except subprocess.TimeoutExpired:
-        ok = False
-        print("  ✗ git push: 超时 90 秒（github.com 连接被挂住）")
-    if ok:
-        return head
-    raise RuntimeError("push 失败（API 与 git push 均不可用，本地 commit 已保留，可稍后重试）")
+    raise RuntimeError("push 失败（git push 与 API 均不可用，本地 commit 已保留，可稍后重试）")
 
 
 def verify_online(meta, wait=45):
