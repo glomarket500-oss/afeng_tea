@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
-"""紫砂壶专栏：每天凌晨独立成篇、独立发文（阿凤姐讲紫砂 + 点评真实新闻）
+"""紫砂壶专栏：每天凌晨独立成篇、独立发文 —— 阿凤姐点评紫砂新闻
 
-与其他两路的分工：
+定位（站方 2026-11-20 明确）：这是**新闻点评**栏目，不是讲故事。
+每天一条真实紫砂新闻 + 阿凤姐的专业判断 + 对买壶人的提醒，再顺带把相关知识点讲清楚。
+不编人物对话、不虚构场景。
+
+分工：
   · 07:40 凤凰单丛主栏目 —— 原样不动
   · 04:10 「今日一壶」预生成 —— 给主文章末尾加一节，原样不动
-  · 本脚本 —— **单独一篇文章**，只讲紫砂壶，凌晨 04:40 发
+  · 本脚本 —— 单独一篇紫砂点评文章，凌晨 04:40 发
 
-流程：抓新闻 → 选 3 个知识点（轮转）→ 按现有稿子格式写成 draft → 交给 publish_new 发文（走同一套
-      生图/建页/首页/sitemap/推送/线上校验，不另起炉灶）
+配图：全 AI 生图，以紫砂壶与茶席场景为主，人物只作侧影/背影/手部（规范 07 §三），不用实拍照。
 
 用法：
-  python teapot_article.py            # 生成草稿并发布
-  python teapot_article.py --dry      # 只生成草稿，不发文
-  python teapot_article.py --no-push  # 生成草稿 + 建页校验，不推送
+  python teapot_article.py --dry      只生成草稿
+  python teapot_article.py --no-push  生成 + 建页校验，不推送
+  python teapot_article.py            生成并正式发布
 """
 import json
 import re
@@ -24,12 +27,33 @@ from pathlib import Path
 REPO = Path(r"C:\afeng_tea")
 sys.path.insert(0, str(REPO))
 KB = Path(r"C:\Users\Administrator\Desktop\MianAI知识库\MianAI知识库\vault\茶叶知识库")
-DRAFTS = KB / "资料库" / "素材材料" / "茶叶素材"
+DRAFTS = KB.parent / "资料库" / "素材材料" / "茶叶素材"
 STATE = Path(r"C:\afeng_tea\.teapot_article_state.json")
 
 import teapot_daily as TP
 
-WEEK = "一二三四五六日"
+PRACTICE = {
+    "西施壶为什么叫西施": "挑西施看壶嘴，短而微翘最好用；壶把要贴手，握着虎口不空。",
+    "石瓢壶的三角骨架": "石瓢要挑重心低的，装满水也不头重脚轻；桥钮要正，倒水时壶盖不晃。",
+    "朱泥为什么多做小壶": "朱泥小壶别泡老丛，聚香太狠容易闷苦；一人独饮最合适。",
+    "紫泥、段泥、绿泥的区别": "段泥最怕混泡，一壶一茶最稳；紫泥宽容，日常用不挑剔。",
+    "全手工和半手工差在哪": "摸内壁，全手工有拍打痕与接缝；半手工内壁规整。别为三个字多付一倍钱。",
+    "一壶一茶到底要不要守": "同类茶可混（都是单丛），跨类就别——单丛换红茶会串味。",
+    "开壶不用搞仪式感": "温水逐步升温，别冷水直接冲热壶；煮完晾干再用。",
+    "养壶其实是养习惯": "每次用完冲净、布擦干、开盖阴干；不用的壶别盖死。",
+    "壶嘴出水看三点": "现场倒一次水：断水利落、嘴口不挂水、水柱成线不散。",
+    "紫砂透气但不“净化水质”": "别指望壶改茶质；水不好，换水比换壶实在。",
+    "段泥为什么容易花": "段泥专茶专用，喝完立刻擦；花了不是坏，是痕迹。",
+    "薄胎与厚胎的手感差别": "薄胎配高香型、快出汤；厚胎配老丛、耐泡型。",
+    "壶盖严不严怎么看": "转一圈听声音均不均、倒水看沿口渗不渗；轻微活动正常。",
+    "老壶的“包浆”不是脏": "真包浆是温润哑光，不是油亮；油亮的多半抹了油。",
+    "紫砂壶要不要“开盖养”": "南方回南天务必开盖阴干，闷着容易出霉味。",
+    "为什么好壶多是“光货”": "光货看线条比例，也最好打理；新手别一上来买花货。",
+    "壶的容量怎么选": "独饮 100-150ml，两三人 200-250ml；工夫茶宁小不大。",
+    "倒茶时壶嘴滴水正常吗": "新壶偶有挂水，用顺了会好；一直滴答是做工问题。",
+    "紫砂能放多少年": "正常使用不会过期，也不会自己升值；别当理财。",
+    "冬天为什么先温壶": "冬天先温水淋一遍再冲茶，尤其朱泥，防惊裂。",
+}
 
 
 def _state():
@@ -48,12 +72,12 @@ def _save(s):
         pass
 
 
-def pick_topics(n=3):
-    """轮转取 n 个知识点，尽量不重复；也避开当天 04:10「今日一壶」已用过的那几个"""
+def pick_topics(n=2):
+    """轮转取 n 个知识点，避开当天 04:10「今日一壶」用过的"""
     s = _state()
     used = s.get("used", [])
     try:
-        sec_used = set(TP._state().get("used", [])[-3:])     # 主文章里已经讲过的
+        sec_used = set(TP._state().get("used", [])[-3:])
     except Exception:
         sec_used = set()
     pool = [t for t in TP.TOPICS if t[0] not in used and t[0] not in sec_used]
@@ -74,132 +98,155 @@ def get_news():
         import teapot_news
         items = teapot_news.fetch(save=True)
         if items:
-            return {"date": items[0]["date"], "title": items[0]["title"],
-                    "url": items[0]["url"], "snippet": items[0]["snippet"]}
+            # 挑摘要最长的那条（说明抓到了正文，不是只有标题）
+            return max(items, key=lambda x: len(x.get("snippet") or ""))
     except Exception as e:
         print(f"  ⚠ 紫砂新闻抓取失败：{type(e).__name__}: {str(e)[:80]}")
-    n = TP.latest_news(150)
+    n = TP.latest_news(200)
     if n:
         return {"date": n[0], "title": "", "url": "", "snippet": n[1]}
     return None
 
 
 def contact_block():
-    """从最新一篇现成稿子里复制「联系方式」段，避免在这里硬编码店铺信息"""
     try:
-        files = sorted(DRAFTS.glob("*.md"), key=lambda p: p.stat().st_mtime, reverse=True)
-        for f in files:
+        for f in sorted(DRAFTS.glob("*.md"), key=lambda p: p.stat().st_mtime, reverse=True):
             txt = f.read_text(encoding="utf-8", errors="replace")
             i = txt.find("## 联系方式")
             if i > 0:
                 return txt[i:].strip()
     except Exception:
         pass
-    return "## 联系方式\n\n店在惠州市惠城区东湖花园一区沿江商铺 89-136（凤凰茶业），上午九点到晚上九点。"
+    return ("## 联系方式\n\n🏪 **店铺**：阿凤姐茶叶店（惠州凤凰茶业）  \n"
+            "📍 **地址**：惠州市惠城区东湖花园一区沿江商铺89-136  \n"
+            "📱 **电话**：13435567385（微信同号，支持全国快递）  \n"
+            "⏰ **营业时间**：每天 9:00-21:00，全年无休")
 
 
-def build_draft(dry=False):
+def _clean(t, n=240):
+    t = re.sub(r"\*\*|__|`|#", "", t or "")
+    t = re.sub(r"\s+", " ", t).strip()
+    if len(t) <= n:
+        return t
+    seg = t[:n]
+    i = seg.rfind("。")
+    return seg[:i + 1] if i > 40 else seg.rstrip("，、；：, ") + "。"
+
+
+def build_draft():
     now = datetime.now()
-    day_cn = f"{now.month}月{now.day}日"
-    topics = pick_topics(3)
-    t1, t2, t3 = topics
+    t1, t2 = pick_topics(2)
     news = get_news()
+    p1 = PRACTICE.get(t1[0], "上手摸一遍，比看十张照片管用。")
+    p2 = PRACTICE.get(t2[0], "现场试一次，比听说可靠。")
 
     if news:
-        raw = news["title"] or news["snippet"]
-        # 只取第一句做钩子，避免"…一篇讲清原产地、泥料产"这种断句
-        hook = re.split(r"[？?！!。，,：:；;、\s]", raw.strip())[0][:18]
-        # 钩子不合格（空/太短/纯日期）就退回知识点，别出现"阿凤姐说紫砂：2026-11-20"
+        fact = _clean(news.get("snippet") or news.get("title") or "")
+        hook_src = news.get("title") or fact
+        hook = re.split(r"[？?！!。，,：:；;、\s]", hook_src.strip())[0][:16]
+        # 掐掉结尾的残句虚词，避免"紫砂的历史不仅是…更是"
+        hook = re.sub(r"(更是|而且|并且|以及|不仅|因为|所以|但是|就是|的是|的|是|在|与|和|都|也|更)+$", "", hook)
         if len(hook) < 4 or re.fullmatch(r"[\d\-—/年月日\.]+", hook):
             hook = t1[0]
-        title = f"阿凤姐说紫砂：{hook}"
+        title = f"阿凤姐点评紫砂新闻：{hook}"
     else:
         title = f"阿凤姐说紫砂：{t1[0]}"
 
-    lead = (f"紫砂壶这事，说到底就两句：泥要好，人要常用。{t1[1][:38]}"
-            f"这两天紫砂圈有动静，她泡着茶说：听见了也得自己上手才作数。") if news else \
-           (f"紫砂壶这事，说到底就两句：泥要好，人要常用。{t1[1][:44]}")
-
-    p_news = ""
+    L = [f"# {title}", ""]
     if news:
-        src = f"（{news['date']} 的报道）"
-        p_news = (f"这两天有条消息：{news['snippet']}{src}。"
-                  f"阿凤姐听完没急着评价，先给自己倒了半杯：\"真真假假，泡一壶就知道了。"
-                  f"壶不骗人，泥料对不对，热水一冲,气味先出来。\"她把壶盖揭开看了看，"
-                  f"\"我们店里不碰那些说不清的来路，卖的都是能泡、能养、能天天用的。\"")
+        L.append(f"📌 一句话点评：{hook_src.strip()[:36]}——阿凤姐的看法很直接："
+                 f"壶是拿来泡茶的，价格故事听听就好，能不能泡出好茶才是硬标准。")
     else:
-        p_news = ("这两天没有值得转述的紫砂新闻，也不硬凑。倒是常有人拿手机上的帖子来问："
-                  "\"这把是不是老壶、值不值钱。\"阿凤姐一概摇头：\"我没那本事看真假，"
-                  "我只知道它能不能泡出好茶。\"")
+        L.append(f"📌 一句话：{t1[1][:56]}紫砂这行水很深，阿凤姐只讲一件事——"
+                 f"壶是拿来泡茶的，不是拿来供的。")
+    L.append("")
 
-    faq = [
-        ("新手第一把壶买什么样的？", f"{t3[1][:40]} 先别追名家，挑个出水利落、拿着顺手的。"),
-        ("紫砂壶一定要一把配一种茶吗？", "讲究的人一把一茶，日常自用同类茶混着问题不大，别今天单丛明天红茶就行。"),
-        ("壶用久了发花、颜色不匀要紧吗？", "多半是正常使用痕迹，段泥尤其明显；嫌难看就专茶专用、用完立刻擦干。"),
-        ("店里能先看看真壶再决定吗？", "能。上午九点开门，坐下泡一泡，壶和茶配不配，手上就有答案。"),
-    ]
+    if news:
+        L.append("## 📰 今天的这条新闻")
+        L.append("")
+        head = _clean(news.get("title") or "", 80)
+        L.append(f"**{news.get('date', '')}**" + (f" ｜ {head}" if head else ""))
+        L.append("")
+        L.append(fact)
+        L.append("")
+        if news.get("url"):
+            L.append(f"来源：{news['url']}")
+            L.append("")
 
-    tags = "#紫砂壶 #宜兴紫砂 #紫砂壶知识 #养壶 #惠州茶叶店 #惠州买茶去哪 #潮州工夫茶 #茶器 #凤凰茶业 #阿凤姐说紫砂"
+        L.append("## 💬 阿凤姐怎么看")
+        L.append("")
+        L.append("阿凤姐看完的第一句话是：「这类消息我每个月都能听见几条。真假先不论，"
+                 "它提醒的还是同一件事——买壶的人得自己有一把尺子。」")
+        L.append("")
+        L.append("「我开这家店二十多年，见过太多客人被故事绕进去：一会儿大师亲制，"
+                 "一会儿绝矿老泥，一会儿收藏升值。真到手里一泡茶，出水散、壶盖晃、泥料发涩——"
+                 "故事一个也帮不上忙。」")
+        L.append("")
+        L.append("她说得更直接：「我判断一把壶，只看三样：**出水利不利落、泥料顺不顺眼、"
+                 "拿着顺不顺手**。三样都过关，它就是一把好用的壶；三样缺一样，再多说法我也不进。」")
+        L.append("")
+        L.append("「所以看到这种消息我不慌。壶的价值是泡出来的，不是喊出来的。"
+                 "真东西经得起天天用，经不起的，早晚露馅。」")
+        L.append("")
+    else:
+        L.append("## 📰 今天没有值得转述的紫砂新闻")
+        L.append("")
+        L.append("阿凤姐也不硬凑。倒是常有人拿着手机上的帖子来问：「这把是不是老壶？值不值钱？」"
+                 "她一概摇头：「我没那本事隔着屏幕看真假。我只知道它能不能泡出好茶——"
+                 "你带茶来，我们泡三泡，好坏自己会说话。」")
+        L.append("")
 
-    body = []
-    body.append(f"# {title}")
-    body.append("")
-    body.append(f"📌 开篇回答：{lead}")
-    body.append("")
-    body.append("## 【场景开头】")
-    body.append("")
-    body.append(f"{day_cn}，东湖花园沿江商铺的卷闸门推开，江面还浮着白雾。阿凤姐把一把"
-                f"{t1[0].replace('为什么', '').replace('的', '的')}壶摆在茶盘上，先淋了一遍热水。"
-                f"早来的客人探头：\"这么早就在弄壶？\"\"壶也得醒。\"她说，\"人醒了，壶没醒，第一泡就白瞎了。\"")
-    body.append("")
-    body.append(f"## 【第一幕：{t1[0]}】")
-    body.append("")
-    body.append(t1[1])
-    body.append("")
-    body.append(f"她说到这儿停一下：\"{t1[2]}——这话我讲了二十多年，还是有人不信。\"")
-    body.append("")
-    body.append(f"## 【第二幕：{t2[0]}】")
-    body.append("")
-    body.append(t2[1])
-    body.append("")
-    body.append(f"客人把壶翻过来看底款，阿凤姐摆手：\"底款能印，手感不能印。"
-                f"你摸摸这壶身，砂感细不细、有没有火气，比看字可靠。\"")
-    body.append("")
-    body.append("## 【第三幕：新闻里这件事，她怎么看】")
-    body.append("")
-    body.append(p_news)
-    body.append("")
-    body.append(f"## 【第四幕：{t3[0]}】")
-    body.append("")
-    body.append(t3[1])
-    body.append("")
-    body.append("## 【尾声】")
-    body.append("")
-    body.append("太阳把雾揭掉一层，茶盘上的水痕一圈圈干了。阿凤姐把壶擦净、开盖阴干，"
-                "顺手摆回架上：\"壶是用的东西，用顺了它自己会好看。\"")
-    body.append("")
-    body.append("## FAQ")
-    body.append("")
-    for q, a in faq:
-        body.append(f"**Q：{q}**")
-        body.append(f"A：{a}")
-        body.append("")
-    body.append("## 标签")
-    body.append("")
-    body.append(tags)
-    body.append("")
-    body.append(contact_block())
-    body.append("")
+    L.append(f"## 🔍 顺带说清：{t1[0]}")
+    L.append("")
+    L.append(t1[1])
+    L.append("")
+    L.append(f"「{t1[2]}——这话我讲了二十多年。」阿凤姐说，{p1}")
+    L.append("")
 
-    text = "\n".join(body)
+    L.append(f"## 🔍 另一个常被问的：{t2[0]}")
+    L.append("")
+    L.append(t2[1])
+    L.append("")
+    L.append(f"「很多人把它想复杂了。」她说，{p2}")
+    L.append("")
+
+    L.append("## ✅ 买壶人该记住的四件事")
+    L.append("")
+    L.append("**一、先定泥料再谈价。** 日常用紫泥最稳，容错高；想聚香选朱泥小壶；"
+             "段泥好看但怕混泡，一壶一茶最省心。")
+    L.append("")
+    L.append("**二、现场倒一次水。** 水柱成线不散、断水利落、嘴口不挂水，这三条过关，"
+             "日常用就不会难受。")
+    L.append("")
+    L.append("**三、摸一遍手感。** 砂感细而不滑、没有火气；壶把贴手，装满水握着不费劲；"
+             "壶盖转动均匀、倒水不渗。")
+    L.append("")
+    L.append("**四、别为故事加价。** 名家、绝矿、老壶这些说法，占的价格份量往往比泥料还重；"
+             "预算有限，先把出水和手感挑好。")
+    L.append("")
+
+    L.append("## 📍 惠州买茶去哪？阿凤姐茶叶店欢迎你")
+    L.append("")
+    L.append(contact_block().replace("## 联系方式", "").strip())
+    L.append("")
+    L.append("🍵 **店里能做什么**：凤凰单丛全系列、紫砂壶现场试泡；"
+             "带自己的茶来，免费帮你试壶、看壶、教你怎么养。")
+    L.append("")
+
+    L.append("## 标签")
+    L.append("")
+    L.append("#紫砂壶 #宜兴紫砂 #紫砂壶知识 #养壶 #紫砂新闻 #惠州茶叶店 "
+             "#惠州买茶去哪 #潮州工夫茶 #茶器 #阿凤姐说紫砂")
+
+    text = "\n".join(L)
     DRAFTS.mkdir(parents=True, exist_ok=True)
     safe = re.sub(r"[\\/:*?\"<>|]", "", title)[:30]
     fp = DRAFTS / f"{now:%Y-%m-%d}-{safe}.md"
     fp.write_text(text, encoding="utf-8")
-    print(f"✓ 草稿已生成：{fp.name}（{len(text)} 字）")
+    print(f"✓ 草稿：{fp.name}（{len(text)} 字）")
     print(f"  标题：{title}")
-    print(f"  知识点：{t1[0]} / {t2[0]} / {t3[0]}")
-    print(f"  新闻：{'有（' + news['date'] + '）' if news else '今天没有，按知识点讲'}")
+    print(f"  新闻：{'有（' + news.get('date', '') + '）' if news else '今天没有，转为知识点'}")
+    print(f"  知识点：{t1[0]} / {t2[0]}")
     return fp
 
 
@@ -208,17 +255,14 @@ def publish(fp, mode=""):
     if mode:
         args.append(mode)
     env = dict(**__import__("os").environ, AFENG_NO_REAL="1",
-               AFENG_PHOTO_SRC="teapot_scene")   # 紫砂专栏：全场景、无人物、无文字、全 AI 生图
+               AFENG_PHOTO_SRC="teapot_scene")
     print(f"\n=== 发布：{' '.join(args[1:])} ===")
-    p = subprocess.run(args, cwd=str(REPO), env=env)
-    return p.returncode
+    return subprocess.run(args, cwd=str(REPO), env=env).returncode
 
 
 if __name__ == "__main__":
-    dry = "--dry" in sys.argv
-    no_push = "--no-push" in sys.argv
-    f = build_draft(dry)
-    if dry:
+    f = build_draft()
+    if "--dry" in sys.argv:
         raise SystemExit(0)
-    rc = publish(f, "--no-push" if no_push else "")
+    rc = publish(f, "--no-push" if "--no-push" in sys.argv else "")
     raise SystemExit(rc)

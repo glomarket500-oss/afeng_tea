@@ -111,7 +111,13 @@ def fetch(save=True):
                 continue
             if not any(k in title for k in ("紫砂", "宜兴", "陶都", "泥料", "壶")):
                 continue
-            if re.search(r"(排行榜|京东|淘宝|旗舰店|优惠|券后|秒杀)", title):
+            if re.search(r"(排行榜|京东|淘宝|天猫|1688|拼多多|旗舰店|优惠|券后|秒杀|包邮|卖家|促销|已售)", title):
+                continue
+            # 电商/导购站整站排除（它们的"新闻"其实是商品列表）
+            if re.search(r"(taobao|tmall|jd\.com|1688|pinduoduo|suning|zhe800|smzdm|xiaohongshu)", url):
+                continue
+            body_txt = re.sub(r"\s+", " ", (r.get("content") or ""))
+            if re.search(r"(卖家|￥|促销|包邮|已售|销量|优惠券|下单)", body_txt[:200]):
                 continue
             # 掐掉站点名尾巴："—紫砂之家" "－紫砂壶·茶具·建盏·收藏精华" 这类导航标题
             if re.search(r"[—\-－_|｜].*(网|之家|商城|官网|首页|频道)$", title) or title.count("·") >= 2:
