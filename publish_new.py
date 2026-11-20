@@ -337,6 +337,11 @@ SHOP_POOL = [
 COVER_MOUNTAIN = "凤凰山脉高山茶园晨雾全景，远山层叠，构图舒展留白"
 COVER_SHOP = "木质茶席上凤凰单丛干茶叶，晨光斜射，构图舒展留白"
 
+# 去假字：AI 极爱在茶罐 / 包装上生成「像汉字的乱码」，像素检测查不出来，
+# 只能从提示词源头掐掉（2026-11-20 封面两个茶罐上全是伪汉字）。
+NO_TEXT = "，画面内所有器物与包装一律素面，没有任何文字、汉字、标签、印章、logo或图案"
+
+
 
 def pick_domain(title, sections):
     txt = title + "".join(" ".join(ps) for _, ps in sections)
@@ -372,7 +377,7 @@ def build_prompts(title, sections):
     pool = MOUNTAIN_POOL if domain == "mountain" else SHOP_POOL
     cover_desc = COVER_MOUNTAIN if domain == "mountain" else COVER_SHOP
 
-    prompts = [{"key": "cover", "cap": scene_caption(cover_desc), "desc": cover_desc}]
+    prompts = [{"key": "cover", "cap": scene_caption(cover_desc), "desc": cover_desc + NO_TEXT}]
     used = {cover_desc}          # 封面用过的构图，场景图不再重复
 
     def too_similar(cand):
@@ -400,13 +405,13 @@ def build_prompts(title, sections):
         if not desc:
             desc = pool[i % len(pool)]
         used.add(desc)
-        prompts.append({"key": f"s{i+1}", "cap": scene_caption(desc), "desc": desc})
+        prompts.append({"key": f"s{i+1}", "cap": scene_caption(desc), "desc": desc + NO_TEXT})
 
     while len(prompts) < 7:
         k = len(prompts)
         cand = next((c for c in pool if c not in used), pool[k % len(pool)])
         used.add(cand)
-        prompts.append({"key": f"s{k}", "cap": scene_caption(cand), "desc": cand})
+        prompts.append({"key": f"s{k}", "cap": scene_caption(cand), "desc": cand + NO_TEXT})
     return prompts[:8]
 
 
