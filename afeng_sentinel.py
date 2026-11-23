@@ -49,11 +49,23 @@ def say(msg):
     print(msg, flush=True)
 
 
-def fetch_locs(timeout=40):
-    req = urllib.request.Request(SITEMAP, headers=HDR)
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        xml = r.read().decode("utf-8", "ignore")
-    return re.findall(r"<loc>([^<]+)</loc>", xml)
+def fetch_locs(timeout=40, tries=3):
+    """取 sitemap；网络抖就重试，三次都失败才抛"""
+    last = None
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(SITEMAP, headers=HDR)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                xml = r.read().decode("utf-8", "ignore")
+            locs = re.findall(r"<loc>([^<]+)</loc>", xml)
+            if locs:
+                return locs
+            last = RuntimeError("sitemap 里没有 loc")
+        except Exception as e:
+            last = e
+            if i < tries - 1:
+                time.sleep(8 * (i + 1))
+    raise last if last else RuntimeError("sitemap 取不到")
 
 
 def today_posts(today):
@@ -94,15 +106,22 @@ def save_state(today, s):
 
 
 def wait_and_recount(today, tries=5, gap=90):
-    """给 Vercel 部署留时间，避免把「刚发还在部署」误判成缺稿"""
+    """给 Vercel 部署留时间，避免把「刚发还在部署」误判成缺稿。
+    任何一次网络失败都不许把任务炸掉：当作"这次没查到"，继续下一轮。"""
+    story, review = [], []
     for i in range(tries):
-        story, review = today_posts(today)
-        if story and review:
-            return story, review
+        try:
+            story, review = today_posts(today)
+        except Exception as e:
+            log(f"  第 {i + 1} 次查询失败（{type(e).__name__}），稍后再试")
+            story, review = [], []
+        else:
+            if story and review:
+                return story, review
         if i < tries - 1:
             log(f"  第 {i + 1} 次复查：故事 {len(story)} 篇 / 点评 {len(review)} 篇，{gap}s 后再看")
             time.sleep(gap)
-    return today_posts(today)
+    return story, review
 
 
 def run(name, cmd, env_extra=None):
@@ -154,6 +173,11 @@ def main():
         if not review:
             missing.append("点评篇")
         say(f"[--check] {today} 缺：{'、'.join(missing)}（不执行补发）")
+        return 0
+
+    # 夜里（09:00 前）只查不补：04:40 / 07:40 还没跑，别抢先发文
+    if datetime.now().hour < 9 and "--force" not in sys.argv:
+        log("还没到 09:00，正常发文流程未跑完，只记录不补（要强补加 --force）")
         return 0
 
     # 给部署留时间（部署慢时先别急着重造）
@@ -225,4 +249,11 @@ def main():
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except SystemExit:
+        raise
+    except Exception as e:
+        # 哨兵不许因为异常把 cron 打成失败（会误报飞书）
+        log(f"✗ 哨兵异常已吞掉：{type(e).__name__}: {str(e)[:120]}")
+        raise SystemExit(0)
