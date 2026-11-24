@@ -133,6 +133,101 @@ def _clean(t, n=240):
     return seg[:i + 1] if i > 40 else seg.rstrip("，、；：, ") + "。"
 
 
+_NOISE_SUFFIX = re.compile(
+    r"[_＿\-－—–|｜]\s*(?:地方频道[^_＿\-－—|｜]*|央视网.*|新华网.*|人民网.*|中国新闻网.*|"
+    r"新浪.*|搜狐.*|网易.*|腾讯.*|知乎.*|百度.*|微信公众号.*|紫砂之家.*|懂茶帝.*|茶友网.*)$")
+# 导航式标题常以站点名开头：「紫砂之家—紫砂壶·茶具·建盏·收藏精」
+_SITE_PREFIX = re.compile(
+    r"^(?:紫砂之家|懂茶帝|茶友网|宜兴紫砂网|紫砂网)\s*[_＿\-－—–|｜·]+\s*")
+_SOCIAL_PREFIX = re.compile(
+    r"^.{0,40}?\b(?:on|於|在)\s*(?:Facebook|Twitter|Instagram|YouTube|微博|抖音|小红书)\s*[:：]?\s*",
+    re.I)
+_DOMAIN = re.compile(r"[（(]\s*[A-Za-z0-9.\-]+\.(?:com|cn|net|org|cc)(?:\.[a-z]{2})?\s*[）)]")
+_ORPHAN_QUOTES = "「『“‘\"'」』”’"
+
+
+def _safe_title_part(s, n=16):
+    """从新闻标题 / 知识点里抠一段能当标题的短句。
+
+    2026-11-20/21 实际踩的坑（新闻源抓回来的是这种）：
+      "#紫砂壺的「精」與「氣」"        → 硬截 16 字 → "#紫砂壺的「精"（半个引号）
+      "紫砂之家—紫砂壶·茶具·建盏·收藏精" → 照抄 → 截在半个词上
+      "…福州展出_地方频道福建站_央视网(cctv.com)" → 站点后缀进了标题
+      "Purple Cane 紫藤 on Facebook: \"👉一把…"  → 社交平台前缀进了标题
+
+    所以：去井号/表情 → 去社交前缀/域名/站点后缀/栏目标签
+          → 只在强标点断句 → 过长时优先在空格逗号处收口
+          → 引号成对就收口在收尾引号 → 引号没配平就砍掉未闭合段 → 去结尾残句虚词
+    """
+    t = (s or "").strip()
+    t = re.sub(r"[#＃]+\s*", "", t)                                    # 话题井号
+    t = re.sub(r"[\U0001F300-\U0001FAFF\u2600-\u27BF\uFE0F]", "", t)   # 表情符号
+    t = re.sub(r"\*\*|__|`", "", t).strip()
+    t = _SOCIAL_PREFIX.sub("", t)
+    t = _DOMAIN.sub("", t)
+    t = _NOISE_SUFFIX.sub("", t).strip()
+    t = _SITE_PREFIX.sub("", t).strip()
+    t = re.sub(r"^[【\[][^】\]]{1,8}[】\]]\s*", "", t).strip()          # 开头的栏目标签
+    t = t.strip(" 　\t")
+    if not t:
+        return ""
+
+    # 只在强标点断句，避免把「以器正名 醒石古今」这种被空格拆碎
+    seg = re.split(r"[。！!？?]+", t)[0].strip() or t
+
+    truncated = False
+    if len(seg) > n:
+        cut = max(seg.rfind(" ", 0, n), seg.rfind("，", 0, n), seg.rfind("、", 0, n))
+        seg = seg[:cut] if cut >= 6 else seg[:n]
+        truncated = True
+
+    # 只有真的截断过，才收口在收尾引号；
+    # 否则会把「「养壶」到底要不要开盖」这类完整标题砍成「「养壶」」。
+    if truncated:
+        for cl in ("”", "」", "』", "》", "）"):
+            i = seg.find(cl)
+            if -1 < i < len(seg) - 1:
+                seg = seg[:i + 1]
+                break
+
+    # 引号 / 括号没配平 → 砍掉未闭合的那一段（开头就是半截引号则整段作废）
+    for op, cl in (("「", "」"), ("『", "』"), ("“", "”"), ("（", "）"),
+                   ("(", ")"), ("《", "》"), ("【", "】"), ('"', '"')):
+        if seg.count(op) > seg.count(cl):
+            k = seg.rfind(op)
+            seg = seg[:k] if k > 0 else ""
+
+    # 掐掉结尾的残句虚词
+    seg = re.sub(r"(更是|而且|并且|以及|不仅|因为|所以|但是|就是|的是|的|是|在|与|和|都|也|更"
+                 r"|之|把|被|对|从|向|让|给)+$", "", seg)
+    # 只清「弱标点」。不能把 「」【】 也 strip 掉，
+    # 否则 "紫砂壺的「精」與「氣」" 会少一个收尾引号。
+    seg = seg.strip(" 　\t—－-…·、,，。:：;；!?！？|｜/")
+
+    # 收尾清理：按「配平」处理两端孤悬的引号。
+    # 「养壶」到底要不要开盖 → 开头的「是成对的，不能削；
+    # 社交帖正文以 " 起头且只有一个 " → 这个孤引号要削掉。
+    _MATCH = {"「": "」", "『": "』", "“": "”", "‘": "’"}
+    _REV = {v: k for k, v in _MATCH.items()}
+    for _ in range(3):
+        ch = seg[:1]
+        if ch in _MATCH and seg.count(ch) > seg.count(_MATCH[ch]):
+            seg = seg[1:].strip()
+            continue
+        ch = seg[-1:]
+        if ch in _REV and seg.count(ch) > seg.count(_REV[ch]):
+            seg = seg[:-1].strip()
+            continue
+        if seg.startswith('"') and seg.count('"') % 2 == 1:
+            seg = seg[1:].strip()
+            continue
+        if seg.endswith('"') and seg.count('"') % 2 == 1:
+            seg = seg[:-1].strip()
+            continue
+        break
+    return seg
+
+
 def build_draft():
     now = datetime.now()
     t1, t2 = pick_topics(2)
@@ -143,14 +238,12 @@ def build_draft():
     if news:
         fact = _clean(news.get("snippet") or news.get("title") or "")
         hook_src = news.get("title") or fact
-        hook = re.split(r"[？?！!。，,：:；;、\s]", hook_src.strip())[0][:16]
-        # 掐掉结尾的残句虚词，避免"紫砂的历史不仅是…更是"
-        hook = re.sub(r"(更是|而且|并且|以及|不仅|因为|所以|但是|就是|的是|的|是|在|与|和|都|也|更)+$", "", hook)
+        hook = _safe_title_part(hook_src, 16)
         if len(hook) < 4 or re.fullmatch(r"[\d\-—/年月日\.]+", hook):
-            hook = t1[0]
+            hook = _safe_title_part(t1[0], 14)
         title = f"阿凤姐点评紫砂新闻：{hook}"
     else:
-        title = f"阿凤姐说紫砂：{t1[0]}"
+        title = f"阿凤姐说紫砂：{_safe_title_part(t1[0], 14)}"
 
     L = [f"# {title}", ""]
     if news:
@@ -254,8 +347,9 @@ def publish(fp, mode=""):
     args = [str(REPO / ".venv" / "Scripts" / "python.exe"), "publish_new.py", str(fp), "--no-teapot"]
     if mode:
         args.append(mode)
-    env = dict(**__import__("os").environ, AFENG_NO_REAL="1",
-               AFENG_PHOTO_SRC="teapot_scene")
+    env = dict(__import__("os").environ)
+    env["AFENG_NO_REAL"] = "1"
+    env["AFENG_PHOTO_SRC"] = "teapot_scene"
     print(f"\n=== 发布：{' '.join(args[1:])} ===")
     return subprocess.run(args, cwd=str(REPO), env=env).returncode
 

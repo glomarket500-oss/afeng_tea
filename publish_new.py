@@ -607,6 +607,16 @@ def make_images(prefix, title, sections, slug):
         teapot_key = prompts[-1]["key"]
     TEAPOT_LAST_KEY = teapot_key
 
+    # 普洱茶专栏：整篇换成普洱场景提示词（茶饼/茶汤为主体、无正脸、无文字）
+    if os.environ.get("AFENG_PHOTO_SRC") == "puer_scene":
+        try:
+            import puer_scenes as PS
+            for p, d in zip(prompts, PS.scene_pool(len(prompts))):
+                p["desc"] = d
+            print(f"  [普洱场景] {len(prompts)} 张场景提示词（茶饼/茶汤为主体/无文字）")
+        except Exception as e:
+            print(f"  ⚠ 普洱场景提示词生成失败：{type(e).__name__}: {e}")
+
     # 紫砂专栏：整篇换成场景提示词（以壶为主体、无人物、无文字）
     if os.environ.get("AFENG_PHOTO_SRC") == "teapot_scene":
         try:
