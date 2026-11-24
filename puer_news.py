@@ -85,13 +85,13 @@ def _seen():
     return []
 
 
-def fetch(save=True, days=2, max_age=1):
+def fetch(save=True, days=1, max_age=0):
     """返回本次抓到的新条目列表 [{title, url, date, snippet}]
 
     days    —— 给 Tavily 的检索窗口（天）
-    max_age —— 只接受多少天以内的条目（默认 1 = 今天或昨天，24 小时内）
-               站方要求「用当天真实新闻」，凌晨 03:00 当天新闻尚未出稿，
-               所以取最严格的可行口径：必须是 24 小时内发布的。
+    max_age —— 只接受多少天以内的条目（默认 0 = 必须是今天发布的）
+               改到 20:30 发文后，当天新闻已经出齐，所以按站方要求收最严：
+               只要发布日是今天的。
     """
     keys = _keys()
     if not keys:

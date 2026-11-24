@@ -145,11 +145,11 @@ def _override_news():
             return None
         if not (it.get("url") and it.get("date") and len(it.get("snippet") or "") >= 40):
             return None
-        # 必须是 24 小时内的新闻（站方要求用当天真实新闻）
+        # 必须是今天发布的新闻（站方要求用当天真实新闻）
         try:
             age = (datetime.now() - datetime.strptime(it["date"], "%Y-%m-%d")).days
-            if age < 0 or age > 1:
-                print(f"  ⚠ 搜索到的新闻是 {it['date']} 的，已超 24 小时，弃用")
+            if age < 0 or age > 0:
+                print(f"  ⚠ 搜索到的新闻是 {it['date']} 的，不是今天，弃用")
                 return None
         except Exception:
             return None
@@ -168,13 +168,13 @@ def get_news():
         return ov
     try:
         import puer_news as PN
-        # 只要 24 小时内的（今天或昨天）；没有就不发，绝不拿旧新闻冒充当天
-        items = PN.fetch(save=True, days=2, max_age=1)
+        # 只要今天发布的（站方要求用当天真实新闻）；没有就不发，绝不拿旧新闻冒充
+        items = PN.fetch(save=True, days=1, max_age=0)
         real = [x for x in items if x.get("url") and len(x.get("snippet") or "") >= 60]
         if real:
             # 先按「像不像真新闻」，再按正文长度
             return max(real, key=lambda x: (x.get("score", 1), len(x.get("snippet") or "")))
-        print("  ⚠ 24 小时内没有『带正文的真实普洱新闻』")
+        print("  今天没有『带正文的真实普洱新闻』")
     except Exception as e:
         print(f"  ⚠ 普洱新闻抓取失败：{type(e).__name__}: {str(e)[:80]}")
     return None

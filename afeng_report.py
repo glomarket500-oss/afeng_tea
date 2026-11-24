@@ -21,7 +21,7 @@ SKIP_FILE = LOGDIR / "redirects.txt"      # 已改成跳转的废页，不计入
 SITEMAP = "https://feng-tea.com/sitemap.xml"
 HDR = {"User-Agent": "Mozilla/5.0 (afeng-report)"}
 
-COLS = [("故事篇", "07:40"), ("紫砂点评", "04:40"), ("普洱点评", "03:00")]
+COLS = [("故事篇", "07:40", (7, 40)), ("紫砂点评", "04:40", (4, 40)), ("普洱点评", "20:30", (20, 30))]
 
 
 def get(u, timeout=40):
@@ -64,8 +64,14 @@ def main():
             found["故事篇"].append(u)
 
     lines = [f"📊 阿凤姐茶叶站 · {datetime.now():%Y-%m-%d} 发文核查", ""]
+    now_hm = (datetime.now().hour, datetime.now().minute)
     n_ok = 0
-    for col, t in COLS:
+    n_due = 0
+    for col, t, hm in COLS:
+        if now_hm < hm:
+            lines.append(f"⟳ **{col}**（{t}）：还没到点，待发")
+            continue
+        n_due += 1
         urls = found[col]
         if not urls:
             lines.append(f"❌ **{col}**（{t}）：今天线上没有")
@@ -87,13 +93,15 @@ def main():
 
     lines.append("")
     total = sum(len(v) for v in found.values())
-    if total >= 3 and n_ok >= 3:
-        lines.append("结论：**三篇齐全，全部正常** ✅")
-    elif total >= 3:
-        lines.append(f"结论：三篇都在线，其中 {total - n_ok} 篇访问异常，看门狗会跟进")
+    miss = [c for c, _, hm in COLS if now_hm >= hm and not found[c]]
+    if n_due == 0:
+        lines.append("结论：今天三篇都还没到发文时间")
+    elif not miss and n_ok >= n_due:
+        lines.append(f"结论：**到点的 {n_due} 篇齐全，全部正常** ✅")
+    elif not miss:
+        lines.append(f"结论：到点的 {n_due} 篇都在线，其中有访问异常，看门狗会跟进")
     else:
-        miss = [c for c, _ in COLS if not found[c]]
-        lines.append(f"结论：缺 {'、'.join(miss)}；哨兵会在 12:00–14:00 窗口补")
+        lines.append(f"结论：缺 {'、'.join(miss)}，哨兵会自动补（普洱找不到当天真新闻时按规矩不发）")
 
     if skip:
         lines.append(f"（另有 {len(skip)} 个已改跳转的废页不计入）")
