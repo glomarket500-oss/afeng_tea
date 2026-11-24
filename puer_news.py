@@ -28,8 +28,10 @@ QUERIES = [
 # 标题里必须出现的普洱相关词（宁可漏，不要抓成别的茶）
 HIT = ("普洱", "云南", "勐海", "易武", "冰岛", "班章", "布朗山", "熟茶", "生茶", "茶饼", "古树")
 
-BAN_URL = r"(taobao|tmall|jd\.com|1688|pinduoduo|suning|zhe800|smzdm|xiaohongshu)"
-BAN_TITLE = r"(排行榜|京东|淘宝|天猫|1688|拼多多|旗舰店|优惠|券后|秒杀|包邮|卖家|促销|已售)"
+BAN_URL = (r"(taobao|tmall|jd\.com|1688|pinduoduo|suning|zhe800|smzdm|xiaohongshu|"
+           r"facebook|instagram|twitter|x\.com|weibo|douyin|kuaishou|youtube|tiktok|threads)")
+BAN_TITLE = (r"(排行榜|京东|淘宝|天猫|1688|拼多多|旗舰店|优惠|券后|秒杀|包邮|卖家|促销|已售|"
+             r"on Facebook|on Instagram|on Twitter|福利|拍卖|代购|批发|价格表|多少钱|航线|航班|机票)")
 BAN_BODY = r"(卖家|￥|促销|包邮|已售|销量|优惠券|下单)"
 
 
@@ -83,8 +85,14 @@ def _seen():
     return []
 
 
-def fetch(save=True, days=7):
-    """返回本次抓到的新条目列表 [{title, url, date, snippet}]"""
+def fetch(save=True, days=2, max_age=1):
+    """返回本次抓到的新条目列表 [{title, url, date, snippet}]
+
+    days    —— 给 Tavily 的检索窗口（天）
+    max_age —— 只接受多少天以内的条目（默认 1 = 今天或昨天，24 小时内）
+               站方要求「用当天真实新闻」，凌晨 03:00 当天新闻尚未出稿，
+               所以取最严格的可行口径：必须是 24 小时内发布的。
+    """
     keys = _keys()
     if not keys:
         print("⚠ 没找到 TAVILY key（hermes\\.env）")
@@ -129,7 +137,7 @@ def fetch(save=True, days=7):
                 continue
             try:
                 age = (datetime.now() - datetime.strptime(pd, "%Y-%m-%d")).days
-                if age < 0 or age > days:
+                if age < 0 or age > max_age:
                     continue
             except Exception:
                 continue
@@ -140,6 +148,9 @@ def fetch(save=True, days=7):
                           "非遗", "博物馆", "论坛", "大会", "监管", "案件", "判决", "罚款",
                           "发布", "开幕", "投产", "减产", "干旱", "暴雨", "协会")
             score = 3 if any(w in title for w in NEWS_WORDS) else 1
+            # 24 小时窗口下噪声多：只留「像真新闻」的事件类条目，纯介绍/社媒帖一律丢
+            if score < 3:
+                continue
             items.append({
                 "title": title[:120],
                 "url": url,
