@@ -80,11 +80,19 @@ def fetch_locs(timeout=40, tries=3):
 
 
 def today_posts(today):
-    """返回 (故事篇, 紫砂点评, 普洱点评) 三个列表"""
+    """返回 (故事篇, 紫砂点评, 普洱点评) 三个列表
+    已改成跳转的废页（cache/sentinel/redirects.txt）不算发文。"""
+    skip = set()
+    try:
+        skip = {x.strip() for x in (LOGDIR / "redirects.txt").read_text(encoding="utf-8").splitlines() if x.strip()}
+    except Exception:
+        pass
     story, zisha, puer = [], [], []
     for u in fetch_locs():
         m = re.search(r"/articles/(\d{8})([^/]*)\.html?$", u)
         if not m or m.group(1) != today:
+            continue
+        if f"{m.group(1)}{m.group(2)}" in skip:
             continue
         name = m.group(2)
         if "紫砂" in name:
