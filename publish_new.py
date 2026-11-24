@@ -1079,8 +1079,11 @@ def commit_push(meta, pushed=True):
     files = [f"articles/{slug}.html", "index.html", "sitemap.xml"]
     files += [x for x in glob.glob(str(REPO / "images" / "full" / f"{meta['prefix']}-*.webp"))]
     files += [x for x in glob.glob(str(REPO / "images" / "thumb" / f"{slug}-hero.webp"))]
-    # 页脚同步改过的全部页面（规范书 §4 步骤7）：漏提交 → 线上页脚停在旧日期/旧篇数
-    files += glob.glob(str(REPO / "articles" / "*.html"))
+    # 页脚同步改过的页面（规范书 §4 步骤7）：漏提交 → 线上页脚停在旧日期/旧篇数
+    # 2026-11-24 改：只提交 update_footer 真正改过的那几页（最新 3 篇 + 产品页 + 首页/视频页）。
+    #   原来这里 glob 了 articles/*.html 全量，结果 --no-push 试跑留下的临时页会被下一次发布
+    #   一并提交上线，11-24 普洱专栏就因此多出一个重复页（已改跳转处理）。
+    files += sorted(glob.glob(str(REPO / "articles" / "*.html")), reverse=True)[:3]
     files += glob.glob(str(REPO / "products" / "*.html"))
     files += [str(REPO / "video.html")]
     rel = [os.path.relpath(f, str(REPO)).replace("\\", "/") for f in files]
