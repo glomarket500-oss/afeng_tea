@@ -1302,6 +1302,23 @@ def main():
         "分享图三处（og:image / twitter:image / JSON-LD image）未全部指向本篇封面"
     print(f"✓ [4/9] 文章页生成: 场景图{page.count('scene-fig')} 标签{len(tagged)} 正文{len(page)}B")
 
+    # ---- 发布前完整性硬校验（2026-11-26 新增）----
+    # 背景：11-22/11-24/11-25 三篇紫砂点评残缺发布（587-887字/3-4节/1图/死图），
+    #       原有 assert 只查标签存在，不查内容完整。此处硬闸：不过即拒发。
+    from article_qc import check_article_html
+    qc_issues = check_article_html(
+        page,
+        imgs_dir=REPO / "images" / "full",
+        skip_images=(skip_img or dry),
+    )
+    if qc_issues:
+        raise SystemExit(
+            "❌ 文章完整性校验未通过，拒绝发布（仓库与线上均未改动）：\n  - "
+            + "\n  - ".join(qc_issues)
+            + "\n  如确为短篇（骨架A 1200-2000字），请人工确认后补充内容再发。"
+        )
+    print("✓ [4.5/9] 完整性校验通过（正文长度/章节数/图片存在性/标题清洁/导航/tags）")
+
     art = REPO / "articles" / f"{slug}.html"
     if dry:
         out = REPO / f"_preview_{slug[:20]}.html"

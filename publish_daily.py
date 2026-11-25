@@ -25,7 +25,9 @@ PY = sys.executable
 
 # 单次发布硬上限：绝不允许挂死
 # （2026-11-17 因 git push 无超时，进程整整挂了 25 小时，把后面几天全堵死）
-PUBLISH_TIMEOUT = 900
+# 2026-11-21 实测：上传 120+ 文件到 GitHub 有时要十几分钟，900 秒会冤杀，
+# 所以放宽到 1800 秒；并且超时后还要再确认线上真实状态，不能一见超时就报失败。
+PUBLISH_TIMEOUT = 1800
 # 线上补救总等待上限（秒）
 NUDGE_WAIT = 240
 
@@ -84,9 +86,22 @@ def main():
 
     ok = rc == 0 and "线上验证通过" in out
 
+    # ---- 以线上真实状态为准 ----
+    # 上传 120+ 文件时，硬超时可能先触发，但推送其实还在跑并最终完成
+    # （2026-11-21：07:55 报超时，08:01 远程才推完，文章实际已上线）。
+    # 所以判定失败之前，先直接查线上到底有没有这篇。
+    url = find_article_url(out)
+    if not ok and url:
+        print("=" * 60)
+        print("⚠ 流程未正常收尾，直接核对线上真实状态…")
+        live, cost = VN.wait_online(url, max_wait=150, interval=25, log=print)
+        if live:
+            print("✅ 线上已在（等待 %ss）—— 推送在收尾之后完成了" % cost)
+            ok = True
+            rc = 0
+
     # ---- Vercel 补救：内容已推上去，但线上没接住（大提交偶发不被 Vercel 触发） ----
     if not ok:
-        url = find_article_url(out)
         pushed = ("API 推送成功" in out) or ("推送成功" in out)
         if url and pushed:
             print("=" * 60)
@@ -110,7 +125,13 @@ def main():
             print(f"   文章地址：{url}")
         return 0
     print(f"❌ 发布失败（退出码 {rc}）：{d['title']}")
-    if "配图缺失" in out:
+    if "完整性校验未通过" in out:
+        print("   原因：文章完整性校验未通过（正文过短/章节过少/死图/标题不洁），已拒绝发布，仓库与线上均未改动")
+        # 把 QC 的具体问题也报出来，方便补稿
+        for line in out.splitlines():
+            if line.strip().startswith("- "):
+                print("     " + line.strip())
+    elif "配图缺失" in out:
         print("   原因：配图未生成，已按硬闸中止，仓库与线上均未改动")
     elif "超时" in out:
         print("   原因：发布流程超时被强制中止；本地提交已保留，下次运行可续推")
