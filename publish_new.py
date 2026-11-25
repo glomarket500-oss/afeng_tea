@@ -990,11 +990,11 @@ def update_index(meta, tags):
         f'loading="lazy" decoding="async"></a>\n'
         f'<div class="card-body">\n'
         f'<h3 itemprop="headline"><a href="articles/{slug}.html">{t_esc}</a></h3>\n'
-        # 卡片时间只显示日期（不带时分秒）：首页卡片正文区仅 ~227px 宽，
-        # 带 20:35:06 会折成两行、挤占标题，2026-11-26 站方反馈后修正。
-        # 完整时间保留在 <time datetime> 属性里（SEO/结构化数据不受影响）。
+        # 卡片时间显示精确到秒（站方要求保留时分秒）。
+        # 首页卡片正文区较窄，靠 .article-meta-time 的 .72em 小字号 + 允许换行来适配；
+        # 标题已用 max-height 固定 2 行，时间即使换行也不会再压住标题。
         f'<p class="article-meta-time">📅 发布于 <time itemprop="datePublished" datetime="{meta.get("iso_time", date)}">'
-        f'{meta.get("zh_date_only", meta.get("zh_date", date))}</time></p>\n'
+        f'{meta.get("zh_dt", meta.get("zh_date_only", date))}</time></p>\n'
         f'<meta itemprop="description" content="{d_esc}">\n'
         f'<p class="article-excerpt" itemprop="abstract">{d_esc}</p>\n'
         f'<a class="read-more" href="articles/{slug}.html">阅读全文 →</a>\n'
