@@ -168,9 +168,26 @@ def push_via_api(repo, branch="main", log=print):
         else:
             to_upload.append(path)
 
-    print(f"  ↳ 上传 {len(to_upload)} 个文件（6 线程并行）…")
-    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
-        for path, sha in ex.map(_upload, to_upload):
+    # 2026-11-21：上传 120+ 文件偶发要十几分钟（把 900 秒硬超时顶穿，误报失败）。
+    # 提高到 10 线程，并给每个 blob 加重试——单个文件网络抖动不该拖垮整次推送。
+    workers = 10
+    print(f"  ↳ 上传 {len(to_upload)} 个文件（{workers} 线程并行，失败自动重试）…")
+
+    def _upload_retry(p, tries=3):
+        last = None
+        for i in range(tries):
+            try:
+                return _upload(p)
+            except Exception as e:
+                last = e
+                if i < tries - 1:
+                    time.sleep(1.5 * (i + 1))
+        if last is not None:
+            raise last
+        raise RuntimeError("上传失败：未知原因")
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as ex:
+        for path, sha in ex.map(_upload_retry, to_upload):
             entries.append({"path": path, "mode": "100644", "type": "blob", "sha": sha})
 
     log(f"  ↳ API 推送：{len(entries)} 个文件（删除 {deleted}）→ {owner}/{name}")

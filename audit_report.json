@@ -1,0 +1,7667 @@
+[
+  {
+    "filename": "鸭屎香中秋前三天那通快递电话.html",
+    "title": "鸭屎香·中秋前三天那通快递电话 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：15 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 0.0,
+        "max": 10,
+        "issues": [
+          "正文与 鸭屎香中秋前三天那通快递电话.html 相似度 100%（疑似模板重复）"
+        ]
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 66.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：15 字（需 20+）",
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "正文与 鸭屎香中秋前三天那通快递电话.html 相似度 100%（疑似模板重复）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "chazen-yiwei.html",
+    "title": "🍵 茶禅一味・凤姐茶语 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：11 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题过短，语义不完整"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：11 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "标题过短，语义不完整",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "milan-morning-1727871081.html",
+    "title": "清晨第一泡：唤醒一天的蜜兰香 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：14 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 0.0,
+        "max": 5,
+        "issues": [
+          "prev/next 指向固定旧文章（全站同 URL 问题）"
+        ]
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：14 字（需 20+）",
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema",
+      "prev/next 指向固定旧文章（全站同 URL 问题）"
+    ]
+  },
+  {
+    "filename": "qiju-meixue.html",
+    "title": "🏺 器物之美，茶器有灵 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：11 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题过短，语义不完整"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：11 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "标题过短，语义不完整",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "yashijian.html",
+    "title": "🍵 鸭屎香 | 名字怪但香得不行 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：16 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：16 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "yicong.html",
+    "title": "🍃一丛一世界：凤凰单丛与工夫茶的千年对话 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "内容含跑题词（剪纸/招标/非茶品牌等）"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "内容含跑题词（剪纸/招标/非茶品牌等）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "中秋前夜单丛香.html",
+    "title": "中秋前夜单丛香 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：7 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题过短，语义不完整"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：7 字（需 20+）",
+      "标题过短，语义不完整",
+      "文件名无日期前缀",
+      "标题与正文关键词重合度低",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "秋分前夜嘅凤凰山茶话.html",
+    "title": "秋分前夜嘅凤凰山茶话 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：10 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题过短，语义不完整"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：10 字（需 20+）",
+      "标题过短，语义不完整",
+      "文件名无日期前缀",
+      "标题与正文关键词重合度低",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "秋分茶王赛的故事.html",
+    "title": "秋分茶王赛的故事 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：8 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题过短，语义不完整"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：8 字（需 20+）",
+      "标题过短，语义不完整",
+      "文件名无日期前缀",
+      "标题与正文关键词重合度低",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "茶王赛千份茶样中秋前的茶席争锋.html",
+    "title": "茶王赛千份茶样·中秋前的茶席争锋 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：16 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 0.0,
+        "max": 10,
+        "issues": [
+          "正文与 茶王赛千份茶样中秋前的茶席争锋.html 相似度 100%（疑似模板重复）"
+        ]
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 71.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：16 字（需 20+）",
+      "文件名无日期前缀",
+      "正文与 茶王赛千份茶样中秋前的茶席争锋.html 相似度 100%（疑似模板重复）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609131000凤凰山的直播间与炭焙香.html",
+    "title": "🍵 凤凰山的直播间与炭焙香 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：13 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：13 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "标题与正文关键词重合度低",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "baocun.html",
+    "title": "🍵 茶叶保存小技巧 | 让茶一直新鲜 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：18 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：18 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "baoyucangzhen.html",
+    "title": "🌪️ 阿凤茶传奇故事·暴雨藏珍 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：15 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：15 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "fanchang.html",
+    "title": "🏔️ 重返赛场·四十五岁｜老枞蜜兰香与人生的下半场 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "hailufeng-food.html",
+    "title": "🍜阿凤姐的下午三点：海陆丰美食图鉴，山海之间的烟火密码 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "laocha.html",
+    "title": "🍵 老茶 | 时光的礼物 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：12 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：12 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "sanfu.html",
+    "title": "🔥 越热越要喝热茶：三伏天的反常识茶课 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：19 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：19 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "tea-renqing-1727866025.html",
+    "title": "一杯茶，看透人情冷暖 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：10 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题过短，语义不完整"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：10 字（需 20+）",
+      "标题过短，语义不完整",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "tezheng.html",
+    "title": "🍵 凤凰单丛的特点 | 为什么这么香 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：18 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：18 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "tingxialai.html",
+    "title": "🍵停下来的智慧：老枞鸭屎香与那条歇了半天的街 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "xiawu3.html",
+    "title": "🍵下午三点的茶，喝的是秋天的第一口消息 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：19 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：19 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "yashixiang.html",
+    "title": "🦆 【鸭屎香：一个&quot;丑名字&quot;救了一棵神仙树】 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "zhuixing.html",
+    "title": "🌟 我们追的&quot;星&quot;，是那片叶子上的光 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "中秋倒數六天那年輕嘅茶味從3200億.html",
+    "title": "中秋倒數六天：那年輕嘅茶味，從3200億市場到鳳凰山嘅阿鳳姐 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "内容含跑题词（剪纸/招标/非茶品牌等）"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "文件名无日期前缀",
+      "内容含跑题词（剪纸/招标/非茶品牌等）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "中秋前夕凤凰山上太空茶苗的故事.html",
+    "title": "中秋前夕凤凰山上太空茶苗的故事 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：15 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "标题过短：15 字（需 20+）",
+      "文件名无日期前缀",
+      "标题与正文关键词重合度低",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "阿鳳姐講茶第140屆廣交會來了外單復.html",
+    "title": "阿鳳姐講茶｜第140屆廣交會來了，外單復甦？師傅們點算 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 0.0,
+        "max": 10,
+        "issues": [
+          "正文与 阿鳳姐講茶第140屆廣交會來了外單復.html 相似度 100%（疑似模板重复）"
+        ]
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 76.0,
+    "status": "不合格",
+    "issues": [
+      "文件名无日期前缀",
+      "正文与 阿鳳姐講茶第140屆廣交會來了外單復.html 相似度 100%（疑似模板重复）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609121000凤凰山的月光中秋前的茶市风云.html",
+    "title": "🍵 凤凰山的月光·中秋前的茶市风云 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：17 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：17 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609140430阿凤姐的中秋茶单地理标志的守护.html",
+    "title": "🍵 阿凤姐的中秋茶单：地理标志的守护 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：18 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：18 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609201000黄枝香.html",
+    "title": "黄枝香·中秋前夜的茶亭 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：11 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题过短，语义不完整"
+        ]
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：11 字（需 20+）",
+      "标题过短，语义不完整",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261008一批秋茶三路走阿凤姐的批发分级经.html",
+    "title": "🍵 一批秋茶三路走：阿凤姐的批发分级经 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：19 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：19 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261009茶桌上见人情落魄时那杯热茶最烫心.html",
+    "title": "🍵 茶桌上见人情：落魄时那杯热茶最烫心 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：19 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：19 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261018洗茶那一下香就出来了.html",
+    "title": "🍵 洗茶那一下，香就出来了 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：13 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：13 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261024茶与茶点的搭配像惠州老茶馆那样把日子泡开.html",
+    "title": "🍵 茶与茶点的搭配，像惠州老茶馆那样把日子泡开 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）",
+          "标题疑似单字截断"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "标题疑似单字截断",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261030高山上的那代人福伯与他的山顶茶园.html",
+    "title": "🍵 高山上的那代人：福伯与他的山顶茶园 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：19 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：19 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261108凤凰镇做青房里那双手和那块表.html",
+    "title": "🍵 凤凰镇做青房里，那双手和那块表 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 5.0,
+        "max": 15,
+        "issues": [
+          "标题过短：17 字（需 20+）",
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：17 字（需 20+）",
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "ai-cha.html",
+    "title": "🤖阿凤姐的茶话｜当凤凰单丛遇上AI，老茶人的&quot;黑科技&quot;让我大开眼界！ | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "aishisen.html",
+    "title": "🤖AI无限战争：DeepSeek、Kimi、Grok轮番登场，阿凤姐说——没有护城河的AI，有根的茶 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "baidolphin.html",
+    "title": "🐬 白海豚浇透小半个中国，阿凤姐煮了这壶&quot;雨后茶&quot; | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "basai.html",
+    "title": "🏆 第八届凤凰单丛争霸赛，潮州茶王加冕——从凤凰山到浮滨岭头的寻香之旅 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "chahua.html",
+    "title": "🔥 2025年茶圈五大热点问答｜阿凤姐带你读懂今年茶桌新鲜事 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "chashi.html",
+    "title": "🍵今日茶食搭配・凤姐手记｜凤凰单丛与潮汕粿品的绝配之道 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "chate.html",
+    "title": "🍵茶叶圈变天了：茶特调&quot;上位&quot;，中国茶&quot;出海&quot;——阿凤姐怎么看？ | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "chawang.html",
+    "title": "🏆 凤凰单丛十大茶王加冕，潮汕茶香再飘新高度 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "chayeji.html",
+    "title": "🍵 2026年茶叶市场新机遇：春茶季下的茶饮经济与文化破圈 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "chushu.html",
+    "title": "🍂处暑这天，凤凰山上没有&quot;甲醛白菜&quot;，只有一盏单丛解秋燥 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "duanwu.html",
+    "title": "🐲 【端午节】客户带着粽子来我店里，说要送我——我反而卖给他两斤陈皮 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "fengcha-generations-1727871331.html",
+    "title": "父子两代，半座茶山的执念 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：12 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：12 字（需 20+）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "geo-faq.html",
+    "title": "📍惠州哪里买正宗凤凰单丛？阿凤姐茶叶店常见问题全解答 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "guixiang.html",
+    "title": "🍵阿凤姐的下午三点：当凤凰单丛遇见归乡人 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "hailufeng.html",
+    "title": "🏛️ 从凤凰山到海陆丰：一杯单丛里的千年文脉 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "jiqingle.html",
+    "title": "🤖当凤凰单丛遇上具身智能：阿凤姐的茶桌，也是创业修罗场 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "liqiu.html",
+    "title": "🍂 立秋｜AI跑得再快，也焙不出一泡凤凰单丛 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "liqiu3.html",
+    "title": "🍂 立秋后第一杯茶，阿凤姐劝你别乱喝！——下午3点，正是喝茶的黄金档 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "liushu.html",
+    "title": "🌪️ 刘叔的时空茶事：六秒硬汉与八小时君子 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "milanxiang.html",
+    "title": "🍵 凤凰山800米蜜兰香：潮州老茶客的&quot;心头好&quot;，一喝就是三十年 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "paocha.html",
+    "title": "🍵 凤凰单丛泡茶完全指南 | 一泡茶的故事 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "puer.html",
+    "title": "🍵 【普洱茶 vs 凤凰单丛：一场老灵魂与香美人的邂逅】 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "putian-nansong-1790883356.html",
+    "title": "南宋的福建莆田到底发生了什麼？为何大规模迁移潮汕？ | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 5.0,
+        "max": 10,
+        "issues": [
+          "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）"
+        ]
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题不含站点核心关键词（茶/凤凰/单丛/普洱/紫砂...）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "shiguang.html",
+    "title": "🍵 【茶香里的时光 | 凤凰单丛的情感对话】 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "shihe.html",
+    "title": "🍵 阿凤姐嘅「试喝革命」：六泡小包装，如何撬开凤凰单丛嘅千年密码？ | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "shuangxiong.html",
+    "title": "🍵 蜜兰香 vs 鸭屎香：凤凰单丛「双雄」的前世今生 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "songzhong.html",
+    "title": "🍵宋种凤凰单丛｜七百年古树茶什么味道？惠州茶行阿凤姐带你品鉴宋种老茶 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "taifeng-kunan.html",
+    "title": "🌪️台风天，茶馆里来了一屋子&quot;困兽&quot;——韦东奕、暑期档票房，和一杯凤凰单丛 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "xinshou.html",
+    "title": "🍵 【如何泡出一杯好茶？| 新手入门指南】 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "xuesechayin.html",
+    "title": "🌪️ 血色茶印：一饼假茶牵出的三代茶人恩怨 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "yehua-gpt5.html",
+    "title": "🌙阿凤姐夜话｜GPT-5来了，美股跌了，我还是泡我的凤凰单丛 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "yehua-gudu.html",
+    "title": "🌙【茶叶夜话】深夜的凤凰单丛，是城市写给孤独者的情书 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "yongshui.html",
+    "title": "🍵 【泡茶用水指南 | 凤凰单丛泡茶完全攻略】 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "yuanye-tea-1727866689.html",
+    "title": "年轻人涌进原叶茶，小美跑来凤姐店里取经 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：19 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题过短：19 字（需 20+）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "yuluo.html",
+    "title": "🌧️ 【单丛蜜兰香】雨落茶台，三杯茶的时间：惠州茶叶店阿凤姐的茶台故事 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "zhonglei.html",
+    "title": "🍵 【凤凰单丛品种指南 | 常见品种一次搞懂】 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "zishayiyun.html",
+    "title": "🫖 紫砂疑雲：一把「時大彬」壺，揭開三代壺匠嘅生死恩怨 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "一碗不是茶的茶汕尾鹹茶與菜茶的文.html",
+    "title": "一碗不是茶的「茶」——汕尾鹹茶與菜茶的文化史 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 81.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609130430中秋前的凤凰山老师傅的炭焙与新科技的守护.html",
+    "title": "🍵 中秋前的凤凰山：老师傅的炭焙与新科技的守护 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609141000阿凤姐叹茶具设计大赛凤凰单丛新路向.html",
+    "title": "🍵 阿凤姐叹茶具设计大赛：凤凰单丛新路向 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609150430中秋倒计时十日凤凰山的茶仓与炭焙老人.html",
+    "title": "🍵 中秋倒计时十日：凤凰山的茶仓与炭焙老人 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609151000阿凤姐看凤凰单丛测评行内人眼中的中秋选茶经.html",
+    "title": "🍵 阿凤姐看凤凰单丛测评：行内人眼中的中秋选茶经 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609221000中秋前三天的凤凰山新茶饮退烧后老师傅的第三次中秋.html",
+    "title": "🍵 中秋前三天的凤凰山——新茶饮退烧后，老师傅的第三次中秋 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609261000中秋次日凤凰山茶香未凉老师傅的第三次坚守.html",
+    "title": "🍵 中秋次日：凤凰山茶香未凉，老师傅的第三次坚守 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202609271000秋茶上市正当时凤凰山老师傅的淡定与街坊的着急.html",
+    "title": "🍵 秋茶上市正当时：凤凰山老师傅的淡定与街坊的着急 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "202610062000炭火守了三百年阿凤姐把老茶人的工夫带到惠州.html",
+    "title": "🍵 炭火守了三百年，阿凤姐把老茶人的工夫带到惠州 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261021深夜心事茶话一泡老丛接住了压货的年轻客户.html",
+    "title": "🍵 深夜心事茶话：一泡老丛，接住了压货的年轻客户 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261023茶与禅在喧嚣中找回内心的静阿凤姐的下午.html",
+    "title": "🍵 茶与禅：在喧嚣中找回内心的静——阿凤姐的下午 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261024四季茶饮阿凤姐教你顺着时令喝茶别跟身体对着干.html",
+    "title": "🍵 四季茶饮：阿凤姐教你顺着时令喝茶，别跟身体对着干 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261024深夜品茶心事茶话阿凤姐守到十点半的那一泡老丛.html",
+    "title": "🍵 深夜品茶，心事茶话：阿凤姐守到十点半的那一泡老丛 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261107闻香识单丛一位调香师在阿凤姐茶桌上的下午.html",
+    "title": "🍵 闻香识单丛：一位调香师在阿凤姐茶桌上的下午 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题含非法字符（#/引号/emoji）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "标题含非法字符（#/引号/emoji）",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "tea-road.html",
+    "title": "凤凰单丛茶马古道｜为什么这盏茶能香千年？惠州茶行阿凤姐带你读懂单丛老茶 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "zisha.html",
+    "title": "🆕 【紫砂壶：壶中乾坤，选对才能泡好茶】 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "中秋前茶桌上的选择从送领导到留自己.html",
+    "title": "中秋前，茶桌上的选择——从送领导到留自己喝 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "中秋后那通电话阿凤姐茶叶店的四幕场景.html",
+    "title": "中秋后那通电话——阿凤姐茶叶店的四幕场景 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "凤凰单丛遇上机器人采茶中秋前夕乌岽山的.html",
+    "title": "凤凰单丛遇上机器人采茶：中秋前夕乌岽山的山头风波 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "梅州赛茶遇上凤凰单丛阿凤姐嘅中秋茶礼智.html",
+    "title": "梅州赛茶遇上凤凰单丛：阿凤姐嘅中秋茶礼智慧 | 阿凤姐的故事",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "文件名无日期前缀"
+        ]
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：geo:region"
+        ]
+      },
+      "Schema": {
+        "score": 4.0,
+        "max": 10,
+        "issues": [
+          "缺少 LocalBusiness schema",
+          "缺少 BreadcrumbList schema"
+        ]
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 86.0,
+    "status": "建议修复",
+    "issues": [
+      "文件名无日期前缀",
+      "缺少 SEO 元素：geo:region",
+      "缺少 LocalBusiness schema",
+      "缺少 BreadcrumbList schema"
+    ]
+  },
+  {
+    "filename": "20261117江边那壶茶先给最早起的人阿凤姐.html",
+    "title": "江边那壶茶，先给最早起的人",
+    "checks": {
+      "标题合规": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题过短：13 字（需 20+）"
+        ]
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 90.0,
+    "status": "合格",
+    "issues": [
+      "标题过短：13 字（需 20+）",
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261124点评普洱茶新闻2026年普洱茶博览交易会在云南阿凤姐.html",
+    "title": "20261124点评普洱茶新闻：2026年普洱茶博览交易会在云南景洪开幕.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 12.0,
+        "max": 15,
+        "issues": [
+          "缺少 SEO 元素：og:image"
+        ]
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 92.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低",
+      "缺少 SEO 元素：og:image"
+    ]
+  },
+  {
+    "filename": "20261115三泡就淡的鸭屎香的两只盖碗阿凤姐.html",
+    "title": "20261115三泡就淡的鸭屎香盖碗对比实测：同款茶为何出汤快慢天差地别.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261117清晨第一杯茶先叫醒叶子惠州东平的六点十分阿凤姐.html",
+    "title": "清晨第一杯茶先叫醒叶子，惠州东平阿凤姐的六点十分",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261118清晨五点半的惠州东平一壶凤凰单丛等晨练的人阿凤姐.html",
+    "title": "清晨五点半的惠州东平，阿凤姐一壶凤凰单丛等晨练的人",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261119清晨六点半的惠州东平一壶凤凰单丛理年货单阿凤姐.html",
+    "title": "清晨六点半的惠州东平，阿凤姐一壶凤凰单丛理年货单",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261120惠州清晨第一杯茶六点半就烧上了水阿凤姐.html",
+    "title": "惠州清晨第一杯茶，阿凤姐六点半就烧上了水",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261120说紫砂紫砂之家紫砂壶茶具建盏收藏精阿凤姐.html",
+    "title": "20261120阿凤姐的紫砂避坑指南：二十年茶人教你四步买对壶.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261121周六清晨的惠州东平头一壶单丛先留给赶早市的人阿凤姐.html",
+    "title": "周六清晨的惠州东平，阿凤姐头一壶单丛先留给赶早市的人",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261122周日清晨的惠州东平用一壶鸭屎香叫醒整条江边阿凤姐.html",
+    "title": "周日清晨的惠州东平，阿凤姐用一壶鸭屎香叫醒整条江边",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261123惠州东平周一清晨一壶蜜兰香先暖了晨练人的手阿凤姐.html",
+    "title": "惠州东平周一清晨，阿凤姐一壶蜜兰香先暖了晨练人的手",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261124点评普洱茶新闻2026年普洱茶博览交易会在云南景洪开阿凤姐.html",
+    "title": "阿凤姐点评普洱茶新闻，2026年普洱茶博览交易会在云南景洪开幕",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 10.0,
+        "max": 15,
+        "issues": [
+          "标题与正文关键词重合度低"
+        ]
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 95.0,
+    "status": "合格",
+    "issues": [
+      "标题与正文关键词重合度低"
+    ]
+  },
+  {
+    "filename": "20261112立冬过了雪片还没到阿凤姐教你一眼看穿单丛秋茶换皮的价差.html",
+    "title": "立冬过了，雪片还没到，阿凤姐教你一眼看穿单丛秋茶换皮的价差",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261115立冬之后换一壶秋茶阿凤姐教你顺时而饮.html",
+    "title": "20261115立冬后换茶记：阿凤姐教你按节气挑单丛，不跟着广告买.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261116山路上那一串头灯阿凤姐.html",
+    "title": "20261116凌晨三点上茶山：跟着阿凤姐看一场单丛采摘的‘夜班’.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261116茶叶出口量减价增新茶饮抢原料惠州茶客怎么选茶阿凤姐.html",
+    "title": "茶叶出口量减价增，新茶饮抢原料，惠州茶客怎么选茶？",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261121点评紫砂新闻紫砂壺的精阿凤姐.html",
+    "title": "20261121阿凤姐点评紫砂新闻：一把壶的‘精气神’到底看哪三处.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261122点评紫砂新闻剪纸武汉剪纸阿凤姐.html",
+    "title": "20261122阿凤姐点评非遗新闻：鄂派紫砂入选省级非遗，宜兴这边怎么看.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261123点评紫砂新闻吕俊杰紫砂艺术作品展在沂州古城开阿凤姐.html",
+    "title": "20261123阿凤姐点评紫砂新闻：吕俊杰紫砂艺术作品展在沂州古城开幕，看展顺道聊聊‘器以载道’.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261124惠州清晨的第一杯茶天没亮就起身的人最懂这一泡阿凤姐.html",
+    "title": "惠州清晨的第一杯茶，天没亮就起身的人，最懂这一泡",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261124点评紫砂新闻致敬手艺人阿凤姐.html",
+    "title": "20261124阿凤姐点评紫砂新闻：致敬手艺人，一把壶的一生比人还长.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261125清晨头一泡惠州东平凤凰单丛六点二十的水声阿凤姐.html",
+    "title": "清晨头一泡，惠州东平凤凰单丛，六点二十的水声",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  },
+  {
+    "filename": "20261125点评紫砂新闻一把壶可以泡一杯茶阿凤姐.html",
+    "title": "20261125阿凤姐点评紫砂新闻：一把壶可以泡一杯茶，也可以泡一个人.html",
+    "checks": {
+      "标题合规": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "标题语义": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "素材时效": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "主题匹配": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "正文原创": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "SEO元素": {
+        "score": 15.0,
+        "max": 15,
+        "issues": []
+      },
+      "Schema": {
+        "score": 10.0,
+        "max": 10,
+        "issues": []
+      },
+      "内链": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      },
+      "图片alt": {
+        "score": 5.0,
+        "max": 5,
+        "issues": []
+      }
+    },
+    "total_score": 100.0,
+    "status": "合格",
+    "issues": []
+  }
+]
